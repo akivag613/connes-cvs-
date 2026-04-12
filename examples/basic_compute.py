@@ -5,8 +5,8 @@ Minimal example: compute the CvS ground-state eigenvalue at cutoff c=13.
 This reproduces the central numerical result from:
   Connes & van Suijlekom, arXiv:2511.23257
 
-Expected output:
-  λ_min(c=13) ≈ 1.455e-55
+Expected output (at T=400, dps=80):
+  λ_min(c=13) ≈ 2.077e-59
   |γ₁ error|  ≈ 1.5e-55
 """
 
