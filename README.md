@@ -14,7 +14,7 @@
 
 The Riemann Hypothesis (RH) is equivalent to the positivity of a certain quadratic functional on the Weil explicit-formula side. Connes and van Suijlekom (arXiv: [2511.23257](https://arxiv.org/abs/2511.23257)) introduced a *truncated* version of this functional: restrict the test-function space to functions supported on [−log *c*, log *c*], expand in a trigonometric basis of dimension 2*N*+1, and assemble the resulting Galerkin matrix *Q*. Its minimum eigenvalue λ\_min(*c*) must be non-negative for all *c* if and only if RH holds. Connes, Consani, and Moscovici (arXiv: [2511.22755](https://arxiv.org/abs/2511.22755)) independently studied the same operator in a prolate-spheroidal basis and confirmed rapid convergence of λ\_min toward zero as *c* grows.
 
-This package implements the trigonometric-basis construction from CvS Proposition 4.1. The matrix decomposes into three arithmetically transparent pieces — a prime-sum piece encoding the von Mangoldt function, a pole piece from the trivial zeros, and an archimedean piece from the Mellin multiplier of the test-function space. High-precision arithmetic (mpmath/python-flint at 80--300 decimal digits) is essential because the eigenvalues shrink super-exponentially: at cutoff *c* = 13 the ground-state error |γ₁ − λ| is of order 10⁻⁵⁵, and by *c* = 23 it reaches 10⁻¹⁶³. The package handles this precision management transparently.
+This package implements the trigonometric-basis construction from CvS Proposition 4.1. The matrix decomposes into three arithmetically transparent pieces — a prime-sum piece encoding the von Mangoldt function, a pole piece from the trivial zeros, and an archimedean piece from the Mellin multiplier of the test-function space. High-precision arithmetic (mpmath/python-flint at 80--300 decimal digits) is essential because the eigenvalues shrink super-exponentially: at cutoff *c* = 13 the ground-state error |γ₁ − λ| is of order 10⁻⁵⁵, and by *c* = 61 it reaches 10⁻¹⁶⁴. The package handles this precision management transparently.
 
 ---
 
@@ -82,7 +82,7 @@ For mathematical derivations, see:
 
 - **CvS paper:** Connes & van Suijlekom, "Spectral truncation of the Weil operator," [arXiv:2511.23257](https://arxiv.org/abs/2511.23257)
 - **CCM paper:** Connes, Consani & Moscovici, "Spectral realization and the Weil positivity," [arXiv:2511.22755](https://arxiv.org/abs/2511.22755)
-- **Our paper:** Groskin, "First independent implementation and convergence study of the CvS truncated Weil minimizer," arXiv:XXXX.XXXXX (forthcoming)
+- **Our paper:** Groskin, "Structural Properties of the Connes-van Suijlekom Truncated Weil Minimizer: Sobolev Scaling," [HAL:hal-05588997](https://hal.science/hal-05588997) (arXiv forthcoming)
 
 ---
 
@@ -92,11 +92,12 @@ If you use this package in your research, please cite:
 
 ```bibtex
 @article{groskin2026connes_cvs,
-  title   = {First independent implementation and convergence study
-             of the {C}onnes--van {S}uijlekom truncated {W}eil minimizer},
+  title   = {Structural Properties of the {C}onnes--van {S}uijlekom
+             Truncated {W}eil Minimizer: {S}obolev Scaling},
   author  = {Groskin, Akiva},
   year    = {2026},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX (forthcoming)},
+  note    = {HAL: hal-05588997, arXiv forthcoming},
+  url     = {https://hal.science/hal-05588997},
 }
 ```
 
@@ -106,11 +107,14 @@ If you use this package in your research, please cite:
 
 This implementation has been validated against published values from Connes (2026) and CCM (2025):
 
-| Cutoff | CCM value          | This package       | Ratio |
-|--------|--------------------|--------------------|-------|
-| c = 13 | 2.5 x 10⁻⁵⁵       | 1.455 x 10⁻⁵⁵     | 1.7x  |
+| Cutoff | Published value | This package   | Source                     |
+|--------|-----------------|----------------|----------------------------|
+| c = 13 | ~2.6 x 10⁻⁵⁵   | 1.455 x 10⁻⁵⁵ | Connes 2026 (factor 1.3x)  |
+| c = 14 | ~1.07 x 10⁻⁶⁰  | 1.602 x 10⁻⁶² | CCM §6 (67x tighter)       |
 
-The factor-of-1.7 difference is fully explained by the different basis choices (trigonometric vs. prolate spheroidal) and numerical parameters (N, dps). Both implementations compute eigenvalues of the same mathematical operator.
+The factor-of-1.3 difference at c=13 is explained by the different basis choices (trigonometric vs. prolate spheroidal) and numerical parameters (N, T, dps). Both implementations compute eigenvalues of the same mathematical operator.
+
+The full dataset spans 15 cutoffs from c=13 to c=67, covering 113 orders of magnitude. See `data/results_15pt_T800.json` for the complete results.
 
 ---
 
