@@ -33,11 +33,20 @@ print(f"  λ_min(c=13) = {lam_min:.6e}")
 
 # Extract the first Riemann zero from the eigenvector
 zeros = extract_zeros(eigvec, L=math.log(13), n_zeros=3)
-gamma1_detected = zeros[0]
-gamma1_error = abs(gamma1_detected - GAMMA_1)
+gamma1_detected = zeros[0]['gamma_detected']
+gamma1_error = zeros[0]['error']
 
 print(f"\nResults:")
-print(f"  Detected γ₁  = {gamma1_detected:.15f}")
+if gamma1_detected is not None:
+    print(f"  Detected γ₁  = {gamma1_detected:.15f}")
+else:
+    print(f"  Detected γ₁  = None (findroot failed)")
 print(f"  Known γ₁     = {GAMMA_1:.15f}")
-print(f"  |γ₁ error|   = {gamma1_error:.4e}")
-print(f"\n  First 3 zeros: {[f'{z:.10f}' for z in zeros]}")
+if gamma1_error is not None:
+    print(f"  |γ₁ error|   = {gamma1_error:.4e}")
+else:
+    print(f"  |γ₁ error|   = N/A")
+print(f"\n  First 3 zeros:")
+for z in zeros:
+    gd = z['gamma_detected']
+    print(f"    k={z['k']}: γ_true={z['gamma_true']:.10f}, γ_detected={'N/A' if gd is None else f'{gd:.10f}'}")

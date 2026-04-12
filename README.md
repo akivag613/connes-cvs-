@@ -34,12 +34,12 @@ pip install connes-cvs[fast]
 
 - Python >= 3.9
 - [mpmath](https://mpmath.org/) (arbitrary-precision arithmetic)
-- [NumPy](https://numpy.org/) and [SciPy](https://scipy.org/) (eigensolvers, analysis)
 
 ### Optional dependencies
 
 - [python-flint](https://github.com/flintlib/python-flint) — Arb-backed digamma for fast kernel evaluation
 - [gmpy2](https://github.com/aleaxit/gmpy2) — faster mpmath backend
+- [NumPy](https://numpy.org/) and [SciPy](https://scipy.org/) — for post-processing and analysis
 
 ---
 
@@ -76,13 +76,13 @@ for c, r in results.items():
 
 ## Documentation
 
-Full API documentation: *coming soon*
+Full API documentation: See docstrings in source code
 
 For mathematical derivations, see:
 
 - **CvS paper:** Connes & van Suijlekom, "Spectral truncation of the Weil operator," [arXiv:2511.23257](https://arxiv.org/abs/2511.23257)
 - **CCM paper:** Connes, Consani & Moscovici, "Spectral realization and the Weil positivity," [arXiv:2511.22755](https://arxiv.org/abs/2511.22755)
-- **Our paper:** Groskin, "First independent implementation and convergence study of the CvS truncated Weil minimizer," [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
+- **Our paper:** Groskin, "First independent implementation and convergence study of the CvS truncated Weil minimizer," arXiv:XXXX.XXXXX (forthcoming)
 
 ---
 
@@ -96,7 +96,7 @@ If you use this package in your research, please cite:
              of the {C}onnes--van {S}uijlekom truncated {W}eil minimizer},
   author  = {Groskin, Akiva},
   year    = {2026},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX (forthcoming)},
 }
 ```
 
