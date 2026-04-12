@@ -82,7 +82,7 @@ For mathematical derivations, see:
 
 - **CvS paper:** Connes & van Suijlekom, "Spectral truncation of the Weil operator," [arXiv:2511.23257](https://arxiv.org/abs/2511.23257)
 - **CCM paper:** Connes, Consani & Moscovici, "Spectral realization and the Weil positivity," [arXiv:2511.22755](https://arxiv.org/abs/2511.22755)
-- **Our paper:** Groskin, "Structural Properties of the Connes-van Suijlekom Truncated Weil Minimizer: Sobolev Scaling," [HAL:hal-05589052](https://hal.science/hal-05589052) (arXiv forthcoming)
+- **Our paper:** Groskin, "Structural Properties of the Connes-van Suijlekom Truncated Weil Minimizer: Sobolev Scaling," [HAL:hal-05589109](https://hal.science/hal-05589109) (arXiv forthcoming)
 
 ---
 
@@ -96,8 +96,8 @@ If you use this package in your research, please cite:
              Truncated {W}eil Minimizer: {S}obolev Scaling},
   author  = {Groskin, Akiva},
   year    = {2026},
-  note    = {HAL: hal-05589052, arXiv forthcoming},
-  url     = {https://hal.science/hal-05589052},
+  note    = {HAL: hal-05589109, arXiv forthcoming},
+  url     = {https://hal.science/hal-05589109},
 }
 ```
 
