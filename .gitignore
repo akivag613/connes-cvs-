@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -8,3 +9,18 @@ build/
 *.pickle
 .venv/
 venv/
+
+# OS
+.DS_Store
+
+# Private research directories (local only, not published)
+code/
+docs/
+papers/
+research/
+results/
+website/
+RIEMANN_README.md
+RIEMANN_GIT_HISTORY.md
+CLAUDE.md
+.claude/
