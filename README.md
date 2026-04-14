@@ -4,7 +4,7 @@
 
 ### The first public implementation of the Connes–van Suijlekom Galerkin matrix for the Riemann Hypothesis.
 
-[![PyPI version](https://img.shields.io/pypi/v/connes-cvs.svg?color=4c1)](https://pypi.org/project/connes-cvs/)
+[![Version](https://img.shields.io/badge/version-0.2.0-4c1.svg)](CHANGELOG.md)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19546515-1f74b7.svg)](https://zenodo.org/records/19546515)
@@ -74,15 +74,27 @@ Each step adds one prime. The convergence is monotone but not smooth (nine param
 
 ## Installation
 
+Install directly from the GitHub repository:
+
 ```bash
-pip install connes-cvs
+pip install git+https://github.com/akivag613/connes-cvs-.git
 ```
 
 For the optional **11× speedup** on the archimedean integral via Arb's arbitrary-precision digamma:
 
 ```bash
-pip install connes-cvs[fast]
+pip install "connes-cvs[fast] @ git+https://github.com/akivag613/connes-cvs-.git"
 ```
+
+Or clone and install editable (recommended for development):
+
+```bash
+git clone https://github.com/akivag613/connes-cvs-.git
+cd connes-cvs-
+pip install -e '.[all]'
+```
+
+> A PyPI release is planned; `pip install connes-cvs` will work once that lands.
 
 ### Requirements
 
@@ -210,10 +222,10 @@ Version 0.2.0 is **2.06× faster** on the dominant archimedean-integral phase an
 | Wall time | 214.8 s | **127.3 s** (**1.69× faster**) |
 | $\lambda_{\min}$ (paper Table 18: $2.865 \times 10^{-59}$) | `2.8654536149302802951…e-59` | `2.8654536149302802951…e-59` — **matches paper to all reported precision** |
 
-See [`_benchmarks/AB_VERIFIED_2026-04-14.md`](_benchmarks/AB_VERIFIED_2026-04-14.md) for the full A/B protocol and raw timings. Reproduce on your hardware:
+See [`benchmarks/AB_VERIFIED_2026-04-14.md`](benchmarks/AB_VERIFIED_2026-04-14.md) for the full A/B protocol and raw timings. Reproduce on your hardware:
 
 ```bash
-python _benchmarks/win1_pool_benchmark.py 13 80 400 80
+python benchmarks/win1_pool_benchmark.py 13 80 400 80
 ```
 
 ---
