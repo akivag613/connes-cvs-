@@ -4,7 +4,7 @@
 
 ### The first public implementation of the Connes–van Suijlekom Galerkin matrix for the Riemann Hypothesis.
 
-[![PyPI version](https://img.shields.io/pypi/v/connes-cvs.svg?color=4c1)](https://pypi.org/project/connes-cvs/)
+[![PyPI version](https://img.shields.io/pypi/v/connes-cvs.svg?color=4c1&cacheSeconds=300)](https://pypi.org/project/connes-cvs/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19546515-1f74b7.svg)](https://zenodo.org/records/19546515)
