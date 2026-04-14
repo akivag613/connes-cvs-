@@ -35,6 +35,7 @@ from connes_cvs.operator import (
     psi_arch_deriv,
     compute_ground_state,
     extract_zeros,
+    _hplus_cache_clear,
 )
 
 if HAS_FLINT:
@@ -81,9 +82,13 @@ def _compute_psi_pair_worker(n_idx: int) -> tuple[int, str, str]:
     dps = _worker_state["dps"]
     prime_data = _worker_state["prime_data"]
 
+    # WIN 1: share h_plus evaluations between psi_arch and psi_arch_deriv
+    # via a per-x memoization cache keyed on abs(tau). Bit-identical.
+    _hplus_cache_clear()
     x = mp.mpf(n_idx)
     psi = psi_prime(x, L, prime_data) + psi_pole(x, L) + psi_arch(x, L, T, dps)
     psi_d = psi_prime_deriv(x, L, prime_data) + psi_pole_deriv(x, L) + psi_arch_deriv(x, L, T, dps)
+    _hplus_cache_clear()
     return (n_idx, mp.nstr(psi, dps + 5), mp.nstr(psi_d, dps + 5))
 
 
@@ -167,7 +172,11 @@ def _run_single_cutoff(
         "lambda_min": lambda_min,
         "eigvec": v_full,
         "zeros": zeros_results,
-        "gamma1_error": zeros_results[0]["error"] if zeros_results and zeros_results[0]["error"] is not None else None,
+        "gamma1_error": (
+            zeros_results[0]["error"]
+            if zeros_results and zeros_results[0]["error"] is not None
+            else None
+        ),
         "wall_time": t_total,
         "timing": {
             "cache_sec": t_cache,

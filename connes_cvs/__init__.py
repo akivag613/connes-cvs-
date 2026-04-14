@@ -13,7 +13,7 @@ Basic usage::
     lam_min, eigvec = compute_ground_state(Q)
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from connes_cvs.operator import build_galerkin_matrix, compute_ground_state, extract_zeros
 

@@ -2,10 +2,24 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "connes-cvs"
-abstract: "First public implementation of the Connes-van Suijlekom Galerkin matrix"
+abstract: "First public implementation of the Connes-van Suijlekom Galerkin matrix for the Riemann Hypothesis."
 authors:
   - family-names: Groskin
     given-names: Akiva
-version: 0.1.0
+version: 0.2.0
+date-released: 2026-04-14
 license: MIT
 repository-code: "https://github.com/akivag613/connes-cvs-"
+url: "https://github.com/akivag613/connes-cvs-"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19546515
+    description: "Companion paper (Zenodo)"
+keywords:
+  - riemann-hypothesis
+  - spectral-theory
+  - number-theory
+  - connes-van-suijlekom
+  - weil-positivity
+  - galerkin-method
+  - arbitrary-precision
