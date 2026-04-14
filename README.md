@@ -4,7 +4,7 @@
 
 ### The first public implementation of the Connes–van Suijlekom Galerkin matrix for the Riemann Hypothesis.
 
-[![Version](https://img.shields.io/badge/version-0.2.0-4c1.svg)](CHANGELOG.md)
+[![PyPI version](https://img.shields.io/pypi/v/connes-cvs.svg?color=4c1)](https://pypi.org/project/connes-cvs/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19546515-1f74b7.svg)](https://zenodo.org/records/19546515)
@@ -74,27 +74,23 @@ Each step adds one prime. The convergence is monotone but not smooth (nine param
 
 ## Installation
 
-Install directly from the GitHub repository:
-
 ```bash
-pip install git+https://github.com/akivag613/connes-cvs-.git
+pip install connes-cvs
 ```
 
 For the optional **11× speedup** on the archimedean integral via Arb's arbitrary-precision digamma:
 
 ```bash
-pip install "connes-cvs[fast] @ git+https://github.com/akivag613/connes-cvs-.git"
+pip install 'connes-cvs[fast]'
 ```
 
-Or clone and install editable (recommended for development):
+To install from source (recommended for development):
 
 ```bash
 git clone https://github.com/akivag613/connes-cvs-.git
 cd connes-cvs-
 pip install -e '.[all]'
 ```
-
-> A PyPI release is planned; `pip install connes-cvs` will work once that lands.
 
 ### Requirements
 
