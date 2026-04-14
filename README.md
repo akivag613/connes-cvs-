@@ -19,7 +19,7 @@
 
 | Cutoff range | Eigenvalue span | Precision | Speedup (v0.2.0) | Published paper |
 | :---: | :---: | :---: | :---: | :---: |
-| `c = 13 … 67` | `10⁻⁵⁹ → 10⁻¹⁷³` | up to **300** decimal digits | **1.83×** total wall | [Zenodo 10.5281/zenodo.19546515](https://zenodo.org/records/19546515) |
+| `c = 13 … 67` | `10⁻⁵⁹ → 10⁻¹⁷³` | **80–200** decimal digits (tested) | **1.83×** total wall | [Zenodo 10.5281/zenodo.19546515](https://zenodo.org/records/19546515) |
 
 </div>
 
@@ -241,7 +241,7 @@ where $\psi(x) = \tfrac{1}{\pi} \int_0^L \sin\bigl(2\pi x(1-y/L)\bigr)\, D(y)\, 
 1. **$h_+$ is even in $\tau$** and mpmath's tanh-sinh rule is deterministic per `(interval, precision)`, so `psi_arch` and `psi_arch_deriv` share quadrature nodes. A dict keyed on $|\tau|$ gives a 4× hit rate on digamma calls.
 2. **A fused real-arithmetic kernel** computes $\mathrm{Re}\,\hat{S}_x(\tau)$ and $\mathrm{Re}\,\partial_x \hat{S}_x(\tau)$ in one pass, sharing all sub-expressions ($\sin(\beta L)$, $\sin(\beta L/2)$, $1/\beta$, etc.).
 
-Precision management is transparent: eigenvalues shrink super-exponentially (at $c = 67$ the ground-state error reaches $10^{-168}$), so the package threads 80–300 decimal digits of mpmath precision end-to-end.
+Precision management is transparent. Eigenvalues shrink super-exponentially (at $c = 67$ the ground-state error reaches $10^{-168}$), so the published sweep threads 80–200 decimal digits of mpmath precision end-to-end (dps = 80 for the primary $c \leq 37$ cells; dps = 150 for the $c \in \\{13, 17, 19\\}$ retest; dps = 200 for $c \geq 41$). mpmath supports arbitrary precision beyond 200 digits; the paper notes that reaching $c \approx 97$ cleanly would require dps = 300, but such runs are not included in the published dataset.
 
 ---
 
@@ -250,7 +250,7 @@ Precision management is transparent: eigenvalues shrink super-exponentially (at 
 - **Our paper** (computational study, 15 cutoffs, 113 OOM) — Groskin 2026, [Zenodo DOI 10.5281/zenodo.19546515](https://zenodo.org/records/19546515)
 - **CvS** (mathematical foundation) — Connes & van Suijlekom, *Quadratic forms, real zeros and echoes of the spectral action*, [arXiv:2511.23257](https://arxiv.org/abs/2511.23257)
 - **CCM** (prolate-basis companion) — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755)
-- **Connes 2026** (context) — *Past, Present and a Letter Through Time*
+- **Connes 2026** (context) — *The Riemann Hypothesis: Past, Present and a Letter Through Time*, [arXiv:2602.04022](https://arxiv.org/abs/2602.04022)
 
 ---
 
