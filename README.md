@@ -292,7 +292,7 @@ If you use this package in academic work, please cite both the software and the 
 
 ## Contributing
 
-Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for developer-setup instructions, the test-running protocol, and the bit-identicality contract any performance PR must respect. Version history is in [CHANGELOG.md](CHANGELOG.md).
+Issues and pull requests are welcome. See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for developer-setup instructions, the test-running protocol, and the bit-identicality contract any performance PR must respect. Version history is in [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
