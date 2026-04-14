@@ -135,7 +135,9 @@ def _run_single_cutoff(
             if m_idx == n_idx:
                 Q[i, j] = psi_deriv_vals[n_idx]
             else:
-                Q[i, j] = (psi_vals[m_idx] - psi_vals[n_idx]) / mp.mpf(m_idx - n_idx)
+                # Note: mpmath handles mpf / int correctly; avoid redundant
+                # mp.mpf(int) conversion in the inner loop (micro-opt, bit-identical).
+                Q[i, j] = (psi_vals[m_idx] - psi_vals[n_idx]) / (m_idx - n_idx)
     # Symmetrize
     for i in range(DIM):
         for j in range(i + 1, DIM):

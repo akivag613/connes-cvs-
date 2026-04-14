@@ -364,7 +364,9 @@ def build_galerkin_matrix(
             if m_idx == n_idx:
                 Q[i, j] = psi_deriv_vals[n_idx]
             else:
-                Q[i, j] = (psi_vals[m_idx] - psi_vals[n_idx]) / mp.mpf(m_idx - n_idx)
+                # Note: mpmath handles mpf / int correctly; avoid redundant
+                # mp.mpf(int) conversion in the inner loop (micro-opt, bit-identical).
+                Q[i, j] = (psi_vals[m_idx] - psi_vals[n_idx]) / (m_idx - n_idx)
 
     # Symmetrize: Q[i,j] = Q[j,i] = (Q[i,j] + Q[j,i]) / 2
     for i in range(DIM):
