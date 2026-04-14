@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "connes-cvs"
-version = "0.1.0"
-description = "First public implementation of the Connes-van Suijlekom Galerkin matrix for the Riemann Hypothesis"
+version = "0.2.0"
+description = "First public implementation of the Connes-van Suijlekom Galerkin matrix for the Riemann Hypothesis."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.9"
@@ -17,14 +17,18 @@ keywords = [
     "spectral-theory",
     "number-theory",
     "connes",
+    "van-suijlekom",
     "weil-positivity",
     "galerkin",
     "arbitrary-precision",
+    "computational-mathematics",
+    "l-functions",
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -32,6 +36,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Mathematics",
+    "Typing :: Typed",
 ]
 dependencies = [
     "mpmath>=1.3.0",
@@ -58,10 +63,12 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/akivag613/connes-cvs-"
+Homepage      = "https://github.com/akivag613/connes-cvs-"
 Documentation = "https://github.com/akivag613/connes-cvs-#readme"
-Repository = "https://github.com/akivag613/connes-cvs-"
-Issues = "https://github.com/akivag613/connes-cvs-/issues"
+Repository    = "https://github.com/akivag613/connes-cvs-"
+Issues        = "https://github.com/akivag613/connes-cvs-/issues"
+Changelog     = "https://github.com/akivag613/connes-cvs-/blob/main/CHANGELOG.md"
+Paper         = "https://zenodo.org/records/19546515"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

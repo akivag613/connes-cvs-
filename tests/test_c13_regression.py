@@ -73,7 +73,7 @@ def test_c13_gamma1_error_in_range():
 def test_package_imports():
     """Smoke test: verify the package can be imported."""
     import connes_cvs
-    assert connes_cvs.__version__ == "0.1.0"
+    assert connes_cvs.__version__ == "0.2.0"
 
 
 def test_public_api_exists():

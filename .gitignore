@@ -20,7 +20,25 @@ papers/
 research/
 results/
 website/
+EMAILS/
 RIEMANN_README.md
 RIEMANN_GIT_HISTORY.md
 CLAUDE.md
 .claude/
+DISCOVERIES.md
+files from akiva/
+MEMORY.md
+memory/
+
+# Local-only benchmark scratch (probe scripts and intermediate logs)
+_benchmarks/_probe_*.py
+_benchmarks/run_profile.py
+_benchmarks/profile_baseline.txt
+_benchmarks/HOTSPOTS.md
+_benchmarks/AB_baseline_no_win1.txt
+_benchmarks/AB_with_win1.txt
+_benchmarks/AB_published_reference_check.txt
+_benchmarks/baseline_results_before_win1_win2.txt
+_benchmarks/win1_results.txt
+_benchmarks/WIN1_SUMMARY.md
+_benchmarks/_compare_psi_full.py
