@@ -5,9 +5,9 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [paper v3] — 2026-04-19 (pending Zenodo re-deposit)
+## [paper — Zenodo Version 2] — 2026-04-19 (pending Zenodo re-deposit)
 
-Paper revision; no code changes. An erratum will accompany the revised PDF as a supplementary file on the new Zenodo version; see the Zenodo record once the v3 deposit is live for the authoritative correction list.
+Paper revision; no code changes. An erratum accompanies the revised PDF as a supplementary file on the new Zenodo version; see the Zenodo record once Version 2 is live for the authoritative correction list.
 
 ### Corrected
 
@@ -28,12 +28,12 @@ Paper revision; no code changes. An erratum will accompany the revised PDF as a 
 
 - Comprehensive erratum document (`papers/submission/erratum_2026-04-19b.md`) covering all three classes of correction (basis-attribution, arithmetic, internal-consistency), to be uploaded as supplementary on the new Zenodo version.
 - Acknowledgment of A. Connes in §12 of the revised paper.
-- v3 version history entry in paper front matter.
+- Version-history entry in paper front matter listing Version 1 (2026-04-13) and Version 2 (2026-04-19).
 
 ### Public locations
 
-- **Zenodo** (primary public venue): concept DOI `10.5281/zenodo.19546514` (always resolves to latest version); v1 version DOI `10.5281/zenodo.19546515` (2026-04-13); new version-specific DOI will be issued on v3 upload.
-- **GitHub** (`github.com/akivag613/connes-cvs-`): v3 git tag on paper upload. HAL submission has been dropped; Zenodo + GitHub are the canonical public venues.
+- **Zenodo** (primary public venue): concept DOI `10.5281/zenodo.19546514` (always resolves to the latest version); Version 1 DOI `10.5281/zenodo.19546515` (2026-04-13); a new version-specific DOI is minted by Zenodo on Version 2 upload.
+- **GitHub** (`github.com/akivag613/connes-cvs-`): `paper-v2` git tag on Version 2 upload. HAL submission has been dropped; Zenodo + GitHub are the canonical public venues.
 
 ## [0.2.0] — 2026-04-14
 
