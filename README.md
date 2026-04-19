@@ -45,7 +45,7 @@
 
 **What is this?** An arbitrary-precision Python implementation of the Galerkin matrix $Q(c)$ from Proposition 4.1 of [Connes–van Suijlekom 2025](https://arxiv.org/abs/2511.23257). Its ground-state eigenvalue $\lambda_{\min}(c)$ tracks the spectral positivity condition that implies the Riemann Hypothesis.
 
-**Why does it matter?** Until now, no independent public code existed for this construction. Connes (2026) reported numerical data for the first 50 zeros at $c = 13$; Connes–Consani–Moscovici (2025) reported the same construction at $c = 13$ and $c = 14$ with $N=120$ at 200-digit precision. This package provides the third independent measurement, plus fourteen new cutoffs that together span **113 orders of magnitude** in the first-zero error.
+**Why does it matter?** Until now, no independent public code existed for this construction. Connes (2026) reported numerical data for the first 50 zeros at $c = 13$; Connes–Consani–Moscovici (2025) reported the same construction at $c = 13$ and $c = 14$ with $N=120$ at 200-digit precision. This package provides the third independent measurement at $c=13$, an independent cross-check at $c=14$, and thirteen first-in-literature cutoffs ($c=17$ through $c=67$), extending the dataset to fifteen cutoffs spanning **113 orders of magnitude** in the first-zero error.
 
 **Convergence at a glance** (15 prime cutoffs, $T = 800$, $\mathrm{dps} = 150$–$200$):
 
@@ -192,7 +192,7 @@ This implementation reproduces the published benchmarks from Connes (2026) and C
 
 All four numbers compute the same mathematical object — the truncated Weil minimizer $Q(c)$ — using the **trigonometric basis**, with different $N$, $T$, and precision settings. The factor-of-1.3 spread reflects differences in those settings (and in normalization conventions), not a correctness gap. (**Correction 2026-04-19:** an earlier version of this README and of the accompanying paper attributed a prolate-spheroidal basis to the CCM Galerkin computation; this was an error. The CCM Galerkin matrix is defined via a trigonometric kernel $\sin(2\pi n y/L)$ in CCM 2025 Lemma 5.1, and Connes 2026 §6 likewise describes the computation on a trigonometric basis. Prolate spheroidal wave functions appear in a distinct role in the program, as the approximation construction for the limit $k_\lambda$ (Connes 2026 §6.3–§6.4). A revised paper version with the correction throughout is forthcoming on the Zenodo record.)
 
-**New in this work:** 14 of the 15 cutoffs tested here ($c \geq 17$) have no prior published measurement in the literature. Full dataset in [`data/results_15pt_T800.json`](data/results_15pt_T800.json).
+**New in this work:** 13 of the 15 cutoffs tested here ($c \geq 17$) have no prior published measurement in the literature; $c = 14$ is the first independent cross-check of that datum. Full dataset in [`data/results_15pt_T800.json`](data/results_15pt_T800.json).
 
 ---
 
