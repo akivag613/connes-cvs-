@@ -5,9 +5,9 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [paper — Zenodo Version 2] — 2026-04-19 (pending Zenodo re-deposit)
+## [paper — Zenodo Version 2] — 2026-04-19
 
-Paper revision; no code changes. An erratum accompanies the revised PDF as a supplementary file on the new Zenodo version; see the Zenodo record once Version 2 is live for the authoritative correction list.
+Paper revision; no code changes. Published on Zenodo as Version 2 with version-specific DOI [10.5281/zenodo.19655106](https://doi.org/10.5281/zenodo.19655106) (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) now resolves to Version 2). An erratum accompanies the revised PDF as a supplementary file on the Zenodo record.
 
 ### Corrected
 
