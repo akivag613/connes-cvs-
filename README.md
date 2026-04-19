@@ -45,7 +45,7 @@
 
 **What is this?** An arbitrary-precision Python implementation of the Galerkin matrix $Q(c)$ from Proposition 4.1 of [Connes–van Suijlekom 2025](https://arxiv.org/abs/2511.23257). Its ground-state eigenvalue $\lambda_{\min}(c)$ tracks the spectral positivity condition that implies the Riemann Hypothesis.
 
-**Why does it matter?** Until now, no independent public code existed for this construction. Connes (2026) reported a single number at $c = 13$; Connes–Consani–Moscovici (2025) reported a second number in a different basis. This package provides the third independent measurement, plus fourteen new cutoffs that together span **113 orders of magnitude** in the first-zero error.
+**Why does it matter?** Until now, no independent public code existed for this construction. Connes (2026) reported numerical data for the first 50 zeros at $c = 13$; Connes–Consani–Moscovici (2025) reported the same construction at $c = 13$ and $c = 14$ with $N=120$ at 200-digit precision. This package provides the third independent measurement, plus fourteen new cutoffs that together span **113 orders of magnitude** in the first-zero error.
 
 **Convergence at a glance** (15 prime cutoffs, $T = 800$, $\mathrm{dps} = 150$–$200$):
 
@@ -186,11 +186,11 @@ This implementation reproduces the published benchmarks from Connes (2026) and C
 
 | Cutoff | Published | This package | Agreement |
 | :---: | :---: | :---: | :--- |
-| $c = 13$ | $2.6 \times 10^{-55}$ *(Connes 2026)* | $\mathbf{2.005 \times 10^{-55}}$ | factor 1.3 (basis-dependent constant) |
+| $c = 13$ | $2.6 \times 10^{-55}$ *(Connes 2026)* | $\mathbf{2.005 \times 10^{-55}}$ | factor 1.3 |
 | $c = 13$ | $2.44 \times 10^{-55}$ *(CCM §6, $N=120$, 200-digit)* | $\mathbf{2.005 \times 10^{-55}}$ | factor 1.2 |
-| $c = 14$ | $1.07 \times 10^{-60}$ *(CCM §6)* | $\mathbf{3.541 \times 10^{-61}}$ | order-of-magnitude (first independent $c=14$ measurement) |
+| $c = 14$ | $1.07 \times 10^{-60}$ *(CCM §6)* | $\mathbf{3.541 \times 10^{-61}}$ | factor 3 (first independent $c=14$ measurement) |
 
-All four numbers compute the same mathematical object — the truncated Weil minimizer $Q(c)$ — in different function bases (trigonometric vs. prolate-spheroidal) with different $N$, $T$, and precision settings. The factor-of-1.3 spread reflects Sobolev-norm differences between bases, not a correctness gap.
+All four numbers compute the same mathematical object — the truncated Weil minimizer $Q(c)$ — using the **trigonometric basis**, with different $N$, $T$, and precision settings. The factor-of-1.3 spread reflects differences in those settings (and in normalization conventions), not a correctness gap. (**Correction 2026-04-19:** an earlier version of this README and of the accompanying paper attributed a prolate-spheroidal basis to the CCM Galerkin computation; this was an error. The CCM Galerkin matrix is defined via a trigonometric kernel $\sin(2\pi n y/L)$ in CCM 2025 Lemma 5.1, and Connes 2026 §6 likewise describes the computation on a trigonometric basis. Prolate spheroidal wave functions appear in a distinct role in the program, as the approximation construction for the limit $k_\lambda$ (Connes 2026 §6.3–§6.4). A revised paper version with the correction throughout is forthcoming on the Zenodo record.)
 
 **New in this work:** 14 of the 15 cutoffs tested here ($c \geq 17$) have no prior published measurement in the literature. Full dataset in [`data/results_15pt_T800.json`](data/results_15pt_T800.json).
 
@@ -257,7 +257,7 @@ Precision management is transparent. Eigenvalues shrink super-exponentially (at 
 
 - **Our paper** (computational study, 15 cutoffs, 113 OOM) — Groskin 2026, [Zenodo DOI 10.5281/zenodo.19546515](https://zenodo.org/records/19546515)
 - **CvS** (mathematical foundation) — Connes & van Suijlekom, *Quadratic forms, real zeros and echoes of the spectral action*, [arXiv:2511.23257](https://arxiv.org/abs/2511.23257)
-- **CCM** (prolate-basis companion) — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755)
+- **CCM** (trigonometric-basis companion, $N=120$, 200-digit) — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755)
 - **Connes 2026** (context) — *The Riemann Hypothesis: Past, Present and a Letter Through Time*, [arXiv:2602.04022](https://arxiv.org/abs/2602.04022)
 
 ---

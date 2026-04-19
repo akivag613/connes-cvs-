@@ -30,6 +30,25 @@ files from akiva/
 MEMORY.md
 memory/
 
+# Private session / handoff / research-notes files at repo root
+# (session logs, planning, errata, claims, monitoring — local only)
+HANDOFF_SESSION_*.md
+CLAIMS_AND_FINDINGS_LEDGER_*.md
+ERRATA_AND_ISSUES_*.md
+OVERLOOKED_FINDINGS_*.md
+MONITORING_PROTOCOL.md
+NEXT_SESSION_KICKOFF_PROMPT.md
+SESSION_*.md
+NOTES_*.md
+PROJECT_STATUS.md
+
+# Private workspace (all non-public working docs, outreach, source PDFs, build artifacts)
+_workspace/
+_private/  # legacy name, kept as safety net in case any stray reference remains
+
+# User drop zone for files to be triaged by Claude (never a permanent home)
+_inbox/
+
 # Local-only benchmark scratch (probe scripts and intermediate logs)
 benchmarks/_probe_*.py
 benchmarks/run_profile.py
