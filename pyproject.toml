@@ -68,7 +68,7 @@ Documentation = "https://github.com/akivag613/connes-cvs-#readme"
 Repository    = "https://github.com/akivag613/connes-cvs-"
 Issues        = "https://github.com/akivag613/connes-cvs-/issues"
 Changelog     = "https://github.com/akivag613/connes-cvs-/blob/main/CHANGELOG.md"
-Paper         = "https://zenodo.org/records/19546515"
+Paper         = "https://doi.org/10.5281/zenodo.19546514"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
