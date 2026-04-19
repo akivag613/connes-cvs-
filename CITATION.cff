@@ -6,8 +6,8 @@ abstract: "First public implementation of the Connes-van Suijlekom Galerkin matr
 authors:
   - family-names: Groskin
     given-names: Akiva
-version: 0.2.0
-date-released: 2026-04-14
+version: 0.2.2
+date-released: 2026-04-19
 license: MIT
 repository-code: "https://github.com/akivag613/connes-cvs-"
 url: "https://github.com/akivag613/connes-cvs-"
