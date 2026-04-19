@@ -26,14 +26,40 @@ Paper revision; no code changes. Published on Zenodo as Version 2 with version-s
 
 ### Added
 
-- Comprehensive erratum document (`papers/submission/erratum_2026-04-19b.md`) covering all three classes of correction (basis-attribution, arithmetic, internal-consistency), to be uploaded as supplementary on the new Zenodo version.
+- Comprehensive erratum document covering all three classes of correction (basis-attribution, arithmetic, internal-consistency), deposited as a supplementary file (`erratum_2026-04-19.pdf`) on the Version 2 Zenodo record.
 - Acknowledgment of A. Connes in §12 of the revised paper.
 - Version-history entry in paper front matter listing Version 1 (2026-04-13) and Version 2 (2026-04-19).
 
 ### Public locations
 
-- **Zenodo** (primary public venue): concept DOI `10.5281/zenodo.19546514` (always resolves to the latest version); Version 1 DOI `10.5281/zenodo.19546515` (2026-04-13); a new version-specific DOI is minted by Zenodo on Version 2 upload.
-- **GitHub** (`github.com/akivag613/connes-cvs-`): `paper-v2` git tag on Version 2 upload. HAL submission has been dropped; Zenodo + GitHub are the canonical public venues.
+- **Zenodo** (primary public venue): concept DOI `10.5281/zenodo.19546514` (always resolves to the latest version); Version 1 DOI `10.5281/zenodo.19546515` (2026-04-13); Version 2 DOI `10.5281/zenodo.19655106` (2026-04-19).
+- **GitHub** (`github.com/akivag613/connes-cvs-`): `paper-v2` git tag marks Version 2. HAL submission has been dropped; Zenodo + GitHub are the canonical public venues.
+
+## [0.2.2] — 2026-04-19
+
+Patch release superseding [0.2.1]. Fixes an internal version-string drift that slipped into the 0.2.1 wheel (`connes_cvs.__version__` was stuck at `"0.2.0"` while the installer-reported version was `0.2.1`). 0.2.1 has been yanked from PyPI in favor of this release. Runtime numerical behavior remains bit-identical to 0.2.0.
+
+### Fixed
+
+- `connes_cvs/__init__.py`: `__version__` now reflects the package version (was `"0.2.0"` in the 0.2.1 wheel).
+- `tests/test_c13_regression.py::test_package_imports`: assertion replaced with a structural check that `connes_cvs.__version__ == importlib.metadata.version("connes-cvs")`, so the test no longer requires manual updates on each release and will catch any future drift.
+
+### Unchanged from 0.2.1
+
+- `connes_cvs/py.typed` marker file (PEP 561), so downstream type-checkers pick up the package's in-tree type annotations.
+- `README.md`: validation-section wording aligned with the Zenodo Version 2 paper (`10.5281/zenodo.19655106`) — trigonometric-basis attribution throughout, corrected cross-validation factors (1.3 at $c=13$, 3 at $c=14$), paper DOI switched to the concept DOI (`10.5281/zenodo.19546514`) which always resolves to the latest version.
+- `CITATION.cff`, `pyproject.toml` paper URL: concept DOI.
+- `.github/CONTRIBUTING.md`, `tests/test_c13_regression.py` docstring: factor-1.7 discrepancy between this work and CCM §6 at $c=13$ reattributed to $N$ / precision / normalization differences (same trigonometric basis), per the Version 2 erratum.
+
+### Unchanged from 0.2.0
+
+- Public API surface (`build_galerkin_matrix`, `compute_ground_state`, `extract_zeros`; `connes_cvs.sweep.run_sweep`) — signatures and semantics identical.
+- All numerical output — bit-identical to 0.2.0 at every workload tested, including the paper-canonical $c = 13$, $N = 100$, $T = 800$, dps $= 150$ run that reproduces the published Table 18 $\lambda_\min = 2.865 \times 10^{-59}$.
+- All 15 rows of the production sweep.
+
+## [0.2.1] — 2026-04-19 — **YANKED (superseded by 0.2.2)**
+
+Documentation release. Yanked from PyPI due to an internal `__version__` string drift (`connes_cvs.__version__ == "0.2.0"` inside the 0.2.1 wheel). Functionally equivalent to 0.2.0; users should install 0.2.2 or later.
 
 ## [0.2.0] — 2026-04-14
 
