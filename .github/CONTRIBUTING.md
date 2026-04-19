@@ -61,7 +61,7 @@ Performance optimizations that produce a mathematically different output (e.g. c
 
 ## Reporting a numerical discrepancy
 
-If you see `λ_min` or `|γ₁ err|` diverging from the [data/results_15pt_T800.json](data/results_15pt_T800.json) reference beyond the ~1.3× basis-dependent envelope, please open an issue with:
+If you see `λ_min` or `|γ₁ err|` diverging from the [data/results_15pt_T800.json](data/results_15pt_T800.json) reference beyond the ~1.3× envelope (reflecting differences in `N`, precision, integration cutoff `T`, and normalization conventions — all three published computations use the same trigonometric basis), please open an issue with:
 
 - exact `(c, N, T, dps)` used,
 - platform (macOS/Linux, Python version, mpmath version, python-flint version/presence),

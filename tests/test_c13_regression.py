@@ -9,8 +9,10 @@ This test serves as the primary correctness gate: if it passes, the
 operator construction pipeline is working correctly. The expected
 range [1e-56, 3e-55] is derived from extensive convergence studies
 across iterations 4--7 of the implementation, and is consistent with
-published values from Connes (2026) and CCM (2025) up to the expected
-basis-dependent factor of ~1.7x.
+published values from Connes (2026) and CCM (2025) up to an expected
+factor of ~1.7x arising from differences in N, precision, and
+normalization conventions (all three computations use the same
+trigonometric basis).
 
 References
 ----------
