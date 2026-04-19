@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [paper v3] — 2026-04-19 (pending Zenodo re-deposit)
 
-Paper revision; no code changes. The revised paper PDF is being prepared; see `papers/submission/paper1_v3_edit_plan.md` for the full edit list and `papers/submission/erratum_2026-04-19b.md` for the authoritative erratum.
+Paper revision; no code changes. An erratum will accompany the revised PDF as a supplementary file on the new Zenodo version; see the Zenodo record once the v3 deposit is live for the authoritative correction list.
 
 ### Corrected
 
