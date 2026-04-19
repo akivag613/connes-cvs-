@@ -5,6 +5,36 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [paper v3] — 2026-04-19 (pending Zenodo re-deposit)
+
+Paper revision; no code changes. The revised paper PDF is being prepared; see `papers/submission/paper1_v3_edit_plan.md` for the full edit list and `papers/submission/erratum_2026-04-19b.md` for the authoritative erratum.
+
+### Corrected
+
+- **Basis attribution throughout paper body** (§2.2, §4.1, §4.2 Table 1, §4.3, §5.1.1, §8.5, §9): the CCM 2025 and Connes 2026 Galerkin computations use the same **trigonometric basis** as this work, not prolate-spheroidal — as is evident from CCM Lemma 5.1 (matrix entries defined via the kernel $\sin(2\pi n y/L)$) and Connes 2026 §6 (referring to the "trigonometric orthonormal basis"). The prior prolate-basis attribution was an error of our reading; the correct attribution has always been in the published sources. Prolate wave functions appear in a distinct role in the program (approximation construction for the limit $k_\lambda$ per Connes 2026 §6.3–§6.4).
+- **§5.1.1 arithmetic typo**: "factor of approximately 30" → "factor of approximately 3" at the $c=14$ CCM cross-validation paragraph. Actual ratio: $1.07 \times 10^{-60} / 3.541 \times 10^{-61} = 3.02$. Identified during 2026-04-19c self-audit.
+- **§2.3 internal consistency**: "in different bases" → "via unitarily equivalent matrix representations."
+- **§1 introduction**: "a single numerical datum" → "numerical data for the first fifty zeros at $c=13$."
+- **README**: Validation section (lines 48, 189–193, 260) updated on 2026-04-19 to remove basis-misattribution wording.
+
+### Unchanged
+
+- All numerical data (15-point sweep, Table 3 verified byte-identical against ancillary `results_15pt_T800.json`).
+- All structural observations (Sobolev scaling, multi-zero universality, eigenvector near-invariance, bulk Poisson statistics, spectral-gap $\lambda_2/\lambda_1 \sim 10^{7-8}$ verified against raw pickle).
+- All theorems and derivations (§2.3 unitary-equivalence derivation mathematically correct).
+- The `connes_cvs` v0.2.0 PyPI package is unaffected.
+
+### Added
+
+- Comprehensive erratum document (`papers/submission/erratum_2026-04-19b.md`) covering all three classes of correction (basis-attribution, arithmetic, internal-consistency), to be uploaded as supplementary on the new Zenodo version.
+- Acknowledgment of A. Connes in §12 of the revised paper.
+- v3 version history entry in paper front matter.
+
+### Public locations
+
+- **Zenodo** (primary public venue): concept DOI `10.5281/zenodo.19546515`; new version DOI will be issued on v3 upload.
+- **GitHub** (`github.com/akivag613/connes-cvs-`): v3 git tag on paper upload. HAL submission has been dropped; Zenodo + GitHub are the canonical public venues.
+
 ## [0.2.0] — 2026-04-14
 
 Performance release: archimedean integral phase is **2× faster** at production scale, with output bit-identical to v0.1.0.
