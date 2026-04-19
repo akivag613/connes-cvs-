@@ -7,7 +7,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/connes-cvs.svg?color=4c1&cacheSeconds=300)](https://pypi.org/project/connes-cvs/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19546515-1f74b7.svg)](https://zenodo.org/records/19546515)
+[![Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19546514-1f74b7.svg)](https://doi.org/10.5281/zenodo.19546514)
 [![arXiv](https://img.shields.io/badge/arXiv-2511.23257-b31b1b.svg)](https://arxiv.org/abs/2511.23257)
 [![Tests](https://img.shields.io/badge/tests-6%2F6%20passing-4c1.svg)](tests/)
 
@@ -19,7 +19,7 @@
 
 | Cutoff range | Eigenvalue span | Precision | Speedup (v0.2.0) | Published paper |
 | :---: | :---: | :---: | :---: | :---: |
-| `c = 13 … 67` | `10⁻⁵⁹ → 10⁻¹⁷³` | **80–200** decimal digits (tested) | **1.83×** total wall | [Zenodo 10.5281/zenodo.19546515](https://zenodo.org/records/19546515) |
+| `c = 13 … 67` | `10⁻⁵⁹ → 10⁻¹⁷³` | **80–200** decimal digits (tested) | **1.83×** total wall | [Zenodo 10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) |
 
 </div>
 
@@ -150,7 +150,7 @@ for c, r in results.items():
 
 ## Reproduce the paper
 
-To replicate the full 15-cutoff sweep from [Groskin 2026](https://zenodo.org/records/19546515) (113 orders of magnitude in $|\gamma_1\,\mathrm{err}|$):
+To replicate the full 15-cutoff sweep from [Groskin 2026](https://doi.org/10.5281/zenodo.19546514) (113 orders of magnitude in $|\gamma_1\,\mathrm{err}|$):
 
 ```python
 from connes_cvs.sweep import run_sweep
@@ -255,7 +255,7 @@ Precision management is transparent. Eigenvalues shrink super-exponentially (at 
 
 ## Further reading
 
-- **Our paper** (computational study, 15 cutoffs, 113 OOM) — Groskin 2026, [Zenodo DOI 10.5281/zenodo.19546515](https://zenodo.org/records/19546515)
+- **Our paper** (computational study, 15 cutoffs, 113 OOM) — Groskin 2026, [Zenodo DOI 10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514)
 - **CvS** (mathematical foundation) — Connes & van Suijlekom, *Quadratic forms, real zeros and echoes of the spectral action*, [arXiv:2511.23257](https://arxiv.org/abs/2511.23257)
 - **CCM** (trigonometric-basis companion, $N=120$, 200-digit) — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755)
 - **Connes 2026** (context) — *The Riemann Hypothesis: Past, Present and a Letter Through Time*, [arXiv:2602.04022](https://arxiv.org/abs/2602.04022)
@@ -274,7 +274,7 @@ If you use this package in academic work, please cite both the software and the 
   year    = {2026},
   version = {0.2.0},
   url     = {https://github.com/akivag613/connes-cvs-},
-  doi     = {10.5281/zenodo.19546515},
+  doi     = {10.5281/zenodo.19546514},
 }
 
 @article{groskin2026connes_cvs,
@@ -283,8 +283,8 @@ If you use this package in academic work, please cite both the software and the 
              Multi-Zero Universality, and {L}-Function Extension},
   author  = {Groskin, Akiva},
   year    = {2026},
-  doi     = {10.5281/zenodo.19546515},
-  url     = {https://zenodo.org/records/19546515},
+  doi     = {10.5281/zenodo.19546514},
+  url     = {https://doi.org/10.5281/zenodo.19546514},
 }
 ```
 

@@ -32,7 +32,7 @@ Paper revision; no code changes. An erratum will accompany the revised PDF as a 
 
 ### Public locations
 
-- **Zenodo** (primary public venue): concept DOI `10.5281/zenodo.19546515`; new version DOI will be issued on v3 upload.
+- **Zenodo** (primary public venue): concept DOI `10.5281/zenodo.19546514` (always resolves to latest version); v1 version DOI `10.5281/zenodo.19546515` (2026-04-13); new version-specific DOI will be issued on v3 upload.
 - **GitHub** (`github.com/akivag613/connes-cvs-`): v3 git tag on paper upload. HAL submission has been dropped; Zenodo + GitHub are the canonical public venues.
 
 ## [0.2.0] — 2026-04-14

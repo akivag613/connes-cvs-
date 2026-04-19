@@ -13,8 +13,8 @@ repository-code: "https://github.com/akivag613/connes-cvs-"
 url: "https://github.com/akivag613/connes-cvs-"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.19546515
-    description: "Companion paper (Zenodo)"
+    value: 10.5281/zenodo.19546514
+    description: "Companion paper (Zenodo concept DOI — always resolves to latest version)"
 keywords:
   - riemann-hypothesis
   - spectral-theory
