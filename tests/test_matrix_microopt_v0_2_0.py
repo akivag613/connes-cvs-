@@ -5,8 +5,9 @@ The optimization drops the redundant ``mp.mpf(int)`` conversion in the Q-matrix
 off-diagonal assembly loop in both ``connes_cvs.operator.build_galerkin_matrix``
 and ``connes_cvs.sweep._run_single_cutoff``.  mpmath already handles ``mpf / int``
 arithmetic at full precision, so the change should be bit-identical; this test
-verifies that claim against the published reference pickle at
-``results/iteration_7/results_U_T800_c13.pickle`` (c=13, N=100, T=800, dps=150).
+verifies that claim against the published Paper reference value
+``2.86545361493028029516151514986747977533...e-59`` at c=13, N=100, T=800, dps=150
+(see ``data/results_15pt_T800.json``).
 
 Test design
 -----------

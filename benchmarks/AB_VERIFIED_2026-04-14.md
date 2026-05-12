@@ -52,10 +52,10 @@ The c=13 N=80 T=400 dps=80 A/B above proves the speedup at moderate scale. To pr
 - **Computed:** `λ_min = 2.86545361493028029516151514986747977533798676783773219101029565377637421791530494377666704141009139776092287892559119370499915456183497252629004918875e-59`
 - **Paper Table 18:** `2.865 × 10⁻⁵⁹` ✓ exact match to all reported precision
 - **Wall time:** 127.3 s
-- **Historical baseline (`results/iteration_7/results_U_T800_c13.json`):** 214.8 s
+- **Historical baseline (v0.1.0 at the same workload):** 214.8 s
 - **Speedup at exact paper workload:** **1.69×** total wall
 
-Raw output: `_benchmarks/AB_published_reference_check.txt` (gitignored; full output preserved locally).
+Raw output: `AB_published_reference_check.txt` (gitignored development log; full output preserved in the local working tree).
 
 ## Verdict
 

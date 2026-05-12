@@ -1,56 +1,55 @@
-# Python
+# =============================================================
+# .gitignore for connes-cvs
+# =============================================================
+# Two-tier repository.
+#
+# Public (git-tracked, pushed to GitHub):
+#   connes_cvs/   data/   examples/   tests/   benchmarks/
+#   .github/      pyproject.toml      README.md      CHANGELOG.md
+#   CITATION.cff  LICENSE             .editorconfig  .gitignore
+#
+# Private (local-only research workspace):
+#   _workspace/   _inbox/   code/   docs/   papers/   research/
+#   results/      website/  CLAUDE.md       PROJECT_STATUS.md
+# =============================================================
+
+# ---- Python / build artifacts ----
 __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
-dist/
 build/
+dist/
 .pytest_cache/
 *.pickle
 .venv/
 venv/
 
-# OS
+# ---- OS ----
 .DS_Store
 
-# Private research directories (local only, not published)
+# ---- Private workspace (research notes, sessions, outreach, source PDFs) ----
+_workspace/
+
+# ---- User drop zone (Claude triages on arrival; never a permanent home) ----
+_inbox/
+
+# ---- Private working directories at repo root (historical layout) ----
 code/
 docs/
 papers/
 research/
 results/
 website/
-EMAILS/
-RIEMANN_README.md
-RIEMANN_GIT_HISTORY.md
+
+# ---- Local navigation docs (auto-loaded by Claude Code, not for GitHub) ----
 CLAUDE.md
 .claude/
-DISCOVERIES.md
-files from akiva/
-MEMORY.md
-memory/
-
-# Private session / handoff / research-notes files at repo root
-# (session logs, planning, errata, claims, monitoring — local only)
-HANDOFF_SESSION_*.md
-CLAIMS_AND_FINDINGS_LEDGER_*.md
-ERRATA_AND_ISSUES_*.md
-OVERLOOKED_FINDINGS_*.md
-MONITORING_PROTOCOL.md
-NEXT_SESSION_KICKOFF_PROMPT.md
-SESSION_*.md
-NOTES_*.md
 PROJECT_STATUS.md
 
-# Private workspace (all non-public working docs, outreach, source PDFs, build artifacts)
-_workspace/
-_private/  # legacy name, kept as safety net in case any stray reference remains
-
-# User drop zone for files to be triaged by Claude (never a permanent home)
-_inbox/
-
-# Local-only benchmark scratch (probe scripts and intermediate logs)
+# ---- Local-only benchmark scratch (probe scripts and raw timing logs) ----
 benchmarks/_probe_*.py
+benchmarks/_compare_psi_full.py
 benchmarks/run_profile.py
 benchmarks/profile_baseline.txt
 benchmarks/HOTSPOTS.md
@@ -60,4 +59,3 @@ benchmarks/AB_published_reference_check.txt
 benchmarks/baseline_results_before_win1_win2.txt
 benchmarks/win1_results.txt
 benchmarks/WIN1_SUMMARY.md
-benchmarks/_compare_psi_full.py

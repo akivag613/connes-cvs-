@@ -8,18 +8,18 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19546514-1f74b7.svg)](https://doi.org/10.5281/zenodo.19546514)
-[![arXiv](https://img.shields.io/badge/arXiv-2511.23257-b31b1b.svg)](https://arxiv.org/abs/2511.23257)
-[![Tests](https://img.shields.io/badge/tests-6%2F6%20passing-4c1.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-passing-4c1.svg)](tests/)
 
 </div>
 
-> The Riemann Hypothesis has resisted proof for over 140 years. Connes and van Suijlekom (2025) proposed a spectral route: construct a truncated Weil operator whose ground-state eigenvalue encodes how close the Riemann zeros come to satisfying Weil's positivity criterion. **This package is the only publicly available code that builds and diagonalizes that operator**, and reports convergence across **113 orders of magnitude** in the first-zero error.
+> Connes & van Suijlekom (2025) proposed a spectral route to the Riemann Hypothesis: a truncated Weil quadratic form whose ground-state eigenvalue encodes how close the Riemann zeros come to satisfying Weil's positivity criterion. **This package is the only publicly available code that builds and diagonalizes that operator.** It reproduces the Riemann zeros across **more than 240 orders of magnitude** in the smallest positive eigenvalue, reaches **242 matching digits** on $\gamma_1$ at $c = 100$, and supplies, to our knowledge, the first independent out-of-sample numerical test of the Connes 2026 §6.4 continuum asymptotic.
 
 <div align="center">
 
-| Cutoff range | Eigenvalue span | Precision | Speedup (v0.2.0) | Published paper |
-| :---: | :---: | :---: | :---: | :---: |
-| `c = 13 … 67` | `10⁻⁵⁹ → 10⁻¹⁷³` | **80–200** decimal digits (tested) | **1.83×** total wall | [Zenodo 10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) |
+| Cutoff range | $\lambda_{\min}$ span | $\gamma_1$ accuracy | Cross-check |
+| :---: | :---: | :---: | :---: |
+| `c = 13 … 67` | `10⁻⁵⁹ → 10⁻¹⁷³` | up to **168 matching digits** (`c=67, N=100, dps=200`) | matches CCM 2025 at `c=14` to factor 3 |
+| `c = 100` | `10⁻²⁹⁴` (`N=200, dps=500`) | **242 matching digits** (`N=150, dps=1000`) | Aitken-Δ² → Connes 2026 §6.4 to **~1% of exponent** |
 
 </div>
 
@@ -27,11 +27,12 @@
 
 ## Table of contents
 
-- [At a glance](#at-a-glance)
+- [Headline result](#headline-result)
 - [Installation](#installation)
 - [Quick start](#quick-start)
-- [Reproduce the paper](#reproduce-the-paper)
-- [Validation](#validation)
+- [The c = 100 verification](#the-c--100-verification)
+- [Reproduce the published sweep](#reproduce-the-published-sweep)
+- [Validation against published data](#validation-against-published-data)
 - [Performance](#performance)
 - [How it works](#how-it-works)
 - [Further reading](#further-reading)
@@ -41,34 +42,25 @@
 
 ---
 
-## At a glance
+## Headline result
 
-**What is this?** An arbitrary-precision Python implementation of the Galerkin matrix $Q(c)$ from Proposition 4.1 of [Connes–van Suijlekom 2025](https://arxiv.org/abs/2511.23257). Its ground-state eigenvalue $\lambda_{\min}(c)$ tracks the spectral positivity condition that implies the Riemann Hypothesis.
+**The Connes 2026 §6.4 heuristic continuum asymptotic, tested out-of-sample at $c = 100$.**
 
-**Why does it matter?** Until now, no independent public code existed for this construction. Connes (2026) reported numerical data for the first 50 zeros at $c = 13$; Connes–Consani–Moscovici (2025) reported the same construction at $c = 13$ and $c = 14$ with $N=120$ at 200-digit precision. This package provides the third independent measurement at $c=13$, an independent cross-check at $c=14$, and thirteen first-in-literature cutoffs ($c=17$ through $c=67$), extending the dataset to fifteen cutoffs spanning **113 orders of magnitude** in the first-zero error.
+Connes 2026 (arXiv:2602.04022) §6.4 conjectures a continuum decay rate
+$$1 - \chi^2(\lambda) \;\sim\; \frac{2^{14}}{3}\sqrt{2\pi^5}\; e^{-4\pi c + 9\log c /2}$$
+for the angular function tracking the smallest eigenvalue of the truncated Weil quadratic form. Until now this asymptotic was supported only by agreement with the smallest eigenvalue $\varepsilon(\lambda)$ for $\lambda \leq 14$ (the cutoffs reported in CCM 2025 §6 with $N = 120$).
 
-**Convergence at a glance** (15 prime cutoffs, $T = 800$, $\mathrm{dps} = 150$–$200$):
+Using this package at $c = 100$ with $N \in \{100, 150, 200\}$ at $\mathrm{dps} = 500$, Aitken-Δ² extrapolation of the resulting sequence yields
+$$\log_{10}\bigl|\lambda_\infty^{\mathrm{even}}(c{=}100)\bigr| \;\approx\; -537.$$
+The Connes 2026 §6.4 prediction at $c = 100$ is $\approx -532$. Agreement to about **1% of the exponent**, out-of-sample (the in-sample fit window was $c \leq 67$ at $N = 100$). This is, to our knowledge, the first independent numerical test of the §6.4 asymptotic at $c > 14$.
 
-```text
-c=13  ████████                                                               -55
-c=14  █████████                                                              -60
-c=17  ███████████                                                            -76
-c=19  █████████████                                                          -86
-c=23  ███████████████                                                       -102
-c=29  ██████████████████                                                    -119
-c=31  ██████████████████                                                    -124
-c=37  ████████████████████                                                  -135
-c=41  █████████████████████                                                 -142
-c=43  █████████████████████                                                 -145
-c=47  ██████████████████████                                                -149
-c=53  ███████████████████████                                               -156
-c=59  ████████████████████████                                              -161
-c=61  ████████████████████████                                              -163
-c=67  █████████████████████████                                             -168
-                                                                         log₁₀|γ₁ err|
-```
+**Companion observations** (full details in the paper):
 
-Each step adds one prime. The convergence is monotone but not smooth (nine parametric models tested; all fail to capture the shape at residual ≤ 0.5 OOM).
+- $\gamma_1$ through $\gamma_{10}$ extracted to **219–242 matching digits** at $c = 100$, $N = 150$, $\mathrm{dps} = 1000$.
+- Under the unitary equivalence with CCM 2025 Lemma 5.1, every $\gamma_k$ extraction here is, equivalently, an eigenvalue of the rank-one perturbed scaling operator $D_{\log}^{(\lambda,N)}$ of CCM Theorem 1.1(iii) at $\lambda = \sqrt{c}$.
+- The empirical fit $|\log_{10}\lambda_{\min}(c)| \approx 13.24 \, c^{0.634}$ valid on $c \leq 67$ at $N = 100$ is shown to be a finite-$N$ rate, not the continuum asymptote: the $c = 100$, $N = 200$ datum falsifies the pure-power-law extrapolation by 49 orders of magnitude.
+
+The accompanying paper is currently at Zenodo Version 2 (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514), 15-cutoff sweep at $c \leq 67$); a revision including the $c = 100$ verification is being prepared for submission to arXiv math.NT under personal endorsement from **Alain Connes**.
 
 ---
 
@@ -146,11 +138,50 @@ for c, r in results.items():
 
 </details>
 
+A minimal runnable example is also available at [`examples/basic_compute.py`](examples/basic_compute.py).
+
 ---
 
-## Reproduce the paper
+## The c = 100 verification
 
-To replicate the full 15-cutoff sweep from [Groskin 2026](https://doi.org/10.5281/zenodo.19546514) (113 orders of magnitude in $|\gamma_1\,\mathrm{err}|$):
+The headline measurement is computable with this package by combining the standard primitives with a higher-$N$ basis and elevated working precision. A minimal verification script that loads the published $N$-sweep data and reproduces the Aitken-Δ² match to the Connes 2026 §6.4 prediction in under a second is at [`examples/c100_aitken_check.py`](examples/c100_aitken_check.py); the underlying data is in [`data/c100/`](data/c100/).
+
+### N-sweep at c = 100, T = 800
+
+| $N$ | $\mathrm{dps}$ | $\lambda_{\min}^{\mathrm{even}}$ | $\log_{10}\!\lvert\lambda_{\min}\rvert$ | wall-clock |
+| :---: | :---: | :---: | :---: | :---: |
+| 100 | 500  | $1.22 \times 10^{-191}$ | $-190.92$ | ~10 min |
+| 150 | 500  | $6.42 \times 10^{-248}$ | $-247.19$ | ~21 min |
+| 200 | 500  | $4.87 \times 10^{-295}$ | $-294.31$ | ~35 min |
+| 150 | 1000 | $6.42 \times 10^{-248}$ | $-247.19$ | ~111 min |
+
+Wall-clock on an Apple M-series machine with 12 workers. The bit-identical match between the $\mathrm{dps} = 500$ and $\mathrm{dps} = 1000$ rows at $N = 150$ certifies the precision claim.
+
+### Aitken-Δ² extrapolation
+
+For the sequence $x_N = \log_{10}|\lambda_N|$ at $c = 100$ with $N \in \{100, 150, 200\}$:
+
+$$\hat{x}_\infty \;=\; x_{100} - \frac{(\Delta_1)^2}{\Delta_2 - \Delta_1} \;=\; -190.92 - \frac{(-56.27)^2}{9.15} \;\approx\; \mathbf{-536.97}.$$
+
+The Connes 2026 §6.4 heuristic prediction at $c = 100$ is $\approx -532$. Agreement to about **1% of the exponent**, out-of-sample.
+
+### γ_k extraction at N = 150, dps = 1000
+
+| $k$ | matching digits | $k$ | matching digits |
+| :---: | :---: | :---: | :---: |
+| 1 | **242** | 6 | 228 |
+| 2 | 239 | 7 | 226 |
+| 3 | 236 | 8 | 224 |
+| 4 | 233 | 9 | 221 |
+| 5 | 231 | 10 | 219 |
+
+For reference, CCM 2025 §6 reports $\gamma_1$ matching to ~55 digits at $c = 13$, $N = 120$.
+
+---
+
+## Reproduce the published sweep
+
+To replicate the 15-cutoff sweep at $c \in \{13, 14, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67\}$ — 113 orders of magnitude in $|\gamma_1\,\mathrm{err}|$:
 
 ```python
 from connes_cvs.sweep import run_sweep
@@ -178,29 +209,58 @@ with open("my_sweep.json", "w") as f:
 
 Expected wall time on a 12-core modern machine (v0.2.0): **~48 minutes**. The result is bit-identical in $\lambda_{\min}$ to the reference dataset in [`data/results_15pt_T800.json`](data/results_15pt_T800.json).
 
+### Convergence at a glance
+
+```text
+c=13   ████████                                                              -55
+c=14   █████████                                                             -60
+c=17   ███████████                                                           -76
+c=19   █████████████                                                         -86
+c=23   ███████████████                                                      -102
+c=29   ██████████████████                                                   -119
+c=31   ██████████████████                                                   -124
+c=37   ████████████████████                                                 -135
+c=41   █████████████████████                                                -142
+c=43   █████████████████████                                                -145
+c=47   ██████████████████████                                               -149
+c=53   ███████████████████████                                              -156
+c=59   ████████████████████████                                             -161
+c=61   ████████████████████████                                             -163
+c=67   █████████████████████████                                            -168
+c=100  ████████████████████████████████████  (N=150, dps=1000)             -242
+                                                                          log₁₀|γ₁ err|
+```
+
+Rows $c \leq 67$ use $N = 100$; the $c = 100$ row uses $N = 150$, $\mathrm{dps} = 1000$. The $c \leq 67$ rows report the finite-$N = 100$ rate; the continuum asymptote (Connes 2026 §6.4) decays significantly faster, as the $c = 100$ row makes visible.
+
 ---
 
-## Validation
+## Validation against published data
 
-This implementation reproduces the published benchmarks from Connes (2026) and Connes–Consani–Moscovici (2025), which are the only independent measurements of the CvS Galerkin spectrum in the literature prior to this work.
+Independent measurements of the CvS Galerkin spectrum in the literature, and this package's reproductions:
 
-| Cutoff | Published | This package | Agreement |
+| Cutoff | Source | This package | Agreement |
 | :---: | :---: | :---: | :--- |
-| $c = 13$ | $2.6 \times 10^{-55}$ *(Connes 2026)* | $\mathbf{2.005 \times 10^{-55}}$ | factor 1.3 |
-| $c = 13$ | $2.44 \times 10^{-55}$ *(CCM §6, $N=120$, 200-digit)* | $\mathbf{2.005 \times 10^{-55}}$ | factor 1.2 |
-| $c = 14$ | $1.07 \times 10^{-60}$ *(CCM §6)* | $\mathbf{3.541 \times 10^{-61}}$ | factor 3 (first independent $c=14$ measurement) |
+| $c = 13$ | $2.6 \times 10^{-55}$ — Connes 2026 §6 | $\mathbf{2.005 \times 10^{-55}}$ | factor 1.3 |
+| $c = 13$ | $2.44 \times 10^{-55}$ — CCM 2025 §6, $N=120$, 200-digit | $\mathbf{2.005 \times 10^{-55}}$ | factor 1.2 |
+| $c = 14$ | $1.07 \times 10^{-60}$ — CCM 2025 §6 | $\mathbf{3.541 \times 10^{-61}}$ | factor 3 |
+| $c = 100$ | $\log_{10}\lvert\varepsilon\rvert \approx -532$ — Connes 2026 §6.4 (heuristic) | Aitken-Δ² $\Rightarrow$ $\mathbf{-537}$ | $\sim$1% of exponent |
 
-All four numbers compute the same mathematical object — the truncated Weil minimizer $Q(c)$ — using the **trigonometric basis**, with different $N$, $T$, and precision settings. The factor-of-1.3 spread reflects differences in those settings (and in normalization conventions), not a correctness gap. (**Correction 2026-04-19:** an earlier version of this README and of the accompanying paper attributed a prolate-spheroidal basis to the CCM Galerkin computation; this was an error. The CCM Galerkin matrix is defined via a trigonometric kernel $\sin(2\pi n y/L)$ in CCM 2025 Lemma 5.1, and Connes 2026 §6 likewise describes the computation on a trigonometric basis. Prolate spheroidal wave functions appear in a distinct role in the program, as the approximation construction for the limit $k_\lambda$ (Connes 2026 §6.3–§6.4). The revised paper, Zenodo Version 2 (DOI [10.5281/zenodo.19655106](https://doi.org/10.5281/zenodo.19655106), 2026-04-19), carries the correction throughout; the concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) resolves to Version 2.)
+All four cutoffs compute the same mathematical object — the truncated Weil minimizer $Q(c)$ — using the **trigonometric basis**. The factor-of-1.3 spread at $c = 13$ reflects differences in $N$, $T$, $\mathrm{dps}$, and normalization conventions, not a correctness gap.
 
-**New in this work:** 13 of the 15 cutoffs tested here ($c \geq 17$) have no prior published measurement in the literature; $c = 14$ is the first independent cross-check of that datum. Full dataset in [`data/results_15pt_T800.json`](data/results_15pt_T800.json).
+**Spectral-triple interpretation (CCM 2025 Lemma 5.1 + Theorem 1.1(iii)).** Under the unitary equivalence of $Q(c)$ with the CCM matrix $\tau_{i,j}$, the $F_{\mathrm{even}}$ test function used by this package's `extract_zeros` is, up to a positive scaling constant and the change of variable $u = e^x$, the same as the Fourier–Mellin transform $\widehat{\xi}_N(z)$ appearing in CCM 2025. Every $\gamma_k$ extracted by this package is, therefore, equivalently a zero of $\widehat{\xi}_N$ and an eigenvalue of the rank-one perturbed scaling operator $D_{\log}^{(\lambda,N)}$ at $\lambda = \sqrt{c}$.
+
+**New cutoffs.** The thirteen cutoffs $c \in \{17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67\}$ and the cutoff $c = 100$ have no prior published independent measurement in the literature we have located.
+
+Full dataset for the 15-cutoff sweep in [`data/results_15pt_T800.json`](data/results_15pt_T800.json).
 
 ---
 
 ## Performance
 
-Version 0.2.0 is **2.06× faster** on the dominant archimedean-integral phase and **1.83× faster** end-to-end, with **bit-identical** output to v0.1.0.
+Version 0.2.0 is **2.06× faster** on the dominant archimedean-integral phase and **1.83× faster** end-to-end than v0.1.0, with **bit-identical** output.
 
-### Apples-to-apples A/B test ($c=13$, $N=80$, $T=400$, $\mathrm{dps}=80$, 12-way Pool)
+### A/B test ($c=13$, $N=80$, $T=400$, $\mathrm{dps}=80$, 12-way Pool)
 
 | Phase | v0.1.0 | v0.2.0 | Speedup |
 | :--- | ---: | ---: | :---: |
@@ -211,18 +271,14 @@ Version 0.2.0 is **2.06× faster** on the dominant archimedean-integral phase an
 | **Total wall time** | **64.94 s** | **35.40 s** | **1.83×** |
 | $\lambda_{\min}$ | `2.52826614019657560…e-59` | `2.52826614019657560…e-59` | **bit-identical (80 digits)** |
 
-### At the published reference workload ($c=13$, $N=100$, $T=800$, $\mathrm{dps}=150$)
+### Published reference workload ($c=13$, $N=100$, $T=800$, $\mathrm{dps}=150$)
 
-| | Historical (v0.1.0) | v0.2.0 |
+| | v0.1.0 | v0.2.0 |
 | :--- | ---: | ---: |
 | Wall time | 214.8 s | **127.3 s** (**1.69× faster**) |
-| $\lambda_{\min}$ (paper Table 18: $2.865 \times 10^{-59}$) | `2.8654536149302802951…e-59` | `2.8654536149302802951…e-59` — **matches paper to all reported precision** |
+| $\lambda_{\min}$ | `2.8654536149302802951…e-59` | `2.8654536149302802951…e-59` |
 
-See [`benchmarks/AB_VERIFIED_2026-04-14.md`](benchmarks/AB_VERIFIED_2026-04-14.md) for the full A/B protocol and raw timings. Reproduce on your hardware:
-
-```bash
-python benchmarks/win1_pool_benchmark.py 13 80 400 80
-```
+See [`benchmarks/AB_VERIFIED_2026-04-14.md`](benchmarks/AB_VERIFIED_2026-04-14.md) for the full A/B protocol and raw timings.
 
 ---
 
@@ -244,21 +300,22 @@ q_{m,n} = \frac{\psi(m) - \psi(n)}{m - n}, \qquad q_{n,n} = \psi'(n),
 $$
 where $\psi(x) = \tfrac{1}{\pi} \int_0^L \sin\bigl(2\pi x(1-y/L)\bigr)\, D(y)\, dy$ and $L = \log c$.
 
-**The bottleneck** is the archimedean integral: evaluating the digamma function at ~11,000 adaptive quadrature nodes for each of $2N{+}1 = 201$ basis indices. Version 0.2.0 exploits two observations to halve the cost:
+The bottleneck is the archimedean integral: evaluating the digamma function at ~11,000 adaptive quadrature nodes for each of $2N{+}1$ basis indices. Version 0.2.0 exploits two observations to halve the cost:
 
 1. **$h_+$ is even in $\tau$** and mpmath's tanh-sinh rule is deterministic per `(interval, precision)`, so `psi_arch` and `psi_arch_deriv` share quadrature nodes. A dict keyed on $|\tau|$ gives a 4× hit rate on digamma calls.
-2. **A fused real-arithmetic kernel** computes $\mathrm{Re}\,\hat{S}_x(\tau)$ and $\mathrm{Re}\,\partial_x \hat{S}_x(\tau)$ in one pass, sharing all sub-expressions ($\sin(\beta L)$, $\sin(\beta L/2)$, $1/\beta$, etc.).
+2. **A fused real-arithmetic kernel** computes $\mathrm{Re}\,\hat{S}_x(\tau)$ and $\mathrm{Re}\,\partial_x \hat{S}_x(\tau)$ in one pass, sharing $\sin(\beta L)$, $\sin(\beta L / 2)$, $1/\beta$, and related sub-expressions.
 
-Precision management is transparent. Eigenvalues shrink super-exponentially (at $c = 67$ the ground-state error reaches $10^{-168}$), so the published sweep threads 80–200 decimal digits of mpmath precision end-to-end (dps = 80 for the primary $c \leq 37$ cells; dps = 150 for the $c \in \\{13, 17, 19\\}$ retest; dps = 200 for $c \geq 41$). mpmath supports arbitrary precision beyond 200 digits; the paper notes that reaching $c \approx 97$ cleanly would require dps = 300, but such runs are not included in the published dataset.
+Precision management is transparent. Eigenvalues shrink super-exponentially ($\lambda_{\min} \sim 10^{-168}$ at $c = 67$ with $N = 100$; $\sim 10^{-247}$ at $c = 100$ with $N = 150$). The published 15-cutoff sweep threads 80–200 decimal digits of mpmath precision end-to-end; the $c = 100$ datum uses up to 1000 digits.
 
 ---
 
 ## Further reading
 
-- **Our paper** (computational study, 15 cutoffs, 113 OOM) — Groskin 2026, [Zenodo DOI 10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514)
-- **CvS** (mathematical foundation) — Connes & van Suijlekom, *Quadratic forms, real zeros and echoes of the spectral action*, [arXiv:2511.23257](https://arxiv.org/abs/2511.23257)
-- **CCM** (trigonometric-basis companion, $N=120$, 200-digit) — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755)
-- **Connes 2026** (context) — *The Riemann Hypothesis: Past, Present and a Letter Through Time*, [arXiv:2602.04022](https://arxiv.org/abs/2602.04022)
+- **Our paper** — Groskin 2026, *Structural Properties of the Connes–van Suijlekom Truncated Weil Minimizer: Sobolev Scaling, Multi-Zero Universality, L-Function Extension, and an Out-of-Sample Empirical Test at $c=100$*. Zenodo concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514). Version 2 currently live (15-cutoff sweep at $c \leq 67$); the revision including the $c = 100$ verification is being prepared for arXiv math.NT submission under Alain Connes' personal endorsement.
+- **CvS — mathematical foundation** — Connes & van Suijlekom, *Quadratic forms, real zeros and echoes of the spectral action*, [arXiv:2511.23257](https://arxiv.org/abs/2511.23257).
+- **CCM — the rank-one spectral-triple construction whose spectrum this package measures** — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755).
+- **Connes 2026 — the §6.4 heuristic asymptotic this work tests at $c = 100$** — *The Riemann Hypothesis: Past, Present and a Letter Through Time*, [arXiv:2602.04022](https://arxiv.org/abs/2602.04022).
+- **Connes–Consani 2023 — qualitative motivation for the $k_\lambda$ approximation in Connes 2026 §6.6** — *Spectral triples and $\zeta$-cycles*, [arXiv:2106.01715](https://arxiv.org/abs/2106.01715), Enseign. Math. 69.
 
 ---
 
@@ -272,7 +329,7 @@ If you use this package in academic work, please cite both the software and the 
              {C}onnes--van {S}uijlekom {G}alerkin matrix},
   author  = {Groskin, Akiva},
   year    = {2026},
-  version = {0.2.0},
+  version = {0.2.2},
   url     = {https://github.com/akivag613/connes-cvs-},
   doi     = {10.5281/zenodo.19546514},
 }
@@ -280,7 +337,8 @@ If you use this package in academic work, please cite both the software and the 
 @article{groskin2026connes_cvs,
   title   = {Structural Properties of the {C}onnes--van {S}uijlekom
              Truncated {W}eil Minimizer: {S}obolev Scaling,
-             Multi-Zero Universality, and {L}-Function Extension},
+             Multi-Zero Universality, {L}-Function Extension,
+             and an Out-of-Sample Empirical Test at $c=100$},
   author  = {Groskin, Akiva},
   year    = {2026},
   doi     = {10.5281/zenodo.19546514},

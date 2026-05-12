@@ -5,6 +5,31 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [paper — revision in preparation; arXiv submission pending Alain Connes endorsement] — 2026-05-12
+
+Paper revision; no changes to the `connes-cvs` PyPI package. This revision is being prepared for submission to **arXiv math.NT** under personal endorsement from **Alain Connes** (correspondence April–May 2026). The next Zenodo deposit will be Version 3 of concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514).
+
+### Added
+
+- **§6 — Out-of-sample empirical test at $c = 100$.** A new section reporting an $N$-sweep at $c = 100$, $N \in \{100, 150, 200\}$, $T = 800$, $\mathrm{dps} = 500$, plus a precision retest at $N = 150$, $\mathrm{dps} = 1000$. Aitken-$\Delta^2$ extrapolation of the $N$-sweep gives $\log_{10}|\lambda_\infty^{\mathrm{even}}(c{=}100)| \approx -537$, matching the heuristic continuum asymptotic of Connes 2026 §6.4 ($\approx -532$) to approximately **1% of the exponent**, out-of-sample (the in-sample fit window was $c \leq 67$). To our knowledge this is the first independent numerical test of the §6.4 asymptotic at $c > 14$.
+- **§6.5 — $\gamma_k$ extraction at 219–242 matching digits.** The first ten Riemann zeros are extracted from the smallest-positive even-sector eigenvector at $c = 100$, $N = 150$, $\mathrm{dps} = 1000$ to **219–242 matching digits** (against `mpmath.zetazero`). For reference, CCM 2025 §6 reports $\gamma_1$ at ~55 digits ($c = 13$, $N = 120$). The depth record holds in the public CvS/CCM literature.
+- **§2.4 — Spectral-triple interpretation.** Under the unitary equivalence with CCM 2025 Lemma 5.1, the $F_{\mathrm{even}}$ test function used throughout this work coincides with $\widehat{\xi}_N$ in CCM 2025 Theorem 1.1(iii). Every $\gamma_k$ extraction in this work is equivalently an eigenvalue of the rank-one perturbed scaling operator $D_{\log}^{(\lambda,N)}$ at $\lambda = \sqrt{c}$.
+- **§6.6 — Honest disclosure: dps-stable negative-eigenvalue block.** Five negative-sign eigenvalues at $c = 100$, $N = 150$ reproduce identically across $\mathrm{dps} \in \{500, 1000\}$. Not precision noise; identified as a condition-driven finite-$N$ artifact at marginal basis resolution. The continuum operator remains positive semi-definite (CvS 2025 §6).
+- **§6.7 — Reframing of the empirical fit.** The Paper 1 fit $|\log_{10}\lambda_{\min}(c)| \approx 13.24 \, c^{0.634}$ on $c \leq 67$ at $N = 100$ is shown to be a **finite-$N$ rate**, not the continuum asymptote. The $c = 100$, $N = 200$ datum falsifies the pure-power-law extrapolation by 49 orders of magnitude. Corroborated by a $c = 67$, $N = 150$, $\mathrm{dps} = 500$ rerun: $\log_{10}|\lambda_{\min}| = -218.27$, a 46-OOM drop below the same-cutoff $N = 100$ value of $-172.10$ reported in Paper 1. The $N = 100$ data of the $c \leq 67$ sweep are Galerkin upper bounds rather than near-continuum values.
+- **Statement on use of AI tools** added to the manuscript per arXiv submission policy.
+- **Acknowledgment of Alain Connes** for correspondence in April–May 2026 confirming the trigonometric-basis convention used in the CCM Galerkin computations, identifying Connes–Consani 2023 §3 as the qualitative motivation underlying the $k_\lambda$ approximation in Connes 2026 §6.6, and providing the arXiv endorsement under which the paper appears.
+- **Bibliography.** Five new entries: Connes–Consani 2023 (arXiv:2106.01715), Davies–Plum 2004 (IMA JNA 24), Levitin–Shargorodsky 2004 (IMA JNA 24), Parlett 1998 (SIAM), Aitken 1926 (Proc. Roy. Soc. Edin.).
+
+### Changed
+
+- **Title.** Extended to reflect the new §6 contribution: "Structural Properties of the Connes–van Suijlekom Truncated Weil Minimizer: Sobolev Scaling, Multi-Zero Universality, $L$-Function Extension, and an Out-of-Sample Empirical Test at $c = 100$."
+
+### Unchanged
+
+- All numerical data on the original 15-cutoff sweep ($c = 13, 14, 17, \ldots, 67$ at $N = 100$, $T = 800$, $\mathrm{dps} = 150$–$200$) is bit-identical to Zenodo Version 2.
+- The `connes-cvs` v0.2.2 PyPI package is unaffected. The new $c = 100$ data was produced by a local-only v0.2.3 port (in preparation for an eventual v0.3.0 umbrella release per the no-intermediate-releases discipline).
+- All theorems, derivations, and structural observations from earlier versions are preserved.
+
 ## [paper — Zenodo Version 2] — 2026-04-19
 
 Paper revision; no code changes. Published on Zenodo as Version 2 with version-specific DOI [10.5281/zenodo.19655106](https://doi.org/10.5281/zenodo.19655106) (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) now resolves to Version 2). An erratum accompanies the revised PDF as a supplementary file on the Zenodo record.

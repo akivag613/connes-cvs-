@@ -3,13 +3,12 @@
 WIN 1 Pool-based benchmark: A/B test using the production multiprocessing path.
 
 Uses sweep._run_single_cutoff (12-way multiprocessing) so the timing is
-directly comparable to historical results in results/iteration_*/results_*.json.
+directly comparable to v0.1.0 single-process runs at the same workload.
 
 Usage:
     python win1_pool_benchmark.py [c] [N] [T] [dps]
 
-Defaults: c=13 N=80 T=400 dps=80 (~30-90s, comparable to results_L_c13.json
-which logged 602.8s at c=13 N=100 T=400 dps=80; smaller N/dps for budget).
+Defaults: c=13 N=80 T=400 dps=80 (~30-90s; smaller N/dps for quick A/B).
 """
 from __future__ import annotations
 import os, platform, sys, time, json

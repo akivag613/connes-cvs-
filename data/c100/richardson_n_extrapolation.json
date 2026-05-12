@@ -1,0 +1,43 @@
+{
+  "N_sweep_data": {
+    "N": [
+      100,
+      150,
+      200
+    ],
+    "log10_lam": [
+      -190.92,
+      -247.19,
+      -294.31
+    ]
+  },
+  "model_exponential": {
+    "intercept": -89.05499999999972,
+    "slope": -1.0339000000000014,
+    "prediction_N_infinity": "-infinity (lambda -> 0)"
+  },
+  "model_power": {
+    "intercept": 494.00400113510625,
+    "slope": -148.47886303319135
+  },
+  "model_1_over_N": {
+    "intercept": -389.5635714285715,
+    "slope": 20135.571428571446,
+    "log10_lambda_infinity_extrapolated": -389.5635714285715
+  },
+  "aitken": -536.96512568306,
+  "first_differences": [
+    -56.27000000000001,
+    -47.120000000000005
+  ],
+  "second_difference": 9.150000000000006,
+  "model_stretched_exp": {
+    "alpha": 0.6252008798626855,
+    "beta": 10.741422800866712
+  },
+  "interpretation": {
+    "exponential_supports_lambda_infinity_zero": true,
+    "alpha_positive_supports_lambda_infinity_zero": true,
+    "overall": "the data at c=100 N\u2208{100,150,200} is consistent with \u03bb_\u221e(c=100) = 0 in the continuum limit, with \u03bb_N decreasing exponentially (or stretched-exponentially) in N. This would be consistent with RH via Weil positivity criterion on the continuum CvS operator."
+  }
+}
