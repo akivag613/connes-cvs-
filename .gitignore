@@ -8,9 +8,12 @@
 #   .github/      pyproject.toml      README.md      CHANGELOG.md
 #   CITATION.cff  LICENSE             .editorconfig  .gitignore
 #
-# Private (local-only research workspace):
-#   _workspace/   _inbox/   code/   docs/   papers/   research/
-#   results/      website/  CLAUDE.md       PROJECT_STATUS.md
+# Private (local-only; never pushed):
+#   _research/    all private research content (mission, compute,
+#                 manuscripts, notes, pickles, sessions, outreach,
+#                 source_pdfs, docs, website_drafts, build_artifacts)
+#   _inbox/       user drop zone (Claude triages on arrival)
+#   CLAUDE.md     Claude Code auto-loaded instructions (at repo root)
 # =============================================================
 
 # ---- Python / build artifacts ----
@@ -28,24 +31,15 @@ venv/
 # ---- OS ----
 .DS_Store
 
-# ---- Private workspace (research notes, sessions, outreach, source PDFs) ----
-_workspace/
+# ---- Private research workspace ----
+_research/
 
-# ---- User drop zone (Claude triages on arrival; never a permanent home) ----
+# ---- User drop zone (ephemeral; Claude triages on arrival) ----
 _inbox/
 
-# ---- Private working directories at repo root (historical layout) ----
-code/
-docs/
-papers/
-research/
-results/
-website/
-
-# ---- Local navigation docs (auto-loaded by Claude Code, not for GitHub) ----
+# ---- Local navigation document (auto-loaded by Claude Code from repo root) ----
 CLAUDE.md
 .claude/
-PROJECT_STATUS.md
 
 # ---- Local-only benchmark scratch (probe scripts and raw timing logs) ----
 benchmarks/_probe_*.py
