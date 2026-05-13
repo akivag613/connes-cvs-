@@ -33,4 +33,4 @@ results = run_sweep(cutoffs=CUTOFFS, N=100, T=800, dps=150, workers=12)
 ## Discipline
 
 - This file is **public** (git-tracked, part of the PyPI distribution). Never include in-progress or revision-pending findings here.
-- The file is frozen with the Zenodo Version 2 deposit (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514)). If a correction is needed, deposit a new Zenodo version and update this file in lockstep.
+- The file is bit-identical across Zenodo Versions 1, 2, and 3 (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) — currently resolves to Version 3, [10.5281/zenodo.20150435](https://doi.org/10.5281/zenodo.20150435)). If a correction is needed, deposit a new Zenodo version and update this file in lockstep.

@@ -5,9 +5,9 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [paper — revision in preparation] — 2026-05-13
+## [paper — Zenodo Version 3] — 2026-05-13
 
-Paper revision; no changes to the `connes-cvs` PyPI package. This revision is being prepared for submission to **arXiv math.NT**, with **Alain Connes** having offered to assist with the submission (correspondence April–May 2026). The next Zenodo deposit will be Version 3 of concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514).
+Paper revision; no changes to the `connes-cvs` PyPI package.  Published on Zenodo as **Version 3** with version-specific DOI [10.5281/zenodo.20150435](https://doi.org/10.5281/zenodo.20150435) (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) now resolves to Version 3).  The arXiv math.NT submission is in preparation under **Alain Connes**'s personal endorsement (correspondence April–May 2026).  Title changed to *"High-Precision Galerkin Experiments on the Connes–van Suijlekom Truncated Weil Form, with an Out-of-Sample Empirical Test at $c = 100$"*.
 
 ### Added
 
@@ -22,7 +22,8 @@ Paper revision; no changes to the `connes-cvs` PyPI package. This revision is be
 
 ### Changed
 
-- **Title.** Extended to reflect the new §6 contribution: "Structural Properties of the Connes–van Suijlekom Truncated Weil Minimizer: Sobolev Scaling, Multi-Zero Universality, $L$-Function Extension, and an Out-of-Sample Empirical Test at $c = 100$."
+- **Title.** Rewritten from V2's *"Structural Properties of the Connes–van Suijlekom Truncated Weil Minimizer: Sobolev Scaling, Multi-Zero Universality, and L-Function Extension"* to *"High-Precision Galerkin Experiments on the Connes–van Suijlekom Truncated Weil Form, with an Out-of-Sample Empirical Test at $c = 100$"*.  The new title foregrounds §6's c=100 empirical content over V2's structural-properties framing.
+- **Zenodo bundle layout** is now flat (28 files at top level, individually previewable on the Zenodo Files panel) matching V1/V2 aesthetic. LaTeX source is distributed by the arXiv submission rather than the Zenodo deposit; figures are embedded in the PDF and need not be regenerated.
 
 ### Unchanged
 
