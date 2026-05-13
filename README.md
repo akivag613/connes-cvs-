@@ -317,7 +317,7 @@ Precision management is transparent. Eigenvalues shrink super-exponentially ($\l
 
 ## Further reading
 
-- **Our paper** — Groskin 2026, *High-Precision Galerkin Experiments on the Connes–van Suijlekom Truncated Weil Form, with an Out-of-Sample Empirical Test at $c = 100$*. Zenodo Version 3.1 ([10.5281/zenodo.20153365](https://doi.org/10.5281/zenodo.20153365), 2026-05-13); concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) resolves to the latest version. An arXiv math.NT submission is in preparation.
+- **Our paper** — Groskin 2026, *High-Precision Approximation of Riemann Zeros via the Truncated Weil Form*. Zenodo concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) always resolves to the latest version. An arXiv math.NT submission is in preparation.
 - **CvS — mathematical foundation** — Connes & van Suijlekom, *Quadratic forms, real zeros and echoes of the spectral action*, [arXiv:2511.23257](https://arxiv.org/abs/2511.23257).
 - **CCM — the rank-one spectral-triple construction whose spectrum this package measures** — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755).
 - **Connes 2026 — the §6.4 heuristic asymptotic this work tests at $c = 100$** — *The Riemann Hypothesis: Past, Present and a Letter Through Time*, [arXiv:2602.04022](https://arxiv.org/abs/2602.04022).
@@ -340,16 +340,14 @@ If you use this package in academic work, please cite both the software and the 
   doi     = {10.5281/zenodo.19546514},
 }
 
-@article{groskin2026connes_cvs,
-  title   = {High-Precision {G}alerkin Experiments on the
-             {C}onnes--van {S}uijlekom Truncated {W}eil Form,
-             with an Out-of-Sample Empirical Test at $c = 100$},
+@article{groskin2026weil_form_approximation,
+  title   = {High-Precision Approximation of {R}iemann Zeros
+             via the Truncated {W}eil Form},
   author  = {Groskin, Akiva},
   year    = {2026},
-  doi     = {10.5281/zenodo.20150435},
-  url     = {https://doi.org/10.5281/zenodo.20150435},
-  note    = {Concept DOI 10.5281/zenodo.19546514 always resolves
-             to the latest version.},
+  doi     = {10.5281/zenodo.19546514},
+  url     = {https://doi.org/10.5281/zenodo.19546514},
+  note    = {Concept DOI; always resolves to the latest version.},
 }
 ```
 
