@@ -24,7 +24,7 @@ i.e. the radical covers only the 2, then is multiplied by pi^5. At c=100
 
 Usage:
     python examples/make_fig9_c100_aitken.py
-    # writes _research/manuscripts/paper_1_v3_in_prep/figures/fig9_c100_aitken.pdf
+    # writes ./figures/fig9_c100_aitken.pdf (relative to current directory)
 
 Or with --out to control output path:
     python examples/make_fig9_c100_aitken.py --out /tmp/fig9.pdf
@@ -60,10 +60,7 @@ def _resolve_data_dir() -> str:
 
 
 DATA = _resolve_data_dir()
-DEFAULT_OUT = os.path.join(
-    REPO, "_research", "manuscripts", "paper_1_v3_in_prep",
-    "figures", "fig9_c100_aitken.pdf",
-)
+DEFAULT_OUT = os.path.join("figures", "fig9_c100_aitken.pdf")
 
 N_LIST = (100, 150, 200, 250)
 

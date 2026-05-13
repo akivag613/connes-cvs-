@@ -16,7 +16,7 @@ working precision dps=500.
 
 Usage:
     python examples/make_fig10_c100_gamma_digits.py
-    # writes _research/manuscripts/paper_1_v3_in_prep/figures/fig10_c100_gamma_digits.pdf
+    # writes ./figures/fig10_c100_gamma_digits.pdf (relative to current directory)
 """
 from __future__ import annotations
 
@@ -36,13 +36,8 @@ REPO = os.path.dirname(HERE)
 
 def _resolve_data_dir() -> str:
     for candidate in (
-        # Source-repo layout (gamma JSONs only live in the private bundle copy
-        # in the public repo today; the Zenodo bundle is authoritative for the
-        # full extraction record). Both forms are tried.
-        os.path.join(REPO, "_research", "manuscripts", "paper_1_v3_in_prep",
-                     "zenodo_v3_bundle", "data", "c100_verification"),
-        os.path.join(REPO, "data", "c100_verification"),
-        os.path.join(REPO, "data", "c100"),
+        os.path.join(REPO, "data", "c100"),                  # source-repo layout
+        os.path.join(REPO, "data", "c100_verification"),     # Zenodo-bundle layout
     ):
         # Require at least one of the gamma-extraction files to be present.
         if os.path.isdir(candidate) and any(
@@ -60,10 +55,7 @@ def _resolve_data_dir() -> str:
 
 
 DATA_DIR = _resolve_data_dir()
-DEFAULT_OUT = os.path.join(
-    REPO, "_research", "manuscripts", "paper_1_v3_in_prep",
-    "figures", "fig10_c100_gamma_digits.pdf",
-)
+DEFAULT_OUT = os.path.join("figures", "fig10_c100_gamma_digits.pdf")
 
 CELLS = [
     {

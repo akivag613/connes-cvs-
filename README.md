@@ -60,7 +60,7 @@ approaching the Connes 2026 §6.4 prediction of $\approx -530.38$ monotonically 
 - Under the unitary equivalence with CCM 2025 Lemma 5.1, every $\gamma_k$ extraction here is, modulo a hypothesis-status caveat at $c = 100$ documented in the paper, an eigenvalue of the rank-one perturbed scaling operator $D_{\log}^{(\lambda,N)}$ of CCM Theorem 1.1(iii) at $\lambda = \sqrt{c}$.
 - The empirical fit $|\log_{10}\lambda_{\min}(c)| \approx 13.24 \, c^{0.634}$ valid on $c \leq 67$ at $N = 100$ is shown to be a finite-$N$ rate, not the continuum asymptote: the $c = 100$, $N = 200$ datum falsifies the pure-power-law extrapolation by 49 orders of magnitude.
 
-The accompanying paper is at **Zenodo Version 3.1** ([10.5281/zenodo.20153365](https://doi.org/10.5281/zenodo.20153365), published 2026-05-13; concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) always resolves to the latest version). An arXiv math.NT submission is in preparation.
+The accompanying paper is on **Zenodo**: concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) always resolves to the latest version. An arXiv math.NT submission is in preparation.
 
 ---
 
