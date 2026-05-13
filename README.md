@@ -2,7 +2,7 @@
 
 # connes-cvs
 
-### The first public implementation of the Connes–van Suijlekom Galerkin matrix for the Riemann Hypothesis.
+### To our knowledge, the first public implementation of the Connes–van Suijlekom Galerkin matrix for the Riemann Hypothesis.
 
 [![PyPI version](https://img.shields.io/pypi/v/connes-cvs.svg?color=4c1&cacheSeconds=300)](https://pypi.org/project/connes-cvs/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
@@ -12,14 +12,14 @@
 
 </div>
 
-> Connes & van Suijlekom (2025) proposed a spectral route to the Riemann Hypothesis: a truncated Weil quadratic form whose ground-state eigenvalue encodes how close the Riemann zeros come to satisfying Weil's positivity criterion. **This package is the only publicly available code that builds and diagonalizes that operator.** It reproduces the Riemann zeros across **more than 240 orders of magnitude** in the smallest positive eigenvalue, reaches **242 matching digits** on $\gamma_1$ at $c = 100$, and supplies, to our knowledge, the first independent out-of-sample numerical test of the Connes 2026 §6.4 continuum asymptotic.
+> Connes & van Suijlekom (2025) proposed a spectral route to the Riemann Hypothesis: a truncated Weil quadratic form whose ground-state eigenvalue encodes how close the Riemann zeros come to satisfying Weil's positivity criterion. **This package is, to our knowledge, the first publicly available code that builds and diagonalizes that operator.** It computes the smallest-positive eigenvalue across the full sweep — **275 orders of magnitude** spanning $\sim 10^{-59}$ at $c = 13$ down to $\sim 10^{-334}$ at $c = 100$, $N = 250$ — reaches **329 matching digits** on $\gamma_1$ at $c = 100$, and supplies, to our knowledge, the first independent out-of-sample numerical test of the Connes 2026 §6.4 continuum asymptotic.
 
 <div align="center">
 
 | Cutoff range | $\lambda_{\min}$ span | $\gamma_1$ accuracy | Cross-check |
 | :---: | :---: | :---: | :---: |
 | `c = 13 … 67` | `10⁻⁵⁹ → 10⁻¹⁷³` | up to **168 matching digits** (`c=67, N=100, dps=200`) | matches CCM 2025 at `c=14` to factor 3 |
-| `c = 100` | `10⁻²⁹⁴` (`N=200, dps=500`) | **242 matching digits** (`N=150, dps=1000`) | Aitken-Δ² → Connes 2026 §6.4 to **~1% of exponent** |
+| `c = 100` | `10⁻³³⁴` (`N=250, dps=500`) | **329 matching digits** (`N=250, dps=500`) | two consecutive Aitken-Δ² approaching Connes 2026 §6.4 (≈ −530.4) monotonically; deeper triple within 3.32 OOM, ratios 0.8373 / 0.8355 |
 
 </div>
 
@@ -46,21 +46,21 @@
 
 **The Connes 2026 §6.4 heuristic continuum asymptotic, tested out-of-sample at $c = 100$.**
 
-Connes 2026 (arXiv:2602.04022) §6.4 conjectures a continuum decay rate
-$$1 - \chi^2(\lambda) \;\sim\; \frac{2^{14}}{3}\sqrt{2\pi^5}\; e^{-4\pi c + 9\log c /2}$$
-for the angular function tracking the smallest eigenvalue of the truncated Weil quadratic form. Until now this asymptotic was supported only by agreement with the smallest eigenvalue $\varepsilon(\lambda)$ for $\lambda \leq 14$ (the cutoffs reported in CCM 2025 §6 with $N = 120$).
+Connes 2026 (arXiv:2602.04022) §6.4 gives a heuristic continuum decay rate
+$$1 - \chi_2(\lambda) \;\sim\; \frac{2^{14}}{3}\,\sqrt{2}\,\pi^{5}\; e^{-4\pi e^{L} + 9L/2}, \qquad L = 2\log\lambda,$$
+for the second angular function $\chi_2$, tracking the smallest eigenvalue of the truncated Weil quadratic form. Until now this prediction was supported only by agreement with the smallest eigenvalue $\varepsilon(\lambda)$ for $\lambda \leq 14$ (the cutoffs reported in CCM 2025 §6 with $N = 120$).
 
-Using this package at $c = 100$ with $N \in \{100, 150, 200\}$ at $\mathrm{dps} = 500$, Aitken-Δ² extrapolation of the resulting sequence yields
-$$\log_{10}\bigl|\lambda_\infty^{\mathrm{even}}(c{=}100)\bigr| \;\approx\; -537.$$
-The Connes 2026 §6.4 prediction at $c = 100$ is $\approx -532$. Agreement to about **1% of the exponent**, out-of-sample (the in-sample fit window was $c \leq 67$ at $N = 100$). This is, to our knowledge, the first independent numerical test of the §6.4 asymptotic at $c > 14$.
+Using this package at $c = 100$ with $N \in \{100, 150, 200, 250\}$ at $\mathrm{dps} = 500$, two consecutive Aitken-Δ² extrapolations on the overlapping triples give
+$$\log_{10}\bigl|\lambda_\infty^{\mathrm{even}}(c{=}100)\bigr| \;\approx\; -536.76 \;\;\text{and}\;\; -533.70,$$
+approaching the Connes 2026 §6.4 prediction of $\approx -530.38$ monotonically with $N$; the consecutive first-difference ratios $0.8373$ and $0.8355$ match to two decimal places, evidence for a local geometric model. The deeper-anchored triple sits **3.32 OOM** above the prediction, out of $|x_\infty| \sim 530$ — agreement at the under-1%-of-exponent level on the deeper anchor, out-of-sample (the in-sample fit window was $c \leq 67$ at $N = 100$). This is, to our knowledge, the first independent out-of-sample empirical test of the §6.4 heuristic continuum prediction at $c > 14$.
 
 **Companion observations** (full details in the paper):
 
-- $\gamma_1$ through $\gamma_{10}$ extracted to **219–242 matching digits** at $c = 100$, $N = 150$, $\mathrm{dps} = 1000$.
-- Under the unitary equivalence with CCM 2025 Lemma 5.1, every $\gamma_k$ extraction here is, equivalently, an eigenvalue of the rank-one perturbed scaling operator $D_{\log}^{(\lambda,N)}$ of CCM Theorem 1.1(iii) at $\lambda = \sqrt{c}$.
+- $\gamma_1$ through $\gamma_{10}$ extracted to **307–329 matching digits** at $c = 100$, $N = 250$, $\mathrm{dps} = 500$ (and **219–242** at $N = 150$, $\mathrm{dps} = 1000$).
+- Under the unitary equivalence with CCM 2025 Lemma 5.1, every $\gamma_k$ extraction here is, modulo a hypothesis-status caveat at $c = 100$ documented in the paper, an eigenvalue of the rank-one perturbed scaling operator $D_{\log}^{(\lambda,N)}$ of CCM Theorem 1.1(iii) at $\lambda = \sqrt{c}$.
 - The empirical fit $|\log_{10}\lambda_{\min}(c)| \approx 13.24 \, c^{0.634}$ valid on $c \leq 67$ at $N = 100$ is shown to be a finite-$N$ rate, not the continuum asymptote: the $c = 100$, $N = 200$ datum falsifies the pure-power-law extrapolation by 49 orders of magnitude.
 
-The accompanying paper is currently at Zenodo Version 2 (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514), 15-cutoff sweep at $c \leq 67$); a revision including the $c = 100$ verification is being prepared for submission to arXiv math.NT under personal endorsement from **Alain Connes**.
+The accompanying paper is currently at Zenodo Version 2 (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514), 15-cutoff sweep at $c \leq 67$); a revision including the $c = 100$ verification is being prepared for submission to arXiv math.NT, with **Alain Connes** having offered to assist with the submission.
 
 ---
 
@@ -119,7 +119,7 @@ print(f"|γ₁ error|  = {zeros[0]['error']:.4e}")
 # |γ₁ error|  ≈ 1.5e-55
 ```
 
-End-to-end: ≈ 60 seconds on a 12-core machine with `python-flint` installed.
+End-to-end: ≈ 5 minutes on a 12-core machine with `python-flint` installed (the script is single-process; the 12-core advantage shows up in `examples/c100_aitken_check.py` and the full 15-cutoff sweep, both of which use `multiprocessing`). Without `python-flint` the run is slower (~30 minutes) since the archimedean digamma evaluation dominates wall-clock.
 
 <details>
 <summary><b>Multi-cutoff sweep (click to expand)</b></summary>
@@ -153,29 +153,35 @@ The headline measurement is computable with this package by combining the standa
 | 100 | 500  | $1.22 \times 10^{-191}$ | $-190.92$ | ~10 min |
 | 150 | 500  | $6.42 \times 10^{-248}$ | $-247.19$ | ~21 min |
 | 200 | 500  | $4.87 \times 10^{-295}$ | $-294.31$ | ~35 min |
+| 250 | 500  | $2.08 \times 10^{-334}$ | $-333.68$ | ~38 min |
 | 150 | 1000 | $6.42 \times 10^{-248}$ | $-247.19$ | ~111 min |
 
 Wall-clock on an Apple M-series machine with 12 workers. The bit-identical match between the $\mathrm{dps} = 500$ and $\mathrm{dps} = 1000$ rows at $N = 150$ certifies the precision claim.
 
 ### Aitken-Δ² extrapolation
 
-For the sequence $x_N = \log_{10}|\lambda_N|$ at $c = 100$ with $N \in \{100, 150, 200\}$:
+The four-point sequence $x_N = \log_{10}|\lambda_N|$ at $c = 100$ admits Aitken-$\Delta^2$ acceleration on two overlapping triples:
 
-$$\hat{x}_\infty \;=\; x_{100} - \frac{(\Delta_1)^2}{\Delta_2 - \Delta_1} \;=\; -190.92 - \frac{(-56.27)^2}{9.15} \;\approx\; \mathbf{-536.97}.$$
+$$\hat{x}_\infty^{\{100,150,200\}} \;\approx\; -536.76, \qquad \hat{x}_\infty^{\{150,200,250\}} \;\approx\; -533.70.$$
 
-The Connes 2026 §6.4 heuristic prediction at $c = 100$ is $\approx -532$. Agreement to about **1% of the exponent**, out-of-sample.
+The consecutive first-difference ratios $|\Delta_2/\Delta_1| = 0.8373$ and $|\Delta_3/\Delta_2| = 0.8355$ match to two decimal places, evidence for a local geometric model of the convergence sequence (not a 3-point forced fit).
 
-### γ_k extraction at N = 150, dps = 1000
+The Connes 2026 §6.4 heuristic prediction at $c = 100$ is
+$$\log_{10}\!\frac{2^{14}\sqrt{2}\,\pi^{5}}{3} \;-\; \frac{4\pi\cdot 100}{\ln 10} \;+\; \frac{9\log 100}{2\ln 10} \;\approx\; 6.37 - 545.75 + 9.00 \;\approx\; -530.38.$$
 
-| $k$ | matching digits | $k$ | matching digits |
-| :---: | :---: | :---: | :---: |
-| 1 | **242** | 6 | 228 |
-| 2 | 239 | 7 | 226 |
-| 3 | 236 | 8 | 224 |
-| 4 | 233 | 9 | 221 |
-| 5 | 231 | 10 | 219 |
+The two Aitken anchors sit 6.39 OOM and 3.32 OOM above the prediction respectively, out of a magnitude range $|x_\infty| \sim 530$, with the trend monotone in $N$ — agreement at the **under-1%-of-exponent level on the deeper anchor**, out-of-sample (the in-sample fit window was $c \leq 67$ at $N = 100$). Four points do not rule out alternative convergence-model fits; see the paper for the model-sensitivity discussion.
 
-For reference, CCM 2025 §6 reports $\gamma_1$ matching to ~55 digits at $c = 13$, $N = 120$.
+### γ_k extraction at c = 100
+
+| $k$ | $N=150$, dps=1000 | $N=250$, dps=500 | $k$ | $N=150$, dps=1000 | $N=250$, dps=500 |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | 242 | **329** | 6 | 228 | 316 |
+| 2 | 239 | 325 | 7 | 226 | 313 |
+| 3 | 236 | 323 | 8 | 224 | 312 |
+| 4 | 233 | 320 | 9 | 221 | 309 |
+| 5 | 231 | 318 | 10 | 219 | 307 |
+
+Matching-digit count is floor($-\log_{10}|\gamma_k^{\text{detected}} - \gamma_k^{\text{exact}}|$); the reference is `mpmath.zetazero(k).imag` at `dps=400`. For comparison, CCM 2025 §6 reports $\gamma_1$ matching to ~55 digits at $c = 13$, $N = 120$.
 
 ---
 
@@ -227,11 +233,11 @@ c=53   ███████████████████████    
 c=59   ████████████████████████                                             -161
 c=61   ████████████████████████                                             -163
 c=67   █████████████████████████                                            -168
-c=100  ████████████████████████████████████  (N=150, dps=1000)             -242
+c=100  ███████████████████████████████████████████████  (N=250, dps=500)  -329
                                                                           log₁₀|γ₁ err|
 ```
 
-Rows $c \leq 67$ use $N = 100$; the $c = 100$ row uses $N = 150$, $\mathrm{dps} = 1000$. The $c \leq 67$ rows report the finite-$N = 100$ rate; the continuum asymptote (Connes 2026 §6.4) decays significantly faster, as the $c = 100$ row makes visible.
+Rows $c \leq 67$ use $N = 100$; the $c = 100$ row uses $N = 250$, $\mathrm{dps} = 500$ (headline cell). The $c \leq 67$ rows report the finite-$N = 100$ rate; the continuum asymptote (Connes 2026 §6.4) decays significantly faster, as the $c = 100$ row makes visible.
 
 ---
 
@@ -244,7 +250,7 @@ Independent measurements of the CvS Galerkin spectrum in the literature, and thi
 | $c = 13$ | $2.6 \times 10^{-55}$ — Connes 2026 §6 | $\mathbf{2.005 \times 10^{-55}}$ | factor 1.3 |
 | $c = 13$ | $2.44 \times 10^{-55}$ — CCM 2025 §6, $N=120$, 200-digit | $\mathbf{2.005 \times 10^{-55}}$ | factor 1.2 |
 | $c = 14$ | $1.07 \times 10^{-60}$ — CCM 2025 §6 | $\mathbf{3.541 \times 10^{-61}}$ | factor 3 |
-| $c = 100$ | $\log_{10}\lvert\varepsilon\rvert \approx -532$ — Connes 2026 §6.4 (heuristic) | Aitken-Δ² $\Rightarrow$ $\mathbf{-537}$ | $\sim$1% of exponent |
+| $c = 100$ | $\log_{10}\lvert\varepsilon\rvert \approx -530.38$ — Connes 2026 §6.4 (heuristic) | two Aitken-Δ² anchors at $\mathbf{-536.76}$ and $\mathbf{-533.70}$ | 3.32 OOM (deeper anchor); under 1% of exponent |
 
 All four cutoffs compute the same mathematical object — the truncated Weil minimizer $Q(c)$ — using the **trigonometric basis**. The factor-of-1.3 spread at $c = 13$ reflects differences in $N$, $T$, $\mathrm{dps}$, and normalization conventions, not a correctness gap.
 
@@ -325,7 +331,7 @@ If you use this package in academic work, please cite both the software and the 
 
 ```bibtex
 @software{connes_cvs_package,
-  title   = {connes-cvs: First public implementation of the
+  title   = {connes-cvs: Public implementation of the
              {C}onnes--van {S}uijlekom {G}alerkin matrix},
   author  = {Groskin, Akiva},
   year    = {2026},

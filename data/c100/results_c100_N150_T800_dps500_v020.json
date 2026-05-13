@@ -6,11 +6,12 @@
   "dps": 500,
   "flint_prec": 2000,
   "engine": "v020",
-  "lambda_even": "-0.00000000000000000000000000000000000000002197374825612379898585323885676579728477554879790375747647514580486578507634513295859459354272293326193654580891080443486210603495618010978881048799141958734507683690506131930021554165854463868767081841873539832321145565692507336493222363592391626764477629347618570985958841954436540776096571986922451038444924584002337274193065857876199719172027420687097741373735637540232795411405487319559313712242436193319958211976035454607046108339759370564693235482498120011492143956795167825094562307997440551831954",
+  "lambda_even": "6.41845210995848289209971224221614068486731167108e-248",
   "t_cache_s": 1219.415738105774,
   "t_mat_s": 0.44176793098449707,
   "t_diag_s": 39.59058904647827,
   "t_total_s": 1259.4480950832367,
   "n_workers": 12,
-  "version": "v0.2.3-local"
+  "version": "v0.2.3-local",
+  "notes": "lambda_even here is the smallest-positive eigenvalue of the even-sector Galerkin matrix at c=100, N=150, dps=500 \u2014 an empirically distinguished positive branch, NOT a theorem-level ground-state identification. The raw finite-precision spectrum at this cell additionally contains 5 negative-sign eigenvalues at log10|e| in {-40.66, -59.75, -96.75, -165.15, -223.69}; these reproduce identically across dps=500 and dps=1000 (see results_c100_N150_T800_dps1000_v020.json), and we attribute them to condition-number-driven loss of positivity in the finite-N projection. Continuum positivity of QW_lambda for lambda > 1 is equivalent to the Riemann Hypothesis (Connes 2026 Sec 4.1) and is not assumed at lambda = sqrt(100). The smallest-positive eigenvector produces the gamma_1...gamma_10 extraction reported in c100_N150_dps1000_gamma_extraction.json (219-242 matching digits at dps=1000); the identification of this branch with the CCM 2025 Theorem 1.1 ground-state construction is conditional on a future certification of the negative-sign block."
 }

@@ -5,9 +5,17 @@ Minimal example: compute the CvS ground-state eigenvalue at cutoff c=13.
 This reproduces the central numerical result from:
   Connes & van Suijlekom, arXiv:2511.23257
 
-Expected output (at T=400, dps=80):
+Settings here are tuned for fast reproducibility (T=400, dps=80,
+typically ~1-3 minutes wall-clock on a single core, depending on
+whether python-flint is installed for accelerated digamma):
   λ_min(c=13) ≈ 2.077e-59
   |γ₁ error|  ≈ 1.5e-55
+
+This is the T=400 leg of the c=13 study (Paper 1 §4.4 Table 3.2).
+The paper's HEADLINE c=13 result, used in the factor-of-1.3
+agreement with Connes 2026 and CCM 2025 at c=13, is the T=800
+datum |γ₁ error| ≈ 2.005e-55 — to reproduce that value, change
+T=400 to T=800 below; the run takes roughly 4x longer.
 """
 
 import mpmath as mp
