@@ -28,6 +28,9 @@ dist/
 .venv/
 venv/
 
+# ---- Local secrets ----
+.env
+
 # ---- OS ----
 .DS_Store
 

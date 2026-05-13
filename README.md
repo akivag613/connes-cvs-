@@ -60,7 +60,7 @@ approaching the Connes 2026 §6.4 prediction of $\approx -530.38$ monotonically 
 - Under the unitary equivalence with CCM 2025 Lemma 5.1, every $\gamma_k$ extraction here is, modulo a hypothesis-status caveat at $c = 100$ documented in the paper, an eigenvalue of the rank-one perturbed scaling operator $D_{\log}^{(\lambda,N)}$ of CCM Theorem 1.1(iii) at $\lambda = \sqrt{c}$.
 - The empirical fit $|\log_{10}\lambda_{\min}(c)| \approx 13.24 \, c^{0.634}$ valid on $c \leq 67$ at $N = 100$ is shown to be a finite-$N$ rate, not the continuum asymptote: the $c = 100$, $N = 200$ datum falsifies the pure-power-law extrapolation by 49 orders of magnitude.
 
-The accompanying paper is at **Zenodo Version 3** ([10.5281/zenodo.20150435](https://doi.org/10.5281/zenodo.20150435), published 2026-05-13; concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) always resolves to the latest version). The arXiv math.NT submission is in preparation under **Alain Connes**'s personal endorsement (correspondence April–May 2026).
+The accompanying paper is at **Zenodo Version 3.1** ([10.5281/zenodo.20153365](https://doi.org/10.5281/zenodo.20153365), published 2026-05-13; concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) always resolves to the latest version). An arXiv math.NT submission is in preparation.
 
 ---
 
@@ -317,7 +317,7 @@ Precision management is transparent. Eigenvalues shrink super-exponentially ($\l
 
 ## Further reading
 
-- **Our paper** — Groskin 2026, *High-Precision Galerkin Experiments on the Connes–van Suijlekom Truncated Weil Form, with an Out-of-Sample Empirical Test at $c = 100$*. Zenodo Version 3 ([10.5281/zenodo.20150435](https://doi.org/10.5281/zenodo.20150435), 2026-05-13); concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) resolves to the latest version. arXiv math.NT submission in preparation under Alain Connes' personal endorsement.
+- **Our paper** — Groskin 2026, *High-Precision Galerkin Experiments on the Connes–van Suijlekom Truncated Weil Form, with an Out-of-Sample Empirical Test at $c = 100$*. Zenodo Version 3.1 ([10.5281/zenodo.20153365](https://doi.org/10.5281/zenodo.20153365), 2026-05-13); concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) resolves to the latest version. An arXiv math.NT submission is in preparation.
 - **CvS — mathematical foundation** — Connes & van Suijlekom, *Quadratic forms, real zeros and echoes of the spectral action*, [arXiv:2511.23257](https://arxiv.org/abs/2511.23257).
 - **CCM — the rank-one spectral-triple construction whose spectrum this package measures** — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755).
 - **Connes 2026 — the §6.4 heuristic asymptotic this work tests at $c = 100$** — *The Riemann Hypothesis: Past, Present and a Letter Through Time*, [arXiv:2602.04022](https://arxiv.org/abs/2602.04022).

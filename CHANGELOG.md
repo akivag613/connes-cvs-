@@ -5,9 +5,13 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [paper — Zenodo Version 3.1] — 2026-05-13
+
+Acknowledgments-only revision; paper body and all numerical data bit-identical to Version 3.  Published on Zenodo as **Version 3.1** with version-specific DOI [10.5281/zenodo.20153365](https://doi.org/10.5281/zenodo.20153365) (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) now resolves to Version 3.1).
+
 ## [paper — Zenodo Version 3] — 2026-05-13
 
-Paper revision; no changes to the `connes-cvs` PyPI package.  Published on Zenodo as **Version 3** with version-specific DOI [10.5281/zenodo.20150435](https://doi.org/10.5281/zenodo.20150435) (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) now resolves to Version 3).  The arXiv math.NT submission is in preparation under **Alain Connes**'s personal endorsement (correspondence April–May 2026).  Title changed to *"High-Precision Galerkin Experiments on the Connes–van Suijlekom Truncated Weil Form, with an Out-of-Sample Empirical Test at $c = 100$"*.
+Paper revision; no changes to the `connes-cvs` PyPI package.  Published on Zenodo as **Version 3** with version-specific DOI [10.5281/zenodo.20150435](https://doi.org/10.5281/zenodo.20150435).  Title changed to *"High-Precision Galerkin Experiments on the Connes–van Suijlekom Truncated Weil Form, with an Out-of-Sample Empirical Test at $c = 100$"*.
 
 ### Added
 
@@ -17,7 +21,7 @@ Paper revision; no changes to the `connes-cvs` PyPI package.  Published on Zenod
 - **§6.6 — Disclosure: dps-stable negative-eigenvalue block.** At $c = 100$, $N = 150$, five negative-sign eigenvalues reproduce identically across $\mathrm{dps} \in \{500, 1000\}$ (and the count $\{3, 5, 8, 11\}$ at $N \in \{100, 150, 200, 250\}$ scales linearly in $N$). Consistent with a condition-driven finite-$N$ artifact at marginal basis resolution rather than precision noise; certification as either a fixable conditioning artifact, a finite-$N$ structural feature, or a persistent feature is left to future work. Continuum positivity of $QW_\lambda$ is RH-equivalent and is not assumed at $\lambda = \sqrt{100}$.
 - **§6.7 — Reframing of the empirical fit.** The Paper 1 fit $|\log_{10}\lambda_{\min}(c)| \approx 13.24 \, c^{0.634}$ on $c \leq 67$ at $N = 100$ is shown to be a **finite-$N$ rate**, not the continuum asymptote. The $c = 100$, $N = 200$ datum falsifies the pure-power-law extrapolation by 49 orders of magnitude. Corroborated by a $c = 67$, $N = 150$, $\mathrm{dps} = 500$ rerun: $\log_{10}|\lambda_{\min}| = -218.27$, a 46-OOM drop below the same-cutoff $N = 100$ value of $-172.10$ reported in Paper 1. The $N = 100$ data of the $c \leq 67$ sweep are Galerkin upper bounds rather than near-continuum values.
 - **Statement on use of AI tools** added to the manuscript per arXiv submission policy.
-- **Acknowledgment of Alain Connes** for correspondence in April–May 2026 confirming the trigonometric-basis convention used in the CCM Galerkin computations, identifying Connes–Consani 2023 §3 as the qualitative motivation underlying the $k_\lambda$ approximation in Connes 2026 §6.6, and offering to assist with the arXiv submission.
+- **Acknowledgment of Alain Connes** (see paper §Acknowledgments for details).
 - **Bibliography.** Five new entries: Connes–Consani 2023 (arXiv:2106.01715), Davies–Plum 2004 (IMA JNA 24), Levitin–Shargorodsky 2004 (IMA JNA 24), Parlett 1998 (SIAM), Aitken 1926 (Proc. Roy. Soc. Edin.).
 
 ### Changed
