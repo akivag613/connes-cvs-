@@ -12,9 +12,27 @@ license: MIT
 repository-code: "https://github.com/akivag613/connes-cvs-"
 url: "https://github.com/akivag613/connes-cvs-"
 identifiers:
+  - type: other
+    value: "arXiv:2605.20224"
+    description: "Companion paper (arXiv e-print, math.NT)"
   - type: doi
     value: 10.5281/zenodo.19546514
     description: "Companion paper (Zenodo concept DOI — always resolves to latest version)"
+preferred-citation:
+  type: article
+  title: "High-Precision Approximation of Riemann Zeros via the Truncated Weil Form"
+  authors:
+    - family-names: Groskin
+      given-names: Akiva
+  year: 2026
+  url: "https://arxiv.org/abs/2605.20224"
+  identifiers:
+    - type: other
+      value: "arXiv:2605.20224"
+      description: "arXiv e-print (math.NT)"
+    - type: doi
+      value: 10.5281/zenodo.19546514
+      description: "Zenodo concept DOI (always resolves to latest version)"
 keywords:
   - riemann-hypothesis
   - spectral-theory

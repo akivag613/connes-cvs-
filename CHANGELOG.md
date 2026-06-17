@@ -5,6 +5,10 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [paper — arXiv:2605.20224] — 2026-05-13
+
+The paper is now publicly available on **arXiv**: [arXiv:2605.20224](https://arxiv.org/abs/2605.20224) (math.NT, primary; submitted 13 May 2026), *High-Precision Approximation of Riemann Zeros via the Truncated Weil Form*. The arXiv version corresponds to Zenodo **Version 3.2** (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) always resolves to the latest version). No changes to the `connes-cvs` PyPI package or to any numerical data.
+
 ## [paper — Zenodo Version 3.2] — 2026-05-13
 
 Title-only revision; paper body and all numerical data bit-identical to Version 3.1.  Title shortened to *"High-Precision Approximation of Riemann Zeros via the Truncated Weil Form."*  Published on Zenodo as **Version 3.2** with version-specific DOI [10.5281/zenodo.20156914](https://doi.org/10.5281/zenodo.20156914) (concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) now resolves to Version 3.2).
