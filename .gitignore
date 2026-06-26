@@ -1,20 +1,6 @@
 # =============================================================
 # .gitignore for connes-cvs
 # =============================================================
-# Two-tier repository.
-#
-# Public (git-tracked, pushed to GitHub):
-#   connes_cvs/   data/   examples/   tests/   benchmarks/
-#   .github/      pyproject.toml      README.md      CHANGELOG.md
-#   CITATION.cff  LICENSE             .editorconfig  .gitignore
-#
-# Private (local-only; never pushed):
-#   _research/    all private research content (mission, compute,
-#                 manuscripts, notes, pickles, sessions, outreach,
-#                 source_pdfs, docs, website_drafts, build_artifacts)
-#   _inbox/       user drop zone (Claude triages on arrival)
-#   CLAUDE.md     Claude Code auto-loaded instructions (at repo root)
-# =============================================================
 
 # ---- Python / build artifacts ----
 __pycache__/
@@ -23,52 +9,15 @@ __pycache__/
 *.egg-info/
 build/
 dist/
-.pytest_cache/
+*.whl
 *.pickle
+.pytest_cache/
 .venv/
 venv/
 
 # ---- Local secrets ----
 .env
 
-# ---- OS ----
+# ---- OS / editor ----
 .DS_Store
-
-# ---- Private research workspace ----
-_research/
-
-# ---- Paper-2 in-prep bundle + agent tooling (LOCAL-ONLY; not public until release) ----
-data/paper2/
-examples/make_paper2_*.py
-examples/paper2_*.py
-tests/test_paper2_*.py
-.codex/
-.agents/
-AGENTS.md
-
-# ---- User drop zone (ephemeral; Claude triages on arrival) ----
-_inbox/
-
-# ---- Local navigation document (auto-loaded by Claude Code from repo root) ----
-CLAUDE.md
-.claude/
-
-# ---- Local-only benchmark scratch (probe scripts and raw timing logs) ----
-benchmarks/_probe_*.py
-benchmarks/_compare_psi_full.py
-benchmarks/run_profile.py
-benchmarks/profile_baseline.txt
-benchmarks/HOTSPOTS.md
-benchmarks/AB_baseline_no_win1.txt
-benchmarks/AB_with_win1.txt
-benchmarks/AB_published_reference_check.txt
-benchmarks/baseline_results_before_win1_win2.txt
-benchmarks/win1_results.txt
-benchmarks/WIN1_SUMMARY.md
-
-# build wheels (regenerable)
-*.whl
 .vscode/
-
-# ---- Held Paper-2 zero-source-transport bundle (LOCAL-ONLY; never public) ----
-paper2_zero_source_transport/
