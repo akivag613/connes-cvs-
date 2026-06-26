@@ -37,6 +37,15 @@ venv/
 # ---- Private research workspace ----
 _research/
 
+# ---- Paper-2 in-prep bundle + agent tooling (LOCAL-ONLY; not public until release) ----
+data/paper2/
+examples/make_paper2_*.py
+examples/paper2_*.py
+tests/test_paper2_*.py
+.codex/
+.agents/
+AGENTS.md
+
 # ---- User drop zone (ephemeral; Claude triages on arrival) ----
 _inbox/
 
@@ -56,3 +65,10 @@ benchmarks/AB_published_reference_check.txt
 benchmarks/baseline_results_before_win1_win2.txt
 benchmarks/win1_results.txt
 benchmarks/WIN1_SUMMARY.md
+
+# build wheels (regenerable)
+*.whl
+.vscode/
+
+# ---- Held Paper-2 zero-source-transport bundle (LOCAL-ONLY; never public) ----
+paper2_zero_source_transport/
