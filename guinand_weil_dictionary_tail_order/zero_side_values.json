@@ -1,0 +1,33 @@
+{
+  "c": 13,
+  "N": 4,
+  "dps": 30,
+  "source_total_tau_contraction": "0.04996841457109697973029",
+  "rows": [
+    {
+      "M": 16,
+      "zero_side": "0.049960684915535050321",
+      "signed_diff_to_source": "-7.72966e-6",
+      "abs_diff_to_source": "7.72966e-6"
+    },
+    {
+      "M": 32,
+      "zero_side": "0.049967509206611903312",
+      "signed_diff_to_source": "-9.05364e-7",
+      "abs_diff_to_source": "9.05364e-7"
+    },
+    {
+      "M": 48,
+      "zero_side": "0.049968163988462837607",
+      "signed_diff_to_source": "-2.50583e-7",
+      "abs_diff_to_source": "2.50583e-7"
+    },
+    {
+      "M": 64,
+      "zero_side": "0.049968326587757932035",
+      "signed_diff_to_source": "-8.79833e-8",
+      "abs_diff_to_source": "8.79833e-8"
+    }
+  ],
+  "note": "2*sum_{n=1..M} g_v(gamma_n) converges to <v,Q_inf v>; confirmation only, not part of the proof."
+}

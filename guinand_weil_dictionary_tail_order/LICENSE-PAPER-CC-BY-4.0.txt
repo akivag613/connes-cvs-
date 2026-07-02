@@ -1,0 +1,14 @@
+Paper license notice
+
+The manuscript files main.tex and main.pdf are released under the Creative
+Commons Attribution 4.0 International license, abbreviated CC-BY-4.0.
+
+License text:
+https://creativecommons.org/licenses/by/4.0/
+
+Attribution:
+Akiva Groskin, "A finite CvS-to-Guinand-Weil dictionary and archimedean tail
+order for the truncated Weil form".
+
+The companion Python scripts and package documentation are released under the
+MIT license in LICENSE.

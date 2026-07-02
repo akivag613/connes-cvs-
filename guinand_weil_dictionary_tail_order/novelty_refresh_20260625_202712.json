@@ -1,0 +1,92 @@
+{
+  "arxiv": [
+    {
+      "entries": [],
+      "query": "\"finite CvS-to-Guinand-Weil dictionary\"",
+      "total": 0
+    },
+    {
+      "entries": [],
+      "query": "\"CvS-to-Guinand-Weil\" \"source quotient\"",
+      "total": 0
+    },
+    {
+      "entries": [
+        "Densities, Laplace Transforms and Analytic Number Theory",
+        "Primes in arithmetic progressions and semidefinite programming",
+        "On Littlewood's estimate for the modulus of the zeta function on the critical line",
+        "Explicit conditional bounds for $\u03b6(s)$ at the edge of the critical strip"
+      ],
+      "query": "\"finite source quotient\" \"Guinand-Weil\"",
+      "total": 4
+    },
+    {
+      "entries": [],
+      "query": "\"finite-cutoff archimedean tail order\"",
+      "total": 0
+    },
+    {
+      "entries": [
+        "Densities, Laplace Transforms and Analytic Number Theory",
+        "Primes in arithmetic progressions and semidefinite programming",
+        "On Littlewood's estimate for the modulus of the zeta function on the critical line",
+        "Explicit conditional bounds for $\u03b6(s)$ at the edge of the critical strip"
+      ],
+      "query": "\"source-complete transport\" \"Guinand-Weil\"",
+      "total": 4
+    }
+  ],
+  "zenodo": [
+    {
+      "entries": [],
+      "query": "\"finite CvS-to-Guinand-Weil dictionary\"",
+      "total": 0
+    },
+    {
+      "entries": [
+        "Baryogenesis as Completion\u2013Locked Asymmetry Survival: Survivor Quotients and Conditional Baryogenesis Closure",
+        "Volterra-Perron Pricing of the Option Manifold",
+        "Physics 2.0 \u2014 The One Particle Theory: a finite-cutoff single-primitive framework deriving the gauge couplings, the fermion mass spectrum, and emergent gravity from one energy anchor"
+      ],
+      "query": "\"CvS-to-Guinand-Weil\" \"source quotient\"",
+      "total": 3
+    },
+    {
+      "entries": [
+        "HBP | Main | 1.6 \u2022 Helson\u2013Blur to Hilbert\u2013P\u00f3lya - Uniform",
+        "Thermodynamic Unification of the Arithmetic Vacuum: Spectral Rigidity, Unitary Phase Interference, and the Topological Derivation of the Fine-Structure Constant",
+        "Closure-First Riemann\u2013Weil Transport Geometry in Mittermeier Attractor Theory (MAT): Entropy-Width Lock, Gamma-Refined Length Map, Prime-Transfer Law, and the Finite-Support Origin of the Spectral Length Scale",
+        "A Unified Geometric Proof of the Riemann Hypothesis and the Emergence of Fundamental Physics from Quantum Self-Verifying Geometry (QSVG)",
+        "A Universal Bound on the Weil Functional and Its Violation Under a Displaced Zero",
+        "Positive Curvature of the Spectral Trace at the Critical Line",
+        "Proof of the Riemann Hypothesis via Trace-Class Regularisation of the Prime Field and Spectral Stability of the Mehler-Zeta Operator",
+        "A Structural Proof of the Riemann Hypothesis via a Positive Self-Adjoint Trace Operator",
+        "Global Coercivity of Explicit\u2013Formula Residuals A Rigidity Theorem for the Riemann Hypothesis",
+        "Prime-Archimedean Certificate Calculus, Part 1: Finite Arithmetic Certificates for the Riemann Xi Function"
+      ],
+      "query": "\"finite source quotient\" \"Guinand-Weil\"",
+      "total": 17
+    },
+    {
+      "entries": [],
+      "query": "\"finite-cutoff archimedean tail order\"",
+      "total": 0
+    },
+    {
+      "entries": [
+        "HBP | Main | 1.6 \u2022 Helson\u2013Blur to Hilbert\u2013P\u00f3lya - Uniform",
+        "Thermodynamic Unification of the Arithmetic Vacuum: Spectral Rigidity, Unitary Phase Interference, and the Topological Derivation of the Fine-Structure Constant",
+        "Closure-First Riemann\u2013Weil Transport Geometry in Mittermeier Attractor Theory (MAT): Entropy-Width Lock, Gamma-Refined Length Map, Prime-Transfer Law, and the Finite-Support Origin of the Spectral Length Scale",
+        "A Unified Geometric Proof of the Riemann Hypothesis and the Emergence of Fundamental Physics from Quantum Self-Verifying Geometry (QSVG)",
+        "A Universal Bound on the Weil Functional and Its Violation Under a Displaced Zero",
+        "Positive Curvature of the Spectral Trace at the Critical Line",
+        "Proof of the Riemann Hypothesis via Trace-Class Regularisation of the Prime Field and Spectral Stability of the Mehler-Zeta Operator",
+        "A Structural Proof of the Riemann Hypothesis via a Positive Self-Adjoint Trace Operator",
+        "Global Coercivity of Explicit\u2013Formula Residuals A Rigidity Theorem for the Riemann Hypothesis",
+        "Prime-Archimedean Certificate Calculus, Part 1: Finite Arithmetic Certificates for the Riemann Xi Function"
+      ],
+      "query": "\"source-complete transport\" \"Guinand-Weil\"",
+      "total": 17
+    }
+  ]
+}

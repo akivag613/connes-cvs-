@@ -1,0 +1,17 @@
+{
+  "series_identity": {
+    "N_values": [
+      1,
+      2,
+      4,
+      8,
+      12
+    ],
+    "cases": 125,
+    "exact_coefficient_equalities": 2000,
+    "exact_even_power_zero_checks": 1875,
+    "max_order_k": 30,
+    "random_seed": 20260625
+  },
+  "status": "passed"
+}

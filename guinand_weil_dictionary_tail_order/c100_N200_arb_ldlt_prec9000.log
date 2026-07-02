@@ -1,0 +1,9 @@
+[23:28:57] SELF-TEST: pick polygamma + validate Arb entries vs mpmath ...
+    trigamma(0.25+0.3i): mpmath=-0.100177-6.813404j  arb=-0.100177-6.813404j  ok=True
+    Arb closed-forms vs mpmath: agree to >= 69 digits (OK)
+[23:28:57] SELF-TEST PASS
+
+[23:28:57] ARB-CERTIFY  c=100 N=200 prec=9000 bits (~2709 digits)
+[23:41:10] true-pairing block built (733.2s); interval LDL^T ...
+[23:42:41] TRUE pairing: n_pos=401 n_neg=0  (90.7s)
+  >>> CERTIFIED positive-definite: True  (rigorous Arb interval LDL^T, all 401 pivots strictly signed)

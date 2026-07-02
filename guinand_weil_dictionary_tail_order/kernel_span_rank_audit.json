@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "method": "explicit generators 1*1, 1*cos(k), and cos(k)*cos(k) in the coordinate basis over Q(P)",
+  "coordinate_basis": [
+    "omega",
+    "sin(2*pi*k*omega), 1<=k<=N",
+    "omega*cos(2*pi*k*omega), 1<=k<=N"
+  ],
+  "N_range": "0..30",
+  "cases": [
+    {
+      "N": 0,
+      "rank": 1,
+      "expected_rank": 1
+    },
+    {
+      "N": 1,
+      "rank": 3,
+      "expected_rank": 3
+    },
+    {
+      "N": 2,
+      "rank": 5,
+      "expected_rank": 5
+    },
+    {
+      "N": 3,
+      "rank": 7,
+      "expected_rank": 7
+    },
+    {
+      "N": 4,
+      "rank": 9,
+      "expected_rank": 9
+    },
+    {
+      "N": 5,
+      "rank": 11,
+      "expected_rank": 11
+    },
+    {
+      "N": 6,
+      "rank": 13,
+      "expected_rank": 13
+    },
+    {
+      "N": 7,
+      "rank": 15,
+      "expected_rank": 15
+    },
+    {
+      "N": 8,
+      "rank": 17,
+      "expected_rank": 17
+    },
+    {
+      "N": 9,
+      "rank": 19,
+      "expected_rank": 19
+    },
+    {
+      "N": 10,
+      "rank": 21,
+      "expected_rank": 21
+    },
+    {
+      "N": 11,
+      "rank": 23,
+      "expected_rank": 23
+    },
+    {
+      "N": 12,
+      "rank": 25,
+      "expected_rank": 25
+    },
+    {
+      "N": 13,
+      "rank": 27,
+      "expected_rank": 27
+    },
+    {
+      "N": 14,
+      "rank": 29,
+      "expected_rank": 29
+    },
+    {
+      "N": 15,
+      "rank": 31,
+      "expected_rank": 31
+    },
+    {
+      "N": 16,
+      "rank": 33,
+      "expected_rank": 33
+    },
+    {
+      "N": 17,
+      "rank": 35,
+      "expected_rank": 35
+    },
+    {
+      "N": 18,
+      "rank": 37,
+      "expected_rank": 37
+    },
+    {
+      "N": 19,
+      "rank": 39,
+      "expected_rank": 39
+    },
+    {
+      "N": 20,
+      "rank": 41,
+      "expected_rank": 41
+    },
+    {
+      "N": 21,
+      "rank": 43,
+      "expected_rank": 43
+    },
+    {
+      "N": 22,
+      "rank": 45,
+      "expected_rank": 45
+    },
+    {
+      "N": 23,
+      "rank": 47,
+      "expected_rank": 47
+    },
+    {
+      "N": 24,
+      "rank": 49,
+      "expected_rank": 49
+    },
+    {
+      "N": 25,
+      "rank": 51,
+      "expected_rank": 51
+    },
+    {
+      "N": 26,
+      "rank": 53,
+      "expected_rank": 53
+    },
+    {
+      "N": 27,
+      "rank": 55,
+      "expected_rank": 55
+    },
+    {
+      "N": 28,
+      "rank": 57,
+      "expected_rank": 57
+    },
+    {
+      "N": 29,
+      "rank": 59,
+      "expected_rank": 59
+    },
+    {
+      "N": 30,
+      "rank": 61,
+      "expected_rank": 61
+    }
+  ]
+}

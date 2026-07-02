@@ -1,0 +1,227 @@
+\begin{thebibliography}{10}
+
+\bibitem{Andreief1886}
+C.~Andr{\'e}ief.
+\newblock Note sur une relation entre les int{\'e}grales d{\'e}finies des
+  produits des fonctions.
+\newblock {\em M{\'e}moires de la Soci{\'e}t{\'e} des Sciences Physiques et
+  Naturelles de Bordeaux}, 2:1--14, 1886.
+
+\bibitem{Andrews20427500}
+Ronnie Andrews, Jr.
+\newblock Independent reproduction and convergence analysis of the {CCM} zeta
+  spectral triple, June 2026.
+\newblock Zenodo record 20427500.
+\newblock URL: \url{https://zenodo.org/records/20427500}, \href
+  {https://doi.org/10.5281/zenodo.20427500}
+  {\path{doi:10.5281/zenodo.20427500}}.
+
+\bibitem{BertolaGekhtmanSzmigielski2009}
+Marco Bertola, Michael Gekhtman, and Jacek Szmigielski.
+\newblock {Cauchy} biorthogonal polynomials.
+\newblock {\em Journal of Approximation Theory}, 162(4):832--867, 2010.
+\newblock \href {https://arxiv.org/abs/0904.2602} {\path{arXiv:0904.2602}},
+  \href {https://doi.org/10.1016/j.jat.2009.09.008}
+  {\path{doi:10.1016/j.jat.2009.09.008}}.
+
+\bibitem{Bombieri2000}
+Enrico Bombieri.
+\newblock Remarks on {Weil}'s quadratic functional in the theory of prime
+  numbers. {I}.
+\newblock {\em Rendiconti Lincei. Matematica e Applicazioni}, 11(3):183--233,
+  2000.
+\newblock URL: \url{https://eudml.org/doc/252338}.
+
+\bibitem{ChirreMolero2026}
+Andr{\'e}s Chirre and Blas Molero~Ravines.
+\newblock Explicit conditional bounds for {$\zeta(s)$} at the edge of the
+  critical strip.
+\newblock {\em arXiv:2602.06199}, 2026.
+\newblock \href {https://arxiv.org/abs/2602.06199} {\path{arXiv:2602.06199}}.
+
+\bibitem{Connes1999}
+Alain Connes.
+\newblock Trace formula in noncommutative geometry and the zeros of the
+  {Riemann} zeta function.
+\newblock {\em Selecta Mathematica (New Series)}, 5(1):29--106, 1999.
+\newblock \href {https://doi.org/10.1007/s000290050042}
+  {\path{doi:10.1007/s000290050042}}.
+
+\bibitem{Connes2026}
+Alain Connes.
+\newblock The {Riemann} hypothesis: Past, present and a letter through time.
+\newblock {\em arXiv:2602.04022}, 2026.
+\newblock \href {https://arxiv.org/abs/2602.04022} {\path{arXiv:2602.04022}}.
+
+\bibitem{ConnesConsani2020}
+Alain Connes and Caterina Consani.
+\newblock {Weil} positivity and trace formula, the archimedean place.
+\newblock {\em Selecta Mathematica (New Series)}, 27(4):77, 2021.
+\newblock \href {https://arxiv.org/abs/2006.13771} {\path{arXiv:2006.13771}},
+  \href {https://doi.org/10.1007/s00029-021-00689-4}
+  {\path{doi:10.1007/s00029-021-00689-4}}.
+
+\bibitem{ConnesConsani2021}
+Alain Connes and Caterina Consani.
+\newblock Spectral triples and zeta-cycles.
+\newblock {\em L'Enseignement Math{\'e}matique}, 69(1-2):93--148, 2023.
+\newblock \href {https://arxiv.org/abs/2106.01715} {\path{arXiv:2106.01715}},
+  \href {https://doi.org/10.4171/LEM/1049} {\path{doi:10.4171/LEM/1049}}.
+
+\bibitem{ConnesConsaniMoscovici2025}
+Alain Connes, Caterina Consani, and Henri Moscovici.
+\newblock Zeta spectral triples.
+\newblock {\em arXiv:2511.22755}, 2025.
+\newblock \href {https://arxiv.org/abs/2511.22755} {\path{arXiv:2511.22755}},
+  \href {https://doi.org/10.48550/arXiv.2511.22755}
+  {\path{doi:10.48550/arXiv.2511.22755}}.
+
+\bibitem{ConnesvanSuijlekom2025}
+Alain Connes and Walter~D. van Suijlekom.
+\newblock Quadratic forms, real zeros and echoes of the spectral action.
+\newblock {\em arXiv:2511.23257}, 2025.
+\newblock \href {https://arxiv.org/abs/2511.23257} {\path{arXiv:2511.23257}},
+  \href {https://doi.org/10.48550/arXiv.2511.23257}
+  {\path{doi:10.48550/arXiv.2511.23257}}.
+
+\bibitem{Silva20671635}
+Breno~Wilson {de Andrade Silva}.
+\newblock Exact archimedean entries for truncated {Weil} forms: Closed-form
+  implementation, a precision-stable library defect, and corrected deep
+  spectra, June 2026.
+\newblock Zenodo record 20671635.
+\newblock URL: \url{https://zenodo.org/records/20671635}, \href
+  {https://doi.org/10.5281/zenodo.20671635}
+  {\path{doi:10.5281/zenodo.20671635}}.
+
+\bibitem{Silva20710075}
+Breno~Wilson {de Andrade Silva}.
+\newblock A {Loewner} divided-difference formula for the prime contribution in
+  the localized {Weil} quadratic form, and a parity sign law, June 2026.
+\newblock Zenodo record 20710075.
+\newblock URL: \url{https://zenodo.org/records/20710075}, \href
+  {https://doi.org/10.5281/zenodo.20710075}
+  {\path{doi:10.5281/zenodo.20710075}}.
+
+\bibitem{Silva20737111}
+Breno~Wilson {de Andrade Silva}.
+\newblock A {Loewner}/operator-monotone framework for the even-simplicity
+  problem in the {CCM} spectral triple, June 2026.
+\newblock Zenodo record 20737111.
+\newblock URL: \url{https://zenodo.org/records/20737111}, \href
+  {https://doi.org/10.5281/zenodo.20737111}
+  {\path{doi:10.5281/zenodo.20737111}}.
+
+\bibitem{Silva20682834}
+Breno~Wilson {de Andrade Silva}.
+\newblock The pole term is the only obstruction to {Perron} structure in the
+  localized {Weil} quadratic form, June 2026.
+\newblock Zenodo record 20682834.
+\newblock URL: \url{https://zenodo.org/records/20682834}, \href
+  {https://doi.org/10.5281/zenodo.20682834}
+  {\path{doi:10.5281/zenodo.20682834}}.
+
+\bibitem{Silva20650146}
+Breno~Wilson {de Andrade Silva}.
+\newblock Quadrature sensitivity of deep spectra of truncated {Weil} forms,
+  with corrections to two recent computational notes, June 2026.
+\newblock Zenodo record 20650146.
+\newblock URL: \url{https://zenodo.org/records/20650146}, \href
+  {https://doi.org/10.5281/zenodo.20650146}
+  {\path{doi:10.5281/zenodo.20650146}}.
+
+\bibitem{Silva20694588}
+Breno~Wilson {de Andrade Silva}.
+\newblock A scalar {Herglotz} criterion for the even-simplicity hypothesis in
+  the localized {Weil} quadratic form, June 2026.
+\newblock Zenodo record 20694588.
+\newblock URL: \url{https://zenodo.org/records/20694588}, \href
+  {https://doi.org/10.5281/zenodo.20694588}
+  {\path{doi:10.5281/zenodo.20694588}}.
+
+\bibitem{Forrester2019}
+Peter~J. Forrester.
+\newblock Meet {Andr{\'e}ief}, {Bordeaux} 1886, and {Andreev}, {Kharkov}
+  1882--1883.
+\newblock {\em Random Matrices: Theory and Applications}, 8(2):1930001, 2019.
+\newblock \href {https://arxiv.org/abs/1806.10411} {\path{arXiv:1806.10411}},
+  \href {https://doi.org/10.1142/S2010326319300018}
+  {\path{doi:10.1142/S2010326319300018}}.
+
+\bibitem{Guinand1948}
+A.~P. Guinand.
+\newblock A summation formula in the theory of prime numbers.
+\newblock {\em Proceedings of the London Mathematical Society}, 50(1):107--119,
+  1948.
+\newblock \href {https://doi.org/10.1112/plms/s2-50.2.107}
+  {\path{doi:10.1112/plms/s2-50.2.107}}.
+
+\bibitem{Johansson2017Arb}
+Fredrik Johansson.
+\newblock Arb: Efficient arbitrary-precision midpoint-radius interval
+  arithmetic.
+\newblock {\em IEEE Transactions on Computers}, 66(8):1281--1292, 2017.
+\newblock \href {https://doi.org/10.1109/TC.2017.2690633}
+  {\path{doi:10.1109/TC.2017.2690633}}.
+
+\bibitem{Karlin1968}
+Samuel Karlin.
+\newblock {\em Total Positivity, Volume {I}}.
+\newblock Stanford University Press, Stanford, CA, 1968.
+
+\bibitem{Katznelson2004}
+Yitzhak Katznelson.
+\newblock {\em An Introduction to Harmonic Analysis}.
+\newblock Cambridge University Press, Cambridge, third edition, 2004.
+\newblock \href {https://doi.org/10.1017/CBO9781139165372}
+  {\path{doi:10.1017/CBO9781139165372}}.
+
+\bibitem{DLMFDigammaAsymptotic}
+{NIST Digital Library of Mathematical Functions}.
+\newblock Asymptotic expansions for the logarithmic derivative of the gamma
+  function.
+\newblock DLMF Section 5.11, formula 5.11.2, accessed 2026-06-25.
+\newblock URL: \url{https://dlmf.nist.gov/5.11.E2}.
+
+\bibitem{Rudin1987}
+Walter Rudin.
+\newblock {\em Real and Complex Analysis}.
+\newblock McGraw-Hill, New York, third edition, 1987.
+
+\bibitem{Simon2014CauchyTP}
+Thomas Simon.
+\newblock Total positivity of a {Cauchy} kernel.
+\newblock {\em Journal of Approximation Theory}, 184:238--258, 2014.
+\newblock \href {https://arxiv.org/abs/1305.1173} {\path{arXiv:1305.1173}},
+  \href {https://doi.org/10.1016/j.jat.2014.05.014}
+  {\path{doi:10.1016/j.jat.2014.05.014}}.
+
+\bibitem{Suzuki2026}
+Masatoshi Suzuki.
+\newblock {Weil}'s quadratic form via the screw function.
+\newblock {\em arXiv:2606.09096}, 2026.
+\newblock \href {https://arxiv.org/abs/2606.09096} {\path{arXiv:2606.09096}}.
+
+\bibitem{Titchmarsh1986}
+E.~C. Titchmarsh.
+\newblock {\em The Theory of the {Riemann} Zeta-Function}.
+\newblock Clarendon Press, Oxford, second edition, 1986.
+\newblock Revised by D. R. Heath-Brown.
+
+\bibitem{Weil1952}
+Andr{\'e} Weil.
+\newblock Sur les ``formules explicites'' de la th{\'e}orie des nombres
+  premiers.
+\newblock {\em Meddelanden fr{\aa}n Lunds Universitets Matematiska Seminarium
+  (Comm. S{\'e}m. Math. Univ. Lund)}, Tome Suppl{\'e}mentaire:252--265, 1952.
+\newblock Volume dedicated to Marcel Riesz.
+
+\bibitem{Yoshida1992}
+Hiroyuki Yoshida.
+\newblock On hermitian forms attached to zeta functions.
+\newblock In {\em Zeta Functions in Geometry}, volume~21 of {\em Advanced
+  Studies in Pure Mathematics}, pages 281--325. Kinokuniya, Tokyo, 1992.
+\newblock \href {https://doi.org/10.2969/aspm/02110281}
+  {\path{doi:10.2969/aspm/02110281}}.
+
+\end{thebibliography}

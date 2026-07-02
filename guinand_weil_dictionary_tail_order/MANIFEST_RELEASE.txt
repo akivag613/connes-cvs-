@@ -1,0 +1,66 @@
+Zero-source transport release manifest
+Updated: 2026-07-02
+
+Core manuscript:
+main.tex
+main.bib
+main.bbl
+main.pdf
+plainurl.bst
+fig_dictionary.pdf
+fig_tailorder.pdf
+
+Core reproducibility package:
+audit_exact_series_identity.py
+exact_series_audit.json
+audit_kernel_span_rank.py
+kernel_span_rank_audit.json
+audit_full_matrix_source_quotient.py
+full_matrix_source_quotient_audit.json
+audit_pole_neutral_survival.py
+pole_neutral_survival_audit.json
+verify_finite_dictionary.py
+verify_dictionary_threeroute.py
+threeroute_c29N6_generic.json
+threeroute_c29N6_poleneutral.json
+threeroute_c13N4_package.json
+zeta_zeros_512_dps30.json
+verify_arch_tail_order.py
+arch_tail_order_check.json
+audit_arch_tail_dt_bridge.py
+arch_tail_dt_bridge_audit.json
+arch_tail_budget.py
+arch_tail_budget_c100_N200_T800.json
+arch_tail_stress_ladder.py
+arch_tail_stress_ladder.json
+arch_tail_exact_asymptotic.py
+arch_tail_exact_vs_asymptotic.json
+arb_ldlt_certify.py
+c100_N200_arb_ldlt_prec9000.log
+c100_N200_arb_ldlt_prec9000_provenance.json
+verify_zero_side.py
+zero_side_values.json
+make_figures.py
+eigenflow_c13N4.json
+novelty_refresh_20260625_202712.json
+
+Documentation:
+README.md
+VERIFICATION_REPORT.md
+CLAIM_TRACE_AUDIT.md
+NOVELTY_BOUNDARY_AUDIT.md
+MANIFEST_RELEASE.txt
+SHA256SUMS
+requirements.txt
+LICENSE
+LICENSE-PAPER-CC-BY-4.0.txt
+
+Not included in release bundles:
+main.aux
+main.blg
+main.log
+main.out
+main.fdb_latexmk
+main.fls
+__pycache__/
+tmp/
