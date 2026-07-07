@@ -7,13 +7,46 @@
 [![PyPI version](https://img.shields.io/pypi/v/connes-cvs.svg?color=4c1&cacheSeconds=300)](https://pypi.org/project/connes-cvs/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![arXiv](https://img.shields.io/badge/arXiv-2605.20224-b31b1b.svg)](https://arxiv.org/abs/2605.20224)
-[![Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19546514-1f74b7.svg)](https://doi.org/10.5281/zenodo.19546514)
+[![Paper 1 · arXiv](https://img.shields.io/badge/Paper_1-arXiv%3A2605.20224-b31b1b.svg)](https://arxiv.org/abs/2605.20224)
+[![Paper 2 · arXiv](https://img.shields.io/badge/Paper_2-arXiv%3A2607.02828-b31b1b.svg)](https://arxiv.org/abs/2607.02828)
+[![Zenodo DOI](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.19546514-1f74b7.svg)](https://doi.org/10.5281/zenodo.19546514)
 [![Tests](https://img.shields.io/badge/tests-passing-4c1.svg)](tests/)
 
 </div>
 
 > Connes & van Suijlekom (2025) proposed a spectral route to the Riemann Hypothesis: a truncated Weil quadratic form whose ground-state eigenvalue encodes how close the Riemann zeros come to satisfying Weil's positivity criterion. **This package is, to our knowledge, the first publicly available code that builds and diagonalizes that operator.** It computes the smallest-positive eigenvalue across the full sweep — **275 orders of magnitude** spanning $\sim 10^{-59}$ at $c = 13$ down to $\sim 10^{-334}$ at $c = 100$, $N = 250$ — reaches **329 matching digits** on $\gamma_1$ at $c = 100$, and supplies, to our knowledge, the first independent out-of-sample numerical test of the Connes 2026 §6.4 continuum asymptotic.
+
+---
+
+## Papers
+
+This repository hosts the `connes-cvs` package together with the two papers by **Akiva Groskin** that build on the truncated Weil quadratic form of Connes–van Suijlekom. The package implements the Galerkin operator both papers study.
+
+<table>
+<tr><td valign="top" width="50%">
+
+**Paper 1 — the numerics**
+
+*High-Precision Approximation of Riemann Zeros via the Truncated Weil Form.*
+
+[arXiv:2605.20224](https://arxiv.org/abs/2605.20224) (math.NT) · Zenodo concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514)
+
+Builds and diagonalizes the CvS Galerkin matrix at high precision: extracts Riemann zeros to hundreds of matching digits and tests the Connes 2026 §6.4 continuum asymptotic out-of-sample at $c = 100$. **This is the paper the `connes-cvs` package implements** (see [ERRATA.md](ERRATA.md) for a finite-cutoff sign correction).
+
+</td><td valign="top" width="50%">
+
+**Paper 2 — the structure**
+
+*A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form.*
+
+[arXiv:2607.02828](https://arxiv.org/abs/2607.02828) (math.NT, math.SP) · Zenodo concept DOI [10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802)
+
+An exact finite Guinand-Weil zero-source dictionary for the truncated Weil form, plus a finite-cutoff archimedean tail-order theorem with a two-sided certification rule. Manuscript and full reproducibility package in [`guinand_weil_dictionary_tail_order/`](guinand_weil_dictionary_tail_order/).
+
+</td></tr>
+</table>
+
+Both papers report empirical measurements and finite-cutoff structural results; neither claims a proof of the Riemann Hypothesis.
 
 <div align="center">
 
@@ -28,6 +61,7 @@
 
 ## Table of contents
 
+- [Papers](#papers)
 - [Headline result](#headline-result)
 - [Installation](#installation)
 - [Quick start](#quick-start)
@@ -325,7 +359,7 @@ Precision management is transparent. Eigenvalues shrink super-exponentially ($\l
 ## Further reading
 
 - **Our paper** — Groskin 2026, *High-Precision Approximation of Riemann Zeros via the Truncated Weil Form*, [arXiv:2605.20224](https://arxiv.org/abs/2605.20224) (math.NT). Archived on Zenodo; the concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) always resolves to the latest version.
-- **Companion note (Paper 2)** — Groskin 2026, *A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form*: an exact finite Guinand-Weil zero-source dictionary for the truncated Weil form, and a finite-cutoff archimedean tail-order theorem with a two-sided certification rule. Manuscript and full reproducibility package in [`guinand_weil_dictionary_tail_order/`](guinand_weil_dictionary_tail_order/); archived on Zenodo, concept DOI [10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802) (always resolves to the latest version).
+- **Companion note (Paper 2)** — Groskin 2026, *A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form*, [arXiv:2607.02828](https://arxiv.org/abs/2607.02828) (math.NT): an exact finite Guinand-Weil zero-source dictionary for the truncated Weil form, and a finite-cutoff archimedean tail-order theorem with a two-sided certification rule. Manuscript and full reproducibility package in [`guinand_weil_dictionary_tail_order/`](guinand_weil_dictionary_tail_order/); archived on Zenodo, concept DOI [10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802) (always resolves to the latest version).
 - **CvS — mathematical foundation** — Connes & van Suijlekom, *Quadratic forms, real zeros and echoes of the spectral action*, [arXiv:2511.23257](https://arxiv.org/abs/2511.23257).
 - **CCM — the rank-one spectral-triple construction whose spectrum this package measures** — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755).
 - **Connes 2026 — the §6.4 heuristic asymptotic this work tests at $c = 100$** — *The Riemann Hypothesis: Past, Present and a Letter Through Time*, [arXiv:2602.04022](https://arxiv.org/abs/2602.04022).

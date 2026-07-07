@@ -8,6 +8,11 @@ A finite Guinand-Weil dictionary and archimedean tail order
 for the truncated Weil quadratic form
 ```
 
+Akiva Groskin, 2026. Preprint: [arXiv:2607.02828](https://arxiv.org/abs/2607.02828)
+(math.NT, math.SP). Archived on Zenodo, concept DOI
+[10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802) (always
+resolves to the latest version).
+
 The paper is a compact theorem paper (12 content pages, two figures, one
 table) with two theorem spines and three corollaries:
 

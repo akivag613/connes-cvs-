@@ -14,10 +14,16 @@ url: "https://github.com/akivag613/connes-cvs-"
 identifiers:
   - type: other
     value: "arXiv:2605.20224"
-    description: "Companion paper (arXiv e-print, math.NT)"
+    description: "Companion paper 1 (arXiv e-print, math.NT)"
   - type: doi
     value: 10.5281/zenodo.19546514
-    description: "Companion paper (Zenodo concept DOI — always resolves to latest version)"
+    description: "Companion paper 1 (Zenodo concept DOI — always resolves to latest version)"
+  - type: other
+    value: "arXiv:2607.02828"
+    description: "Companion paper 2 (arXiv e-print, math.NT / math.SP)"
+  - type: doi
+    value: 10.5281/zenodo.21124802
+    description: "Companion paper 2 (Zenodo concept DOI — always resolves to latest version)"
 preferred-citation:
   type: article
   title: "High-Precision Approximation of Riemann Zeros via the Truncated Weil Form"
