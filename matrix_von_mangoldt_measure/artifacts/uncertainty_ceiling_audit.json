@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "description": "Exact verification of the finite prime-edge uncertainty ceiling: e(x)<=2N (even-moment Vandermonde invertible), the centered finite-difference stencil (-1)^{N-m}C(2N,N+m) uniquely attains e=2N / visibility order 4N+1, and a family realizes 1,5,...,4N+1.",
+  "N_values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    10
+  ],
+  "results": {
+    "1": {
+      "even_moment_det_nonzero": true,
+      "central_stencil_e_equals_2N": true,
+      "blind_nullspace_dim_is_1": true,
+      "central_stencil_visibility_order": 5,
+      "family_orders": [
+        1,
+        5
+      ]
+    },
+    "2": {
+      "even_moment_det_nonzero": true,
+      "central_stencil_e_equals_2N": true,
+      "blind_nullspace_dim_is_1": true,
+      "central_stencil_visibility_order": 9,
+      "family_orders": [
+        1,
+        5,
+        9
+      ]
+    },
+    "3": {
+      "even_moment_det_nonzero": true,
+      "central_stencil_e_equals_2N": true,
+      "blind_nullspace_dim_is_1": true,
+      "central_stencil_visibility_order": 13,
+      "family_orders": [
+        1,
+        5,
+        9,
+        13
+      ]
+    },
+    "4": {
+      "even_moment_det_nonzero": true,
+      "central_stencil_e_equals_2N": true,
+      "blind_nullspace_dim_is_1": true,
+      "central_stencil_visibility_order": 17,
+      "family_orders": [
+        1,
+        5,
+        9,
+        13,
+        17
+      ]
+    },
+    "5": {
+      "even_moment_det_nonzero": true,
+      "central_stencil_e_equals_2N": true,
+      "blind_nullspace_dim_is_1": true,
+      "central_stencil_visibility_order": 21,
+      "family_orders": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21
+      ]
+    },
+    "6": {
+      "even_moment_det_nonzero": true,
+      "central_stencil_e_equals_2N": true,
+      "blind_nullspace_dim_is_1": true,
+      "central_stencil_visibility_order": 25,
+      "family_orders": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25
+      ]
+    },
+    "8": {
+      "even_moment_det_nonzero": true,
+      "central_stencil_e_equals_2N": true,
+      "blind_nullspace_dim_is_1": true,
+      "central_stencil_visibility_order": 33,
+      "family_orders": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29,
+        33
+      ]
+    },
+    "10": {
+      "even_moment_det_nonzero": true,
+      "central_stencil_e_equals_2N": true,
+      "blind_nullspace_dim_is_1": true,
+      "central_stencil_visibility_order": 41,
+      "family_orders": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29,
+        33,
+        37,
+        41
+      ]
+    }
+  },
+  "failures": []
+}

@@ -1,0 +1,1214 @@
+{
+  "status": "PASS",
+  "moduli": [
+    2147483647,
+    1000000007,
+    1000000009,
+    998244353
+  ],
+  "selected_N": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    20,
+    30,
+    40,
+    60,
+    80,
+    100,
+    120,
+    160,
+    200,
+    300,
+    500,
+    800,
+    1000
+  ],
+  "recurrence_polynomial": "P_N(z)=z prod_{k=1}^N (z-k^2)^2",
+  "jet_recurrence": "sum_{j=0}^{2N+1} [z^j]P_N(z) m_{ell+j}=0",
+  "sharp_order": "2N+1 odd jets are necessary and sufficient for the finite event quotient",
+  "runtime_seconds": 14.367039,
+  "cases_by_modulus": {
+    "2147483647": [
+      {
+        "N": 0,
+        "jet_stream_order": 1,
+        "polynomial_degree": 1,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1
+      },
+      {
+        "N": 1,
+        "jet_stream_order": 3,
+        "polynomial_degree": 3,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 2
+      },
+      {
+        "N": 2,
+        "jet_stream_order": 5,
+        "polynomial_degree": 5,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 2147462911
+      },
+      {
+        "N": 3,
+        "jet_stream_order": 7,
+        "polynomial_degree": 7,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 752841527
+      },
+      {
+        "N": 4,
+        "jet_stream_order": 9,
+        "polynomial_degree": 9,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1224195819
+      },
+      {
+        "N": 5,
+        "jet_stream_order": 11,
+        "polynomial_degree": 11,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 449188563
+      },
+      {
+        "N": 6,
+        "jet_stream_order": 13,
+        "polynomial_degree": 13,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 2099224264
+      },
+      {
+        "N": 7,
+        "jet_stream_order": 15,
+        "polynomial_degree": 15,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 417831429
+      },
+      {
+        "N": 8,
+        "jet_stream_order": 17,
+        "polynomial_degree": 17,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 561719721
+      },
+      {
+        "N": 9,
+        "jet_stream_order": 19,
+        "polynomial_degree": 19,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1817779822
+      },
+      {
+        "N": 10,
+        "jet_stream_order": 21,
+        "polynomial_degree": 21,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 2080390625
+      },
+      {
+        "N": 11,
+        "jet_stream_order": 23,
+        "polynomial_degree": 23,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 902686539
+      },
+      {
+        "N": 12,
+        "jet_stream_order": 25,
+        "polynomial_degree": 25,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1990430399
+      },
+      {
+        "N": 13,
+        "jet_stream_order": 27,
+        "polynomial_degree": 27,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1620756346
+      },
+      {
+        "N": 14,
+        "jet_stream_order": 29,
+        "polynomial_degree": 29,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1778293602
+      },
+      {
+        "N": 15,
+        "jet_stream_order": 31,
+        "polynomial_degree": 31,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 453957465
+      },
+      {
+        "N": 20,
+        "jet_stream_order": 41,
+        "polynomial_degree": 41,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1085953094
+      },
+      {
+        "N": 30,
+        "jet_stream_order": 61,
+        "polynomial_degree": 61,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 455067691
+      },
+      {
+        "N": 40,
+        "jet_stream_order": 81,
+        "polynomial_degree": 81,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 228912853
+      },
+      {
+        "N": 60,
+        "jet_stream_order": 121,
+        "polynomial_degree": 121,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1654658513
+      },
+      {
+        "N": 80,
+        "jet_stream_order": 161,
+        "polynomial_degree": 161,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1004345884
+      },
+      {
+        "N": 100,
+        "jet_stream_order": 201,
+        "polynomial_degree": 201,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 2096928797
+      },
+      {
+        "N": 120,
+        "jet_stream_order": 241,
+        "polynomial_degree": 241,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1745915434
+      },
+      {
+        "N": 160,
+        "jet_stream_order": 321,
+        "polynomial_degree": 321,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1787771133
+      },
+      {
+        "N": 200,
+        "jet_stream_order": 401,
+        "polynomial_degree": 401,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1453072827
+      },
+      {
+        "N": 300,
+        "jet_stream_order": 601,
+        "polynomial_degree": 601,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1672128089
+      },
+      {
+        "N": 500,
+        "jet_stream_order": 1001,
+        "polynomial_degree": 1001,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 273077763
+      },
+      {
+        "N": 800,
+        "jet_stream_order": 1601,
+        "polynomial_degree": 1601,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 553151606
+      },
+      {
+        "N": 1000,
+        "jet_stream_order": 2001,
+        "polynomial_degree": 2001,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1880424708
+      }
+    ],
+    "1000000007": [
+      {
+        "N": 0,
+        "jet_stream_order": 1,
+        "polynomial_degree": 1,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1
+      },
+      {
+        "N": 1,
+        "jet_stream_order": 3,
+        "polynomial_degree": 3,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 2
+      },
+      {
+        "N": 2,
+        "jet_stream_order": 5,
+        "polynomial_degree": 5,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 999979271
+      },
+      {
+        "N": 3,
+        "jet_stream_order": 7,
+        "polynomial_degree": 7,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 295261779
+      },
+      {
+        "N": 4,
+        "jet_stream_order": 9,
+        "polynomial_degree": 9,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 855523578
+      },
+      {
+        "N": 5,
+        "jet_stream_order": 11,
+        "polynomial_degree": 11,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 18758350
+      },
+      {
+        "N": 6,
+        "jet_stream_order": 13,
+        "polynomial_degree": 13,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 724644936
+      },
+      {
+        "N": 7,
+        "jet_stream_order": 15,
+        "polynomial_degree": 15,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 249499913
+      },
+      {
+        "N": 8,
+        "jet_stream_order": 17,
+        "polynomial_degree": 17,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 631668211
+      },
+      {
+        "N": 9,
+        "jet_stream_order": 19,
+        "polynomial_degree": 19,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 5737895
+      },
+      {
+        "N": 10,
+        "jet_stream_order": 21,
+        "polynomial_degree": 21,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 189092794
+      },
+      {
+        "N": 11,
+        "jet_stream_order": 23,
+        "polynomial_degree": 23,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 964514039
+      },
+      {
+        "N": 12,
+        "jet_stream_order": 25,
+        "polynomial_degree": 25,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 870799522
+      },
+      {
+        "N": 13,
+        "jet_stream_order": 27,
+        "polynomial_degree": 27,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 409933253
+      },
+      {
+        "N": 14,
+        "jet_stream_order": 29,
+        "polynomial_degree": 29,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 561769557
+      },
+      {
+        "N": 15,
+        "jet_stream_order": 31,
+        "polynomial_degree": 31,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 629902919
+      },
+      {
+        "N": 20,
+        "jet_stream_order": 41,
+        "polynomial_degree": 41,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 398583372
+      },
+      {
+        "N": 30,
+        "jet_stream_order": 61,
+        "polynomial_degree": 61,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 275612643
+      },
+      {
+        "N": 40,
+        "jet_stream_order": 81,
+        "polynomial_degree": 81,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 769535731
+      },
+      {
+        "N": 60,
+        "jet_stream_order": 121,
+        "polynomial_degree": 121,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 518491349
+      },
+      {
+        "N": 80,
+        "jet_stream_order": 161,
+        "polynomial_degree": 161,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 172844671
+      },
+      {
+        "N": 100,
+        "jet_stream_order": 201,
+        "polynomial_degree": 201,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 192535035
+      },
+      {
+        "N": 120,
+        "jet_stream_order": 241,
+        "polynomial_degree": 241,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 156272214
+      },
+      {
+        "N": 160,
+        "jet_stream_order": 321,
+        "polynomial_degree": 321,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 553698855
+      },
+      {
+        "N": 200,
+        "jet_stream_order": 401,
+        "polynomial_degree": 401,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 442051825
+      },
+      {
+        "N": 300,
+        "jet_stream_order": 601,
+        "polynomial_degree": 601,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 564272840
+      },
+      {
+        "N": 500,
+        "jet_stream_order": 1001,
+        "polynomial_degree": 1001,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 920762582
+      },
+      {
+        "N": 800,
+        "jet_stream_order": 1601,
+        "polynomial_degree": 1601,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 614163592
+      },
+      {
+        "N": 1000,
+        "jet_stream_order": 2001,
+        "polynomial_degree": 2001,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 133309766
+      }
+    ],
+    "1000000009": [
+      {
+        "N": 0,
+        "jet_stream_order": 1,
+        "polynomial_degree": 1,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1
+      },
+      {
+        "N": 1,
+        "jet_stream_order": 3,
+        "polynomial_degree": 3,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 2
+      },
+      {
+        "N": 2,
+        "jet_stream_order": 5,
+        "polynomial_degree": 5,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 999979273
+      },
+      {
+        "N": 3,
+        "jet_stream_order": 7,
+        "polynomial_degree": 7,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 295416573
+      },
+      {
+        "N": 4,
+        "jet_stream_order": 9,
+        "polynomial_degree": 9,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 679941974
+      },
+      {
+        "N": 5,
+        "jet_stream_order": 11,
+        "polynomial_degree": 11,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 689301138
+      },
+      {
+        "N": 6,
+        "jet_stream_order": 13,
+        "polynomial_degree": 13,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 796525901
+      },
+      {
+        "N": 7,
+        "jet_stream_order": 15,
+        "polynomial_degree": 15,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 454448736
+      },
+      {
+        "N": 8,
+        "jet_stream_order": 17,
+        "polynomial_degree": 17,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 833753742
+      },
+      {
+        "N": 9,
+        "jet_stream_order": 19,
+        "polynomial_degree": 19,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 524066298
+      },
+      {
+        "N": 10,
+        "jet_stream_order": 21,
+        "polynomial_degree": 21,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 887773537
+      },
+      {
+        "N": 11,
+        "jet_stream_order": 23,
+        "polynomial_degree": 23,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 117926787
+      },
+      {
+        "N": 12,
+        "jet_stream_order": 25,
+        "polynomial_degree": 25,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 522322705
+      },
+      {
+        "N": 13,
+        "jet_stream_order": 27,
+        "polynomial_degree": 27,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 361169366
+      },
+      {
+        "N": 14,
+        "jet_stream_order": 29,
+        "polynomial_degree": 29,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 170652289
+      },
+      {
+        "N": 15,
+        "jet_stream_order": 31,
+        "polynomial_degree": 31,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 329733438
+      },
+      {
+        "N": 20,
+        "jet_stream_order": 41,
+        "polynomial_degree": 41,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 165595089
+      },
+      {
+        "N": 30,
+        "jet_stream_order": 61,
+        "polynomial_degree": 61,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 559816442
+      },
+      {
+        "N": 40,
+        "jet_stream_order": 81,
+        "polynomial_degree": 81,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 763811456
+      },
+      {
+        "N": 60,
+        "jet_stream_order": 121,
+        "polynomial_degree": 121,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 302851865
+      },
+      {
+        "N": 80,
+        "jet_stream_order": 161,
+        "polynomial_degree": 161,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 95854593
+      },
+      {
+        "N": 100,
+        "jet_stream_order": 201,
+        "polynomial_degree": 201,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 899313613
+      },
+      {
+        "N": 120,
+        "jet_stream_order": 241,
+        "polynomial_degree": 241,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 783771318
+      },
+      {
+        "N": 160,
+        "jet_stream_order": 321,
+        "polynomial_degree": 321,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 886842176
+      },
+      {
+        "N": 200,
+        "jet_stream_order": 401,
+        "polynomial_degree": 401,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 278910394
+      },
+      {
+        "N": 300,
+        "jet_stream_order": 601,
+        "polynomial_degree": 601,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 517997260
+      },
+      {
+        "N": 500,
+        "jet_stream_order": 1001,
+        "polynomial_degree": 1001,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 202164974
+      },
+      {
+        "N": 800,
+        "jet_stream_order": 1601,
+        "polynomial_degree": 1601,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 571073874
+      },
+      {
+        "N": 1000,
+        "jet_stream_order": 2001,
+        "polynomial_degree": 2001,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 579680525
+      }
+    ],
+    "998244353": [
+      {
+        "N": 0,
+        "jet_stream_order": 1,
+        "polynomial_degree": 1,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 1
+      },
+      {
+        "N": 1,
+        "jet_stream_order": 3,
+        "polynomial_degree": 3,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 2
+      },
+      {
+        "N": 2,
+        "jet_stream_order": 5,
+        "polynomial_degree": 5,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 998223617
+      },
+      {
+        "N": 3,
+        "jet_stream_order": 7,
+        "polynomial_degree": 7,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 174141149
+      },
+      {
+        "N": 4,
+        "jet_stream_order": 9,
+        "polynomial_degree": 9,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 716547379
+      },
+      {
+        "N": 5,
+        "jet_stream_order": 11,
+        "polynomial_degree": 11,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 52237968
+      },
+      {
+        "N": 6,
+        "jet_stream_order": 13,
+        "polynomial_degree": 13,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 968038678
+      },
+      {
+        "N": 7,
+        "jet_stream_order": 15,
+        "polynomial_degree": 15,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 132120415
+      },
+      {
+        "N": 8,
+        "jet_stream_order": 17,
+        "polynomial_degree": 17,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 164619490
+      },
+      {
+        "N": 9,
+        "jet_stream_order": 19,
+        "polynomial_degree": 19,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 961283531
+      },
+      {
+        "N": 10,
+        "jet_stream_order": 21,
+        "polynomial_degree": 21,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 888032853
+      },
+      {
+        "N": 11,
+        "jet_stream_order": 23,
+        "polynomial_degree": 23,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 79989613
+      },
+      {
+        "N": 12,
+        "jet_stream_order": 25,
+        "polynomial_degree": 25,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 901508733
+      },
+      {
+        "N": 13,
+        "jet_stream_order": 27,
+        "polynomial_degree": 27,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 279328629
+      },
+      {
+        "N": 14,
+        "jet_stream_order": 29,
+        "polynomial_degree": 29,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 498743681
+      },
+      {
+        "N": 15,
+        "jet_stream_order": 31,
+        "polynomial_degree": 31,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 938347909
+      },
+      {
+        "N": 20,
+        "jet_stream_order": 41,
+        "polynomial_degree": 41,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 470494286
+      },
+      {
+        "N": 30,
+        "jet_stream_order": 61,
+        "polynomial_degree": 61,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 179916451
+      },
+      {
+        "N": 40,
+        "jet_stream_order": 81,
+        "polynomial_degree": 81,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 209026589
+      },
+      {
+        "N": 60,
+        "jet_stream_order": 121,
+        "polynomial_degree": 121,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 21263516
+      },
+      {
+        "N": 80,
+        "jet_stream_order": 161,
+        "polynomial_degree": 161,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 504094699
+      },
+      {
+        "N": 100,
+        "jet_stream_order": 201,
+        "polynomial_degree": 201,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 878951333
+      },
+      {
+        "N": 120,
+        "jet_stream_order": 241,
+        "polynomial_degree": 241,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 793536409
+      },
+      {
+        "N": 160,
+        "jet_stream_order": 321,
+        "polynomial_degree": 321,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 630578083
+      },
+      {
+        "N": 200,
+        "jet_stream_order": 401,
+        "polynomial_degree": 401,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 411149348
+      },
+      {
+        "N": 300,
+        "jet_stream_order": 601,
+        "polynomial_degree": 601,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 296382022
+      },
+      {
+        "N": 500,
+        "jet_stream_order": 1001,
+        "polynomial_degree": 1001,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 239351082
+      },
+      {
+        "N": 800,
+        "jet_stream_order": 1601,
+        "polynomial_degree": 1601,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 384201029
+      },
+      {
+        "N": 1000,
+        "jet_stream_order": 2001,
+        "polynomial_degree": 2001,
+        "leading_coefficient": 1,
+        "constant_coefficient": 0,
+        "root_residue_max": 0,
+        "double_root_residue_max": 0,
+        "sharpness_determinant_mod": 344829858
+      }
+    ]
+  }
+}

@@ -1,0 +1,761 @@
+{
+  "status": "PASS",
+  "modulus": 2147483647,
+  "selected_N": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    20,
+    30,
+    40,
+    60,
+    80,
+    100,
+    120,
+    160,
+    200
+  ],
+  "transport_scales": [
+    2,
+    3,
+    5,
+    17
+  ],
+  "runtime_seconds": 51.01677,
+  "cases": [
+    {
+      "N": 0,
+      "dimension": 1,
+      "odd_jet_rank_mod": 1,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 1
+        },
+        {
+          "scale": 3,
+          "rank_mod": 1
+        },
+        {
+          "scale": 5,
+          "rank_mod": 1
+        },
+        {
+          "scale": 17,
+          "rank_mod": 1
+        }
+      ],
+      "extremizer": null
+    },
+    {
+      "N": 1,
+      "dimension": 3,
+      "odd_jet_rank_mod": 3,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 3
+        },
+        {
+          "scale": 3,
+          "rank_mod": 3
+        },
+        {
+          "scale": 5,
+          "rank_mod": 3
+        },
+        {
+          "scale": 17,
+          "rank_mod": 3
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 1,
+        "top_moment_mod": 2,
+        "expected_top_moment_mod": 2
+      }
+    },
+    {
+      "N": 2,
+      "dimension": 5,
+      "odd_jet_rank_mod": 5,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 5
+        },
+        {
+          "scale": 3,
+          "rank_mod": 5
+        },
+        {
+          "scale": 5,
+          "rank_mod": 5
+        },
+        {
+          "scale": 17,
+          "rank_mod": 5
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 2,
+        "top_moment_mod": 24,
+        "expected_top_moment_mod": 24
+      }
+    },
+    {
+      "N": 3,
+      "dimension": 7,
+      "odd_jet_rank_mod": 7,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 7
+        },
+        {
+          "scale": 3,
+          "rank_mod": 7
+        },
+        {
+          "scale": 5,
+          "rank_mod": 7
+        },
+        {
+          "scale": 17,
+          "rank_mod": 7
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 3,
+        "top_moment_mod": 720,
+        "expected_top_moment_mod": 720
+      }
+    },
+    {
+      "N": 4,
+      "dimension": 9,
+      "odd_jet_rank_mod": 9,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 9
+        },
+        {
+          "scale": 3,
+          "rank_mod": 9
+        },
+        {
+          "scale": 5,
+          "rank_mod": 9
+        },
+        {
+          "scale": 17,
+          "rank_mod": 9
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 4,
+        "top_moment_mod": 40320,
+        "expected_top_moment_mod": 40320
+      }
+    },
+    {
+      "N": 5,
+      "dimension": 11,
+      "odd_jet_rank_mod": 11,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 11
+        },
+        {
+          "scale": 3,
+          "rank_mod": 11
+        },
+        {
+          "scale": 5,
+          "rank_mod": 11
+        },
+        {
+          "scale": 17,
+          "rank_mod": 11
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 5,
+        "top_moment_mod": 3628800,
+        "expected_top_moment_mod": 3628800
+      }
+    },
+    {
+      "N": 6,
+      "dimension": 13,
+      "odd_jet_rank_mod": 13,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 13
+        },
+        {
+          "scale": 3,
+          "rank_mod": 13
+        },
+        {
+          "scale": 5,
+          "rank_mod": 13
+        },
+        {
+          "scale": 17,
+          "rank_mod": 13
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 6,
+        "top_moment_mod": 479001600,
+        "expected_top_moment_mod": 479001600
+      }
+    },
+    {
+      "N": 7,
+      "dimension": 15,
+      "odd_jet_rank_mod": 15,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 15
+        },
+        {
+          "scale": 3,
+          "rank_mod": 15
+        },
+        {
+          "scale": 5,
+          "rank_mod": 15
+        },
+        {
+          "scale": 17,
+          "rank_mod": 15
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 7,
+        "top_moment_mod": 1278945320,
+        "expected_top_moment_mod": 1278945320
+      }
+    },
+    {
+      "N": 8,
+      "dimension": 17,
+      "odd_jet_rank_mod": 17,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 17
+        },
+        {
+          "scale": 3,
+          "rank_mod": 17
+        },
+        {
+          "scale": 5,
+          "rank_mod": 17
+        },
+        {
+          "scale": 17,
+          "rank_mod": 17
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 8,
+        "top_moment_mod": 2004198926,
+        "expected_top_moment_mod": 2004198926
+      }
+    },
+    {
+      "N": 9,
+      "dimension": 19,
+      "odd_jet_rank_mod": 19,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 19
+        },
+        {
+          "scale": 3,
+          "rank_mod": 19
+        },
+        {
+          "scale": 5,
+          "rank_mod": 19
+        },
+        {
+          "scale": 17,
+          "rank_mod": 19
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 9,
+        "top_moment_mod": 1252031961,
+        "expected_top_moment_mod": 1252031961
+      }
+    },
+    {
+      "N": 10,
+      "dimension": 21,
+      "odd_jet_rank_mod": 21,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 21
+        },
+        {
+          "scale": 3,
+          "rank_mod": 21
+        },
+        {
+          "scale": 5,
+          "rank_mod": 21
+        },
+        {
+          "scale": 17,
+          "rank_mod": 21
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 10,
+        "top_moment_mod": 1178259193,
+        "expected_top_moment_mod": 1178259193
+      }
+    },
+    {
+      "N": 11,
+      "dimension": 23,
+      "odd_jet_rank_mod": 23,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 23
+        },
+        {
+          "scale": 3,
+          "rank_mod": 23
+        },
+        {
+          "scale": 5,
+          "rank_mod": 23
+        },
+        {
+          "scale": 17,
+          "rank_mod": 23
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 11,
+        "top_moment_mod": 1042384475,
+        "expected_top_moment_mod": 1042384475
+      }
+    },
+    {
+      "N": 12,
+      "dimension": 25,
+      "odd_jet_rank_mod": 25,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 25
+        },
+        {
+          "scale": 3,
+          "rank_mod": 25
+        },
+        {
+          "scale": 5,
+          "rank_mod": 25
+        },
+        {
+          "scale": 17,
+          "rank_mod": 25
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 12,
+        "top_moment_mod": 2018096451,
+        "expected_top_moment_mod": 2018096451
+      }
+    },
+    {
+      "N": 13,
+      "dimension": 27,
+      "odd_jet_rank_mod": 27,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 27
+        },
+        {
+          "scale": 3,
+          "rank_mod": 27
+        },
+        {
+          "scale": 5,
+          "rank_mod": 27
+        },
+        {
+          "scale": 17,
+          "rank_mod": 27
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 13,
+        "top_moment_mod": 1797668480,
+        "expected_top_moment_mod": 1797668480
+      }
+    },
+    {
+      "N": 14,
+      "dimension": 29,
+      "odd_jet_rank_mod": 29,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 29
+        },
+        {
+          "scale": 3,
+          "rank_mod": 29
+        },
+        {
+          "scale": 5,
+          "rank_mod": 29
+        },
+        {
+          "scale": 17,
+          "rank_mod": 29
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 14,
+        "top_moment_mod": 1827705976,
+        "expected_top_moment_mod": 1827705976
+      }
+    },
+    {
+      "N": 15,
+      "dimension": 31,
+      "odd_jet_rank_mod": 31,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 31
+        },
+        {
+          "scale": 3,
+          "rank_mod": 31
+        },
+        {
+          "scale": 5,
+          "rank_mod": 31
+        },
+        {
+          "scale": 17,
+          "rank_mod": 31
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 15,
+        "top_moment_mod": 966300340,
+        "expected_top_moment_mod": 966300340
+      }
+    },
+    {
+      "N": 20,
+      "dimension": 41,
+      "odd_jet_rank_mod": 41,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 41
+        },
+        {
+          "scale": 3,
+          "rank_mod": 41
+        },
+        {
+          "scale": 5,
+          "rank_mod": 41
+        },
+        {
+          "scale": 17,
+          "rank_mod": 41
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 20,
+        "top_moment_mod": 859298254,
+        "expected_top_moment_mod": 859298254
+      }
+    },
+    {
+      "N": 30,
+      "dimension": 61,
+      "odd_jet_rank_mod": 61,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 61
+        },
+        {
+          "scale": 3,
+          "rank_mod": 61
+        },
+        {
+          "scale": 5,
+          "rank_mod": 61
+        },
+        {
+          "scale": 17,
+          "rank_mod": 61
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 30,
+        "top_moment_mod": 1111590262,
+        "expected_top_moment_mod": 1111590262
+      }
+    },
+    {
+      "N": 40,
+      "dimension": 81,
+      "odd_jet_rank_mod": 81,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 81
+        },
+        {
+          "scale": 3,
+          "rank_mod": 81
+        },
+        {
+          "scale": 5,
+          "rank_mod": 81
+        },
+        {
+          "scale": 17,
+          "rank_mod": 81
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 40,
+        "top_moment_mod": 1167619574,
+        "expected_top_moment_mod": 1167619574
+      }
+    },
+    {
+      "N": 60,
+      "dimension": 121,
+      "odd_jet_rank_mod": 121,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 121
+        },
+        {
+          "scale": 3,
+          "rank_mod": 121
+        },
+        {
+          "scale": 5,
+          "rank_mod": 121
+        },
+        {
+          "scale": 17,
+          "rank_mod": 121
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 60,
+        "top_moment_mod": 1143399349,
+        "expected_top_moment_mod": 1143399349
+      }
+    },
+    {
+      "N": 80,
+      "dimension": 161,
+      "odd_jet_rank_mod": 161,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 161
+        },
+        {
+          "scale": 3,
+          "rank_mod": 161
+        },
+        {
+          "scale": 5,
+          "rank_mod": 161
+        },
+        {
+          "scale": 17,
+          "rank_mod": 161
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 80,
+        "top_moment_mod": 1559232628,
+        "expected_top_moment_mod": 1559232628
+      }
+    },
+    {
+      "N": 100,
+      "dimension": 201,
+      "odd_jet_rank_mod": 201,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 201
+        },
+        {
+          "scale": 3,
+          "rank_mod": 201
+        },
+        {
+          "scale": 5,
+          "rank_mod": 201
+        },
+        {
+          "scale": 17,
+          "rank_mod": 201
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 100,
+        "top_moment_mod": 2014899752,
+        "expected_top_moment_mod": 2014899752
+      }
+    },
+    {
+      "N": 120,
+      "dimension": 241,
+      "odd_jet_rank_mod": 241,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 241
+        },
+        {
+          "scale": 3,
+          "rank_mod": 241
+        },
+        {
+          "scale": 5,
+          "rank_mod": 241
+        },
+        {
+          "scale": 17,
+          "rank_mod": 241
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 120,
+        "top_moment_mod": 1428722374,
+        "expected_top_moment_mod": 1428722374
+      }
+    },
+    {
+      "N": 160,
+      "dimension": 321,
+      "odd_jet_rank_mod": 321,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 321
+        },
+        {
+          "scale": 3,
+          "rank_mod": 321
+        },
+        {
+          "scale": 5,
+          "rank_mod": 321
+        },
+        {
+          "scale": 17,
+          "rank_mod": 321
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 160,
+        "top_moment_mod": 806333044,
+        "expected_top_moment_mod": 806333044
+      }
+    },
+    {
+      "N": 200,
+      "dimension": 401,
+      "odd_jet_rank_mod": 401,
+      "first_jump_profile": "closed formula gives derivative 2 in every entry",
+      "tau_transport": [
+        {
+          "scale": 2,
+          "rank_mod": 401
+        },
+        {
+          "scale": 3,
+          "rank_mod": 401
+        },
+        {
+          "scale": 5,
+          "rank_mod": 401
+        },
+        {
+          "scale": 17,
+          "rank_mod": 401
+        }
+      ],
+      "extremizer": {
+        "moment_rank_mod": 200,
+        "top_moment_mod": 378198466,
+        "expected_top_moment_mod": 378198466
+      }
+    }
+  ]
+}

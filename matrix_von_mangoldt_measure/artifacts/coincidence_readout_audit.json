@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "description": "Coincidence-averaged weight readout: exact clean recovery + rank-one (sv2/sv1) certificate, and Monte-Carlo (2N+1)^2 variance reduction of the matched average vs a single entry.",
+  "sigma": 0.01,
+  "trials": 40000,
+  "results": [
+    {
+      "N": 1,
+      "d": 3,
+      "clean_recovery_err": 0.0,
+      "rank_one_sv2_over_sv1": 9.536151122756831e-18,
+      "var_single": 0.0001004777802048323,
+      "var_matched": 1.1092520475300057e-05,
+      "empirical_ratio": 9.058155937468698,
+      "predicted_ratio_d2": 9
+    },
+    {
+      "N": 3,
+      "d": 7,
+      "clean_recovery_err": 1.1102230246251565e-16,
+      "rank_one_sv2_over_sv1": 1.0576076039261116e-16,
+      "var_single": 9.968238134482226e-05,
+      "var_matched": 2.0282691928820736e-06,
+      "empirical_ratio": 49.14652438376701,
+      "predicted_ratio_d2": 49
+    },
+    {
+      "N": 5,
+      "d": 11,
+      "clean_recovery_err": 0.0,
+      "rank_one_sv2_over_sv1": 3.3608763633957846e-17,
+      "var_single": 0.00010033986140509224,
+      "var_matched": 8.111354915822553e-07,
+      "empirical_ratio": 123.70296016681822,
+      "predicted_ratio_d2": 121
+    },
+    {
+      "N": 10,
+      "d": 21,
+      "clean_recovery_err": 0.0,
+      "rank_one_sv2_over_sv1": 8.051419867030514e-17,
+      "var_single": 0.0001000410062691987,
+      "var_matched": 2.2954243229647398e-07,
+      "empirical_ratio": 435.8279437415173,
+      "predicted_ratio_d2": 441
+    }
+  ],
+  "failures": []
+}

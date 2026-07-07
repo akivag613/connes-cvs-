@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "description": "Depth results: L3 divided-difference identity, L4 second-order event law (+4 Lambda/(sqrt q (log q)^2) 11^T, PSD), L1 Krein boundary-mass identity 1/W_+ - 1/W_- = -a_q (z-independent).",
+  "results": {
+    "L3_DD_identity_max_err": 2.7755575615628914e-17,
+    "L4_second_order_max_rel_err": 6.513040762416612e-05,
+    "L4_positive_sign": true,
+    "L1_krein_increment_max_err": 2.475797344914099e-14,
+    "L1_lambda_recovery_max_err": 4.463096558993129e-14
+  },
+  "failures": []
+}

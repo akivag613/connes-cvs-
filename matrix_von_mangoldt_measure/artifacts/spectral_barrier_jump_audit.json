@@ -1,0 +1,2076 @@
+{
+  "status": "PASS",
+  "claim": "For Q positive definite and event jump -a vv^T, each elementary spectral barrier has strictly negative derivative jump.",
+  "dimensions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "seeds": [
+    1,
+    2,
+    5,
+    11,
+    17
+  ],
+  "cases": [
+    {
+      "dimension": 1,
+      "seed": 1,
+      "det_Q": 13,
+      "min_positive_newton_quadratic": 1,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 13,
+          "derivative_jump_for_a_1": -1,
+          "newton_quadratic": 1
+        }
+      ]
+    },
+    {
+      "dimension": 1,
+      "seed": 2,
+      "det_Q": 21,
+      "min_positive_newton_quadratic": 1,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 21,
+          "derivative_jump_for_a_1": -1,
+          "newton_quadratic": 1
+        }
+      ]
+    },
+    {
+      "dimension": 1,
+      "seed": 5,
+      "det_Q": 12,
+      "min_positive_newton_quadratic": 1,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 12,
+          "derivative_jump_for_a_1": -1,
+          "newton_quadratic": 1
+        }
+      ]
+    },
+    {
+      "dimension": 1,
+      "seed": 11,
+      "det_Q": 30,
+      "min_positive_newton_quadratic": 1,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 30,
+          "derivative_jump_for_a_1": -1,
+          "newton_quadratic": 1
+        }
+      ]
+    },
+    {
+      "dimension": 1,
+      "seed": 17,
+      "det_Q": 21,
+      "min_positive_newton_quadratic": 1,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 21,
+          "derivative_jump_for_a_1": -1,
+          "newton_quadratic": 1
+        }
+      ]
+    },
+    {
+      "dimension": 2,
+      "seed": 1,
+      "det_Q": 178,
+      "min_positive_newton_quadratic": 2,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 39,
+          "derivative_jump_for_a_1": -2,
+          "newton_quadratic": 2
+        },
+        {
+          "r": 2,
+          "e_r_Q": 178,
+          "derivative_jump_for_a_1": -67,
+          "newton_quadratic": 67
+        }
+      ]
+    },
+    {
+      "dimension": 2,
+      "seed": 2,
+      "det_Q": 360,
+      "min_positive_newton_quadratic": 2,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 45,
+          "derivative_jump_for_a_1": -2,
+          "newton_quadratic": 2
+        },
+        {
+          "r": 2,
+          "e_r_Q": 360,
+          "derivative_jump_for_a_1": -69,
+          "newton_quadratic": 69
+        }
+      ]
+    },
+    {
+      "dimension": 2,
+      "seed": 5,
+      "det_Q": 189,
+      "min_positive_newton_quadratic": 2,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 30,
+          "derivative_jump_for_a_1": -2,
+          "newton_quadratic": 2
+        },
+        {
+          "r": 2,
+          "e_r_Q": 189,
+          "derivative_jump_for_a_1": -30,
+          "newton_quadratic": 30
+        }
+      ]
+    },
+    {
+      "dimension": 2,
+      "seed": 11,
+      "det_Q": 846,
+      "min_positive_newton_quadratic": 2,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 63,
+          "derivative_jump_for_a_1": -2,
+          "newton_quadratic": 2
+        },
+        {
+          "r": 2,
+          "e_r_Q": 846,
+          "derivative_jump_for_a_1": -87,
+          "newton_quadratic": 87
+        }
+      ]
+    },
+    {
+      "dimension": 2,
+      "seed": 17,
+      "det_Q": 1134,
+      "min_positive_newton_quadratic": 2,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 69,
+          "derivative_jump_for_a_1": -2,
+          "newton_quadratic": 2
+        },
+        {
+          "r": 2,
+          "e_r_Q": 1134,
+          "derivative_jump_for_a_1": -81,
+          "newton_quadratic": 81
+        }
+      ]
+    },
+    {
+      "dimension": 3,
+      "seed": 1,
+      "det_Q": 4932,
+      "min_positive_newton_quadratic": 3,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 79,
+          "derivative_jump_for_a_1": -3,
+          "newton_quadratic": 3
+        },
+        {
+          "r": 2,
+          "e_r_Q": 1430,
+          "derivative_jump_for_a_1": -204,
+          "newton_quadratic": 204
+        },
+        {
+          "r": 3,
+          "e_r_Q": 4932,
+          "derivative_jump_for_a_1": -2780,
+          "newton_quadratic": 2780
+        }
+      ]
+    },
+    {
+      "dimension": 3,
+      "seed": 2,
+      "det_Q": 10740,
+      "min_positive_newton_quadratic": 3,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 94,
+          "derivative_jump_for_a_1": -3,
+          "newton_quadratic": 3
+        },
+        {
+          "r": 2,
+          "e_r_Q": 2321,
+          "derivative_jump_for_a_1": -264,
+          "newton_quadratic": 264
+        },
+        {
+          "r": 3,
+          "e_r_Q": 10740,
+          "derivative_jump_for_a_1": -5381,
+          "newton_quadratic": 5381
+        }
+      ]
+    },
+    {
+      "dimension": 3,
+      "seed": 5,
+      "det_Q": 5418,
+      "min_positive_newton_quadratic": 3,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 85,
+          "derivative_jump_for_a_1": -3,
+          "newton_quadratic": 3
+        },
+        {
+          "r": 2,
+          "e_r_Q": 1286,
+          "derivative_jump_for_a_1": -228,
+          "newton_quadratic": 228
+        },
+        {
+          "r": 3,
+          "e_r_Q": 5418,
+          "derivative_jump_for_a_1": -1808,
+          "newton_quadratic": 1808
+        }
+      ]
+    },
+    {
+      "dimension": 3,
+      "seed": 11,
+      "det_Q": 39972,
+      "min_positive_newton_quadratic": 3,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 121,
+          "derivative_jump_for_a_1": -3,
+          "newton_quadratic": 3
+        },
+        {
+          "r": 2,
+          "e_r_Q": 4256,
+          "derivative_jump_for_a_1": -318,
+          "newton_quadratic": 318
+        },
+        {
+          "r": 3,
+          "e_r_Q": 39972,
+          "derivative_jump_for_a_1": -8000,
+          "newton_quadratic": 8000
+        }
+      ]
+    },
+    {
+      "dimension": 3,
+      "seed": 17,
+      "det_Q": 69828,
+      "min_positive_newton_quadratic": 3,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 139,
+          "derivative_jump_for_a_1": -3,
+          "newton_quadratic": 3
+        },
+        {
+          "r": 2,
+          "e_r_Q": 5804,
+          "derivative_jump_for_a_1": -354,
+          "newton_quadratic": 354
+        },
+        {
+          "r": 3,
+          "e_r_Q": 69828,
+          "derivative_jump_for_a_1": -9980,
+          "newton_quadratic": 9980
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "seed": 1,
+      "det_Q": 160836,
+      "min_positive_newton_quadratic": 4,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 132,
+          "derivative_jump_for_a_1": -4,
+          "newton_quadratic": 4
+        },
+        {
+          "r": 2,
+          "e_r_Q": 5035,
+          "derivative_jump_for_a_1": -480,
+          "newton_quadratic": 480
+        },
+        {
+          "r": 3,
+          "e_r_Q": 52250,
+          "derivative_jump_for_a_1": -15514,
+          "newton_quadratic": 15514
+        },
+        {
+          "r": 4,
+          "e_r_Q": 160836,
+          "derivative_jump_for_a_1": -86012,
+          "newton_quadratic": 86012
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "seed": 2,
+      "det_Q": 179187,
+      "min_positive_newton_quadratic": 4,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 122,
+          "derivative_jump_for_a_1": -4,
+          "newton_quadratic": 4
+        },
+        {
+          "r": 2,
+          "e_r_Q": 4574,
+          "derivative_jump_for_a_1": -456,
+          "newton_quadratic": 456
+        },
+        {
+          "r": 3,
+          "e_r_Q": 53167,
+          "derivative_jump_for_a_1": -14794,
+          "newton_quadratic": 14794
+        },
+        {
+          "r": 4,
+          "e_r_Q": 179187,
+          "derivative_jump_for_a_1": -103819,
+          "newton_quadratic": 103819
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "seed": 5,
+      "det_Q": 291258,
+      "min_positive_newton_quadratic": 4,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 155,
+          "derivative_jump_for_a_1": -4,
+          "newton_quadratic": 4
+        },
+        {
+          "r": 2,
+          "e_r_Q": 6146,
+          "derivative_jump_for_a_1": -555,
+          "newton_quadratic": 555
+        },
+        {
+          "r": 3,
+          "e_r_Q": 75850,
+          "derivative_jump_for_a_1": -16324,
+          "newton_quadratic": 16324
+        },
+        {
+          "r": 4,
+          "e_r_Q": 291258,
+          "derivative_jump_for_a_1": -104848,
+          "newton_quadratic": 104848
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "seed": 11,
+      "det_Q": 1123683,
+      "min_positive_newton_quadratic": 4,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 158,
+          "derivative_jump_for_a_1": -4,
+          "newton_quadratic": 4
+        },
+        {
+          "r": 2,
+          "e_r_Q": 8354,
+          "derivative_jump_for_a_1": -564,
+          "newton_quadratic": 564
+        },
+        {
+          "r": 3,
+          "e_r_Q": 168061,
+          "derivative_jump_for_a_1": -23974,
+          "newton_quadratic": 23974
+        },
+        {
+          "r": 4,
+          "e_r_Q": 1123683,
+          "derivative_jump_for_a_1": -276817,
+          "newton_quadratic": 276817
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "seed": 17,
+      "det_Q": 4785465,
+      "min_positive_newton_quadratic": 4,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 206,
+          "derivative_jump_for_a_1": -4,
+          "newton_quadratic": 4
+        },
+        {
+          "r": 2,
+          "e_r_Q": 15188,
+          "derivative_jump_for_a_1": -708,
+          "newton_quadratic": 708
+        },
+        {
+          "r": 3,
+          "e_r_Q": 465283,
+          "derivative_jump_for_a_1": -41002,
+          "newton_quadratic": 41002
+        },
+        {
+          "r": 4,
+          "e_r_Q": 4785465,
+          "derivative_jump_for_a_1": -774343,
+          "newton_quadratic": 774343
+        }
+      ]
+    },
+    {
+      "dimension": 5,
+      "seed": 1,
+      "det_Q": 7801667,
+      "min_positive_newton_quadratic": 5,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 172,
+          "derivative_jump_for_a_1": -5,
+          "newton_quadratic": 5
+        },
+        {
+          "r": 2,
+          "e_r_Q": 10132,
+          "derivative_jump_for_a_1": -804,
+          "newton_quadratic": 804
+        },
+        {
+          "r": 3,
+          "e_r_Q": 246057,
+          "derivative_jump_for_a_1": -42186,
+          "newton_quadratic": 42186
+        },
+        {
+          "r": 4,
+          "e_r_Q": 2425345,
+          "derivative_jump_for_a_1": -814158,
+          "newton_quadratic": 814158
+        },
+        {
+          "r": 5,
+          "e_r_Q": 7801667,
+          "derivative_jump_for_a_1": -4617517,
+          "newton_quadratic": 4617517
+        }
+      ]
+    },
+    {
+      "dimension": 5,
+      "seed": 2,
+      "det_Q": 16357518,
+      "min_positive_newton_quadratic": 5,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 203,
+          "derivative_jump_for_a_1": -5,
+          "newton_quadratic": 5
+        },
+        {
+          "r": 2,
+          "e_r_Q": 14528,
+          "derivative_jump_for_a_1": -950,
+          "newton_quadratic": 950
+        },
+        {
+          "r": 3,
+          "e_r_Q": 433615,
+          "derivative_jump_for_a_1": -61242,
+          "newton_quadratic": 61242
+        },
+        {
+          "r": 4,
+          "e_r_Q": 4850745,
+          "derivative_jump_for_a_1": -1508408,
+          "newton_quadratic": 1508408
+        },
+        {
+          "r": 5,
+          "e_r_Q": 16357518,
+          "derivative_jump_for_a_1": -10081329,
+          "newton_quadratic": 10081329
+        }
+      ]
+    },
+    {
+      "dimension": 5,
+      "seed": 5,
+      "det_Q": 11662812,
+      "min_positive_newton_quadratic": 5,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 221,
+          "derivative_jump_for_a_1": -5,
+          "newton_quadratic": 5
+        },
+        {
+          "r": 2,
+          "e_r_Q": 14009,
+          "derivative_jump_for_a_1": -1028,
+          "newton_quadratic": 1028
+        },
+        {
+          "r": 3,
+          "e_r_Q": 345451,
+          "derivative_jump_for_a_1": -54555,
+          "newton_quadratic": 54555
+        },
+        {
+          "r": 4,
+          "e_r_Q": 3424746,
+          "derivative_jump_for_a_1": -949346,
+          "newton_quadratic": 949346
+        },
+        {
+          "r": 5,
+          "e_r_Q": 11662812,
+          "derivative_jump_for_a_1": -4840950,
+          "newton_quadratic": 4840950
+        }
+      ]
+    },
+    {
+      "dimension": 5,
+      "seed": 11,
+      "det_Q": 107118882,
+      "min_positive_newton_quadratic": 5,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 248,
+          "derivative_jump_for_a_1": -5,
+          "newton_quadratic": 5
+        },
+        {
+          "r": 2,
+          "e_r_Q": 22646,
+          "derivative_jump_for_a_1": -1130,
+          "newton_quadratic": 1130
+        },
+        {
+          "r": 3,
+          "e_r_Q": 931819,
+          "derivative_jump_for_a_1": -89322,
+          "newton_quadratic": 89322
+        },
+        {
+          "r": 4,
+          "e_r_Q": 16810872,
+          "derivative_jump_for_a_1": -2856194,
+          "newton_quadratic": 2856194
+        },
+        {
+          "r": 5,
+          "e_r_Q": 107118882,
+          "derivative_jump_for_a_1": -29342958,
+          "newton_quadratic": 29342958
+        }
+      ]
+    },
+    {
+      "dimension": 5,
+      "seed": 17,
+      "det_Q": 225360513,
+      "min_positive_newton_quadratic": 5,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 275,
+          "derivative_jump_for_a_1": -5,
+          "newton_quadratic": 5
+        },
+        {
+          "r": 2,
+          "e_r_Q": 28205,
+          "derivative_jump_for_a_1": -1232,
+          "newton_quadratic": 1232
+        },
+        {
+          "r": 3,
+          "e_r_Q": 1329610,
+          "derivative_jump_for_a_1": -106827,
+          "newton_quadratic": 106827
+        },
+        {
+          "r": 4,
+          "e_r_Q": 28568106,
+          "derivative_jump_for_a_1": -3784274,
+          "newton_quadratic": 3784274
+        },
+        {
+          "r": 5,
+          "e_r_Q": 225360513,
+          "derivative_jump_for_a_1": -45400500,
+          "newton_quadratic": 45400500
+        }
+      ]
+    },
+    {
+      "dimension": 6,
+      "seed": 1,
+      "det_Q": 1078248519,
+      "min_positive_newton_quadratic": 6,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 313,
+          "derivative_jump_for_a_1": -6,
+          "newton_quadratic": 6
+        },
+        {
+          "r": 2,
+          "e_r_Q": 35197,
+          "derivative_jump_for_a_1": -1749,
+          "newton_quadratic": 1749
+        },
+        {
+          "r": 3,
+          "e_r_Q": 1753808,
+          "derivative_jump_for_a_1": -179308,
+          "newton_quadratic": 179308
+        },
+        {
+          "r": 4,
+          "e_r_Q": 39993934,
+          "derivative_jump_for_a_1": -7729122,
+          "newton_quadratic": 7729122
+        },
+        {
+          "r": 5,
+          "e_r_Q": 383959314,
+          "derivative_jump_for_a_1": -135678020,
+          "newton_quadratic": 135678020
+        },
+        {
+          "r": 6,
+          "e_r_Q": 1078248519,
+          "derivative_jump_for_a_1": -751516944,
+          "newton_quadratic": 751516944
+        }
+      ]
+    },
+    {
+      "dimension": 6,
+      "seed": 2,
+      "det_Q": 802573974,
+      "min_positive_newton_quadratic": 6,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 277,
+          "derivative_jump_for_a_1": -6,
+          "newton_quadratic": 6
+        },
+        {
+          "r": 2,
+          "e_r_Q": 28906,
+          "derivative_jump_for_a_1": -1617,
+          "newton_quadratic": 1617
+        },
+        {
+          "r": 3,
+          "e_r_Q": 1403330,
+          "derivative_jump_for_a_1": -161326,
+          "newton_quadratic": 161326
+        },
+        {
+          "r": 4,
+          "e_r_Q": 31474123,
+          "derivative_jump_for_a_1": -7214394,
+          "newton_quadratic": 7214394
+        },
+        {
+          "r": 5,
+          "e_r_Q": 278033757,
+          "derivative_jump_for_a_1": -135129440,
+          "newton_quadratic": 135129440
+        },
+        {
+          "r": 6,
+          "e_r_Q": 802573974,
+          "derivative_jump_for_a_1": -669835185,
+          "newton_quadratic": 669835185
+        }
+      ]
+    },
+    {
+      "dimension": 6,
+      "seed": 5,
+      "det_Q": 514241568,
+      "min_positive_newton_quadratic": 6,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 295,
+          "derivative_jump_for_a_1": -6,
+          "newton_quadratic": 6
+        },
+        {
+          "r": 2,
+          "e_r_Q": 29725,
+          "derivative_jump_for_a_1": -1707,
+          "newton_quadratic": 1707
+        },
+        {
+          "r": 3,
+          "e_r_Q": 1253753,
+          "derivative_jump_for_a_1": -160444,
+          "newton_quadratic": 160444
+        },
+        {
+          "r": 4,
+          "e_r_Q": 22521550,
+          "derivative_jump_for_a_1": -5842263,
+          "newton_quadratic": 5842263
+        },
+        {
+          "r": 5,
+          "e_r_Q": 178070988,
+          "derivative_jump_for_a_1": -74144216,
+          "newton_quadratic": 74144216
+        },
+        {
+          "r": 6,
+          "e_r_Q": 514241568,
+          "derivative_jump_for_a_1": -300183132,
+          "newton_quadratic": 300183132
+        }
+      ]
+    },
+    {
+      "dimension": 6,
+      "seed": 11,
+      "det_Q": 7083849600,
+      "min_positive_newton_quadratic": 6,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 331,
+          "derivative_jump_for_a_1": -6,
+          "newton_quadratic": 6
+        },
+        {
+          "r": 2,
+          "e_r_Q": 42586,
+          "derivative_jump_for_a_1": -1887,
+          "newton_quadratic": 1887
+        },
+        {
+          "r": 3,
+          "e_r_Q": 2682896,
+          "derivative_jump_for_a_1": -224398,
+          "newton_quadratic": 224398
+        },
+        {
+          "r": 4,
+          "e_r_Q": 85530094,
+          "derivative_jump_for_a_1": -12399798,
+          "newton_quadratic": 12399798
+        },
+        {
+          "r": 5,
+          "e_r_Q": 1279308336,
+          "derivative_jump_for_a_1": -309102752,
+          "newton_quadratic": 309102752
+        },
+        {
+          "r": 6,
+          "e_r_Q": 7083849600,
+          "derivative_jump_for_a_1": -2598936144,
+          "newton_quadratic": 2598936144
+        }
+      ]
+    },
+    {
+      "dimension": 6,
+      "seed": 17,
+      "det_Q": 15140890350,
+      "min_positive_newton_quadratic": 6,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 367,
+          "derivative_jump_for_a_1": -6,
+          "newton_quadratic": 6
+        },
+        {
+          "r": 2,
+          "e_r_Q": 52315,
+          "derivative_jump_for_a_1": -2067,
+          "newton_quadratic": 2067
+        },
+        {
+          "r": 3,
+          "e_r_Q": 3654173,
+          "derivative_jump_for_a_1": -267400,
+          "newton_quadratic": 267400
+        },
+        {
+          "r": 4,
+          "e_r_Q": 130418155,
+          "derivative_jump_for_a_1": -15914001,
+          "newton_quadratic": 15914001
+        },
+        {
+          "r": 5,
+          "e_r_Q": 2265497415,
+          "derivative_jump_for_a_1": -425054684,
+          "newton_quadratic": 425054684
+        },
+        {
+          "r": 6,
+          "e_r_Q": 15140890350,
+          "derivative_jump_for_a_1": -4057734411,
+          "newton_quadratic": 4057734411
+        }
+      ]
+    },
+    {
+      "dimension": 7,
+      "seed": 1,
+      "det_Q": 48009201294,
+      "min_positive_newton_quadratic": 7,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 397,
+          "derivative_jump_for_a_1": -7,
+          "newton_quadratic": 7
+        },
+        {
+          "r": 2,
+          "e_r_Q": 59436,
+          "derivative_jump_for_a_1": -2642,
+          "newton_quadratic": 2642
+        },
+        {
+          "r": 3,
+          "e_r_Q": 4263752,
+          "derivative_jump_for_a_1": -368640,
+          "newton_quadratic": 368640
+        },
+        {
+          "r": 4,
+          "e_r_Q": 154877140,
+          "derivative_jump_for_a_1": -23852494,
+          "newton_quadratic": 23852494
+        },
+        {
+          "r": 5,
+          "e_r_Q": 2729102391,
+          "derivative_jump_for_a_1": -740764202,
+          "newton_quadratic": 740764202
+        },
+        {
+          "r": 6,
+          "e_r_Q": 20087309497,
+          "derivative_jump_for_a_1": -9962230776,
+          "newton_quadratic": 9962230776
+        },
+        {
+          "r": 7,
+          "e_r_Q": 48009201294,
+          "derivative_jump_for_a_1": -39863598435,
+          "newton_quadratic": 39863598435
+        }
+      ]
+    },
+    {
+      "dimension": 7,
+      "seed": 2,
+      "det_Q": 228059942094,
+      "min_positive_newton_quadratic": 7,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 381,
+          "derivative_jump_for_a_1": -7,
+          "newton_quadratic": 7
+        },
+        {
+          "r": 2,
+          "e_r_Q": 59057,
+          "derivative_jump_for_a_1": -2576,
+          "newton_quadratic": 2576
+        },
+        {
+          "r": 3,
+          "e_r_Q": 4768409,
+          "derivative_jump_for_a_1": -381955,
+          "newton_quadratic": 381955
+        },
+        {
+          "r": 4,
+          "e_r_Q": 212842410,
+          "derivative_jump_for_a_1": -29028638,
+          "newton_quadratic": 29028638
+        },
+        {
+          "r": 5,
+          "e_r_Q": 5116530826,
+          "derivative_jump_for_a_1": -1183120282,
+          "newton_quadratic": 1183120282
+        },
+        {
+          "r": 6,
+          "e_r_Q": 58764456888,
+          "derivative_jump_for_a_1": -24260507258,
+          "newton_quadratic": 24260507258
+        },
+        {
+          "r": 7,
+          "e_r_Q": 228059942094,
+          "derivative_jump_for_a_1": -192915450258,
+          "newton_quadratic": 192915450258
+        }
+      ]
+    },
+    {
+      "dimension": 7,
+      "seed": 5,
+      "det_Q": 40303395288,
+      "min_positive_newton_quadratic": 7,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 384,
+          "derivative_jump_for_a_1": -7,
+          "newton_quadratic": 7
+        },
+        {
+          "r": 2,
+          "e_r_Q": 54836,
+          "derivative_jump_for_a_1": -2558,
+          "newton_quadratic": 2558
+        },
+        {
+          "r": 3,
+          "e_r_Q": 3660458,
+          "derivative_jump_for_a_1": -337750,
+          "newton_quadratic": 337750
+        },
+        {
+          "r": 4,
+          "e_r_Q": 119931879,
+          "derivative_jump_for_a_1": -19786766,
+          "newton_quadratic": 19786766
+        },
+        {
+          "r": 5,
+          "e_r_Q": 1914608854,
+          "derivative_jump_for_a_1": -517853323,
+          "newton_quadratic": 517853323
+        },
+        {
+          "r": 6,
+          "e_r_Q": 14325990780,
+          "derivative_jump_for_a_1": -5694353552,
+          "newton_quadratic": 5694353552
+        },
+        {
+          "r": 7,
+          "e_r_Q": 40303395288,
+          "derivative_jump_for_a_1": -21658113372,
+          "newton_quadratic": 21658113372
+        }
+      ]
+    },
+    {
+      "dimension": 7,
+      "seed": 11,
+      "det_Q": 1361521218114,
+      "min_positive_newton_quadratic": 7,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 444,
+          "derivative_jump_for_a_1": -7,
+          "newton_quadratic": 7
+        },
+        {
+          "r": 2,
+          "e_r_Q": 81332,
+          "derivative_jump_for_a_1": -2954,
+          "newton_quadratic": 2954
+        },
+        {
+          "r": 3,
+          "e_r_Q": 7914404,
+          "derivative_jump_for_a_1": -506380,
+          "newton_quadratic": 506380
+        },
+        {
+          "r": 4,
+          "e_r_Q": 438125919,
+          "derivative_jump_for_a_1": -44967638,
+          "newton_quadratic": 44967638
+        },
+        {
+          "r": 5,
+          "e_r_Q": 13649984344,
+          "derivative_jump_for_a_1": -2171991583,
+          "newton_quadratic": 2171991583
+        },
+        {
+          "r": 6,
+          "e_r_Q": 218563469016,
+          "derivative_jump_for_a_1": -53811397886,
+          "newton_quadratic": 53811397886
+        },
+        {
+          "r": 7,
+          "e_r_Q": 1361521218114,
+          "derivative_jump_for_a_1": -530916472590,
+          "newton_quadratic": 530916472590
+        }
+      ]
+    },
+    {
+      "dimension": 7,
+      "seed": 17,
+      "det_Q": 2025452927016,
+      "min_positive_newton_quadratic": 7,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 459,
+          "derivative_jump_for_a_1": -7,
+          "newton_quadratic": 7
+        },
+        {
+          "r": 2,
+          "e_r_Q": 86921,
+          "derivative_jump_for_a_1": -2972,
+          "newton_quadratic": 2972
+        },
+        {
+          "r": 3,
+          "e_r_Q": 8761499,
+          "derivative_jump_for_a_1": -507205,
+          "newton_quadratic": 507205
+        },
+        {
+          "r": 4,
+          "e_r_Q": 505327365,
+          "derivative_jump_for_a_1": -44257760,
+          "newton_quadratic": 44257760
+        },
+        {
+          "r": 5,
+          "e_r_Q": 16614143353,
+          "derivative_jump_for_a_1": -2067692419,
+          "newton_quadratic": 2067692419
+        },
+        {
+          "r": 6,
+          "e_r_Q": 287811068976,
+          "derivative_jump_for_a_1": -48712990238,
+          "newton_quadratic": 48712990238
+        },
+        {
+          "r": 7,
+          "e_r_Q": 2025452927016,
+          "derivative_jump_for_a_1": -451835446572,
+          "newton_quadratic": 451835446572
+        }
+      ]
+    },
+    {
+      "dimension": 8,
+      "seed": 1,
+      "det_Q": 14243186578866,
+      "min_positive_newton_quadratic": 8,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 571,
+          "derivative_jump_for_a_1": -8,
+          "newton_quadratic": 8
+        },
+        {
+          "r": 2,
+          "e_r_Q": 131043,
+          "derivative_jump_for_a_1": -3423,
+          "newton_quadratic": 3423
+        },
+        {
+          "r": 3,
+          "e_r_Q": 15525867,
+          "derivative_jump_for_a_1": -562914,
+          "newton_quadratic": 562914
+        },
+        {
+          "r": 4,
+          "e_r_Q": 1015169658,
+          "derivative_jump_for_a_1": -45067209,
+          "newton_quadratic": 45067209
+        },
+        {
+          "r": 5,
+          "e_r_Q": 36334989153,
+          "derivative_jump_for_a_1": -1839300042,
+          "newton_quadratic": 1839300042
+        },
+        {
+          "r": 6,
+          "e_r_Q": 662730832154,
+          "derivative_jump_for_a_1": -36447832005,
+          "newton_quadratic": 36447832005
+        },
+        {
+          "r": 7,
+          "e_r_Q": 5247517727747,
+          "derivative_jump_for_a_1": -301500536650,
+          "newton_quadratic": 301500536650
+        },
+        {
+          "r": 8,
+          "e_r_Q": 14243186578866,
+          "derivative_jump_for_a_1": -839054019189,
+          "newton_quadratic": 839054019189
+        }
+      ]
+    },
+    {
+      "dimension": 8,
+      "seed": 2,
+      "det_Q": 69907493632950,
+      "min_positive_newton_quadratic": 8,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 501,
+          "derivative_jump_for_a_1": -8,
+          "newton_quadratic": 8
+        },
+        {
+          "r": 2,
+          "e_r_Q": 106424,
+          "derivative_jump_for_a_1": -3317,
+          "newton_quadratic": 3317
+        },
+        {
+          "r": 3,
+          "e_r_Q": 12455783,
+          "derivative_jump_for_a_1": -566340,
+          "newton_quadratic": 566340
+        },
+        {
+          "r": 4,
+          "e_r_Q": 873179112,
+          "derivative_jump_for_a_1": -51271927,
+          "newton_quadratic": 51271927
+        },
+        {
+          "r": 5,
+          "e_r_Q": 37278030529,
+          "derivative_jump_for_a_1": -2637837520,
+          "newton_quadratic": 2637837520
+        },
+        {
+          "r": 6,
+          "e_r_Q": 939136066227,
+          "derivative_jump_for_a_1": -76494437535,
+          "newton_quadratic": 76494437535
+        },
+        {
+          "r": 7,
+          "e_r_Q": 12671425222875,
+          "derivative_jump_for_a_1": -1149254087220,
+          "newton_quadratic": 1149254087220
+        },
+        {
+          "r": 8,
+          "e_r_Q": 69907493632950,
+          "derivative_jump_for_a_1": -6889134106125,
+          "newton_quadratic": 6889134106125
+        }
+      ]
+    },
+    {
+      "dimension": 8,
+      "seed": 5,
+      "det_Q": 962103889800,
+      "min_positive_newton_quadratic": 8,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 444,
+          "derivative_jump_for_a_1": -8,
+          "newton_quadratic": 8
+        },
+        {
+          "r": 2,
+          "e_r_Q": 74753,
+          "derivative_jump_for_a_1": -3404,
+          "newton_quadratic": 3404
+        },
+        {
+          "r": 3,
+          "e_r_Q": 6089705,
+          "derivative_jump_for_a_1": -539592,
+          "newton_quadratic": 539592
+        },
+        {
+          "r": 4,
+          "e_r_Q": 256331292,
+          "derivative_jump_for_a_1": -40107571,
+          "newton_quadratic": 40107571
+        },
+        {
+          "r": 5,
+          "e_r_Q": 5694222547,
+          "derivative_jump_for_a_1": -1455165838,
+          "newton_quadratic": 1455165838
+        },
+        {
+          "r": 6,
+          "e_r_Q": 67545050742,
+          "derivative_jump_for_a_1": -25376280087,
+          "newton_quadratic": 25376280087
+        },
+        {
+          "r": 7,
+          "e_r_Q": 404667732996,
+          "derivative_jump_for_a_1": -206015433480,
+          "newton_quadratic": 206015433480
+        },
+        {
+          "r": 8,
+          "e_r_Q": 962103889800,
+          "derivative_jump_for_a_1": -626414482548,
+          "newton_quadratic": 626414482548
+        }
+      ]
+    },
+    {
+      "dimension": 8,
+      "seed": 11,
+      "det_Q": 293719453334226,
+      "min_positive_newton_quadratic": 8,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 573,
+          "derivative_jump_for_a_1": -8,
+          "newton_quadratic": 8
+        },
+        {
+          "r": 2,
+          "e_r_Q": 140255,
+          "derivative_jump_for_a_1": -3821,
+          "newton_quadratic": 3821
+        },
+        {
+          "r": 3,
+          "e_r_Q": 19095704,
+          "derivative_jump_for_a_1": -759066,
+          "newton_quadratic": 759066
+        },
+        {
+          "r": 4,
+          "e_r_Q": 1576236792,
+          "derivative_jump_for_a_1": -80991502,
+          "newton_quadratic": 80991502
+        },
+        {
+          "r": 5,
+          "e_r_Q": 80471678590,
+          "derivative_jump_for_a_1": -4992561232,
+          "newton_quadratic": 4992561232
+        },
+        {
+          "r": 6,
+          "e_r_Q": 2471920449849,
+          "derivative_jump_for_a_1": -177099188484,
+          "newton_quadratic": 177099188484
+        },
+        {
+          "r": 7,
+          "e_r_Q": 41628845497410,
+          "derivative_jump_for_a_1": -3336441156936,
+          "newton_quadratic": 3336441156936
+        },
+        {
+          "r": 8,
+          "e_r_Q": 293719453334226,
+          "derivative_jump_for_a_1": -25723091860776,
+          "newton_quadratic": 25723091860776
+        }
+      ]
+    },
+    {
+      "dimension": 8,
+      "seed": 17,
+      "det_Q": 536680223239671,
+      "min_positive_newton_quadratic": 8,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 621,
+          "derivative_jump_for_a_1": -8,
+          "newton_quadratic": 8
+        },
+        {
+          "r": 2,
+          "e_r_Q": 164924,
+          "derivative_jump_for_a_1": -4157,
+          "newton_quadratic": 4157
+        },
+        {
+          "r": 3,
+          "e_r_Q": 24378596,
+          "derivative_jump_for_a_1": -898620,
+          "newton_quadratic": 898620
+        },
+        {
+          "r": 4,
+          "e_r_Q": 2184086493,
+          "derivative_jump_for_a_1": -104219350,
+          "newton_quadratic": 104219350
+        },
+        {
+          "r": 5,
+          "e_r_Q": 120783586528,
+          "derivative_jump_for_a_1": -6959244748,
+          "newton_quadratic": 6959244748
+        },
+        {
+          "r": 6,
+          "e_r_Q": 4000163939388,
+          "derivative_jump_for_a_1": -265523934432,
+          "newton_quadratic": 265523934432
+        },
+        {
+          "r": 7,
+          "e_r_Q": 72014212494225,
+          "derivative_jump_for_a_1": -5316234724872,
+          "newton_quadratic": 5316234724872
+        },
+        {
+          "r": 8,
+          "e_r_Q": 536680223239671,
+          "derivative_jump_for_a_1": -42896150649009,
+          "newton_quadratic": 42896150649009
+        }
+      ]
+    },
+    {
+      "dimension": 9,
+      "seed": 1,
+      "det_Q": 1190179418613786,
+      "min_positive_newton_quadratic": 9,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 702,
+          "derivative_jump_for_a_1": -9,
+          "newton_quadratic": 9
+        },
+        {
+          "r": 2,
+          "e_r_Q": 202155,
+          "derivative_jump_for_a_1": -4788,
+          "newton_quadratic": 4788
+        },
+        {
+          "r": 3,
+          "e_r_Q": 30982959,
+          "derivative_jump_for_a_1": -1019103,
+          "newton_quadratic": 1019103
+        },
+        {
+          "r": 4,
+          "e_r_Q": 2739854982,
+          "derivative_jump_for_a_1": -111282930,
+          "newton_quadratic": 111282930
+        },
+        {
+          "r": 5,
+          "e_r_Q": 141828334857,
+          "derivative_jump_for_a_1": -6658345212,
+          "newton_quadratic": 6658345212
+        },
+        {
+          "r": 6,
+          "e_r_Q": 4176576787184,
+          "derivative_jump_for_a_1": -216821496348,
+          "newton_quadratic": 216821496348
+        },
+        {
+          "r": 7,
+          "e_r_Q": 64912447193706,
+          "derivative_jump_for_a_1": -3597497946168,
+          "newton_quadratic": 3597497946168
+        },
+        {
+          "r": 8,
+          "e_r_Q": 465130328847912,
+          "derivative_jump_for_a_1": -26778880593666,
+          "newton_quadratic": 26778880593666
+        },
+        {
+          "r": 9,
+          "e_r_Q": 1190179418613786,
+          "derivative_jump_for_a_1": -70133940946242,
+          "newton_quadratic": 70133940946242
+        }
+      ]
+    },
+    {
+      "dimension": 9,
+      "seed": 2,
+      "det_Q": 12267742160960640,
+      "min_positive_newton_quadratic": 9,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 630,
+          "derivative_jump_for_a_1": -9,
+          "newton_quadratic": 9
+        },
+        {
+          "r": 2,
+          "e_r_Q": 172662,
+          "derivative_jump_for_a_1": -4860,
+          "newton_quadratic": 4860
+        },
+        {
+          "r": 3,
+          "e_r_Q": 26923140,
+          "derivative_jump_for_a_1": -1116618,
+          "newton_quadratic": 1116618
+        },
+        {
+          "r": 4,
+          "e_r_Q": 2620790265,
+          "derivative_jump_for_a_1": -141843312,
+          "newton_quadratic": 141843312
+        },
+        {
+          "r": 5,
+          "e_r_Q": 164282989950,
+          "derivative_jump_for_a_1": -10827780045,
+          "newton_quadratic": 10827780045
+        },
+        {
+          "r": 6,
+          "e_r_Q": 6588690885656,
+          "derivative_jump_for_a_1": -504805631220,
+          "newton_quadratic": 504805631220
+        },
+        {
+          "r": 7,
+          "e_r_Q": 161784348242328,
+          "derivative_jump_for_a_1": -13916514670584,
+          "newton_quadratic": 13916514670584
+        },
+        {
+          "r": 8,
+          "e_r_Q": 2187569845128816,
+          "derivative_jump_for_a_1": -205524541005480,
+          "newton_quadratic": 205524541005480
+        },
+        {
+          "r": 9,
+          "e_r_Q": 12267742160960640,
+          "derivative_jump_for_a_1": -1230327256493376,
+          "newton_quadratic": 1230327256493376
+        }
+      ]
+    },
+    {
+      "dimension": 9,
+      "seed": 5,
+      "det_Q": 42932042314560,
+      "min_positive_newton_quadratic": 9,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 576,
+          "derivative_jump_for_a_1": -9,
+          "newton_quadratic": 9
+        },
+        {
+          "r": 2,
+          "e_r_Q": 127680,
+          "derivative_jump_for_a_1": -5076,
+          "newton_quadratic": 5076
+        },
+        {
+          "r": 3,
+          "e_r_Q": 13943070,
+          "derivative_jump_for_a_1": -1088268,
+          "newton_quadratic": 1088268
+        },
+        {
+          "r": 4,
+          "e_r_Q": 799878351,
+          "derivative_jump_for_a_1": -112459860,
+          "newton_quadratic": 112459860
+        },
+        {
+          "r": 5,
+          "e_r_Q": 24511160250,
+          "derivative_jump_for_a_1": -5855507079,
+          "newton_quadratic": 5855507079
+        },
+        {
+          "r": 6,
+          "e_r_Q": 420194488400,
+          "derivative_jump_for_a_1": -150891596892,
+          "newton_quadratic": 150891596892
+        },
+        {
+          "r": 7,
+          "e_r_Q": 4055502952584,
+          "derivative_jump_for_a_1": -1995481384944,
+          "newton_quadratic": 1995481384944
+        },
+        {
+          "r": 8,
+          "e_r_Q": 20612815795008,
+          "derivative_jump_for_a_1": -13046033831760,
+          "newton_quadratic": 13046033831760
+        },
+        {
+          "r": 9,
+          "e_r_Q": 42932042314560,
+          "derivative_jump_for_a_1": -33448358973600,
+          "newton_quadratic": 33448358973600
+        }
+      ]
+    },
+    {
+      "dimension": 9,
+      "seed": 11,
+      "det_Q": 51111335776104648,
+      "min_positive_newton_quadratic": 9,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 711,
+          "derivative_jump_for_a_1": -9,
+          "newton_quadratic": 9
+        },
+        {
+          "r": 2,
+          "e_r_Q": 220938,
+          "derivative_jump_for_a_1": -5508,
+          "newton_quadratic": 5508
+        },
+        {
+          "r": 3,
+          "e_r_Q": 39290922,
+          "derivative_jump_for_a_1": -1443210,
+          "newton_quadratic": 1443210
+        },
+        {
+          "r": 4,
+          "e_r_Q": 4394883693,
+          "derivative_jump_for_a_1": -210774960,
+          "newton_quadratic": 210774960
+        },
+        {
+          "r": 5,
+          "e_r_Q": 319632418179,
+          "derivative_jump_for_a_1": -18695556285,
+          "newton_quadratic": 18695556285
+        },
+        {
+          "r": 6,
+          "e_r_Q": 15060035147840,
+          "derivative_jump_for_a_1": -1026924872796,
+          "newton_quadratic": 1026924872796
+        },
+        {
+          "r": 7,
+          "e_r_Q": 441499389819012,
+          "derivative_jump_for_a_1": -33958657984416,
+          "newton_quadratic": 33958657984416
+        },
+        {
+          "r": 8,
+          "e_r_Q": 7275969740251656,
+          "derivative_jump_for_a_1": -615330584978112,
+          "newton_quadratic": 615330584978112
+        },
+        {
+          "r": 9,
+          "e_r_Q": 51111335776104648,
+          "derivative_jump_for_a_1": -4655322938861280,
+          "newton_quadratic": 4655322938861280
+        }
+      ]
+    },
+    {
+      "dimension": 9,
+      "seed": 17,
+      "det_Q": 111709532832782220,
+      "min_positive_newton_quadratic": 9,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 765,
+          "derivative_jump_for_a_1": -9,
+          "newton_quadratic": 9
+        },
+        {
+          "r": 2,
+          "e_r_Q": 256281,
+          "derivative_jump_for_a_1": -5940,
+          "newton_quadratic": 5940
+        },
+        {
+          "r": 3,
+          "e_r_Q": 49254606,
+          "derivative_jump_for_a_1": -1682889,
+          "newton_quadratic": 1682889
+        },
+        {
+          "r": 4,
+          "e_r_Q": 5971788696,
+          "derivative_jump_for_a_1": -266621922,
+          "newton_quadratic": 266621922
+        },
+        {
+          "r": 5,
+          "e_r_Q": 472495502196,
+          "derivative_jump_for_a_1": -25758781962,
+          "newton_quadratic": 25758781962
+        },
+        {
+          "r": 6,
+          "e_r_Q": 24327611862299,
+          "derivative_jump_for_a_1": -1548808606368,
+          "newton_quadratic": 1548808606368
+        },
+        {
+          "r": 7,
+          "e_r_Q": 783540069256251,
+          "derivative_jump_for_a_1": -56399693063811,
+          "newton_quadratic": 56399693063811
+        },
+        {
+          "r": 8,
+          "e_r_Q": 14276676245917581,
+          "derivative_jump_for_a_1": -1133182899912294,
+          "newton_quadratic": 1133182899912294
+        },
+        {
+          "r": 9,
+          "e_r_Q": 111709532832782220,
+          "derivative_jump_for_a_1": -9581985312124077,
+          "newton_quadratic": 9581985312124077
+        }
+      ]
+    },
+    {
+      "dimension": 10,
+      "seed": 1,
+      "det_Q": 30341378951995824,
+      "min_positive_newton_quadratic": 10,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 844,
+          "derivative_jump_for_a_1": -10,
+          "newton_quadratic": 10
+        },
+        {
+          "r": 2,
+          "e_r_Q": 291156,
+          "derivative_jump_for_a_1": -6558,
+          "newton_quadratic": 6558
+        },
+        {
+          "r": 3,
+          "e_r_Q": 53227200,
+          "derivative_jump_for_a_1": -1697154,
+          "newton_quadratic": 1697154
+        },
+        {
+          "r": 4,
+          "e_r_Q": 5602300056,
+          "derivative_jump_for_a_1": -222880212,
+          "newton_quadratic": 222880212
+        },
+        {
+          "r": 5,
+          "e_r_Q": 347088777885,
+          "derivative_jump_for_a_1": -16019594634,
+          "newton_quadratic": 16019594634
+        },
+        {
+          "r": 6,
+          "e_r_Q": 12533741773385,
+          "derivative_jump_for_a_1": -639685843209,
+          "newton_quadratic": 639685843209
+        },
+        {
+          "r": 7,
+          "e_r_Q": 254784004792361,
+          "derivative_jump_for_a_1": -13874342480450,
+          "newton_quadratic": 13874342480450
+        },
+        {
+          "r": 8,
+          "e_r_Q": 2767098007875714,
+          "derivative_jump_for_a_1": -156782747636481,
+          "newton_quadratic": 156782747636481
+        },
+        {
+          "r": 9,
+          "e_r_Q": 14800913628052086,
+          "derivative_jump_for_a_1": -859935018689262,
+          "newton_quadratic": 859935018689262
+        },
+        {
+          "r": 10,
+          "e_r_Q": 30341378951995824,
+          "derivative_jump_for_a_1": -1793018607837462,
+          "newton_quadratic": 1793018607837462
+        }
+      ]
+    },
+    {
+      "dimension": 10,
+      "seed": 2,
+      "det_Q": 417426410916350046,
+      "min_positive_newton_quadratic": 10,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 780,
+          "derivative_jump_for_a_1": -10,
+          "newton_quadratic": 10
+        },
+        {
+          "r": 2,
+          "e_r_Q": 259758,
+          "derivative_jump_for_a_1": -6738,
+          "newton_quadratic": 6738
+        },
+        {
+          "r": 3,
+          "e_r_Q": 48659964,
+          "derivative_jump_for_a_1": -1893744,
+          "newton_quadratic": 1893744
+        },
+        {
+          "r": 4,
+          "e_r_Q": 5663155326,
+          "derivative_jump_for_a_1": -291196158,
+          "newton_quadratic": 291196158
+        },
+        {
+          "r": 5,
+          "e_r_Q": 425505382215,
+          "derivative_jump_for_a_1": -26866881294,
+          "newton_quadratic": 26866881294
+        },
+        {
+          "r": 6,
+          "e_r_Q": 20724260178314,
+          "derivative_jump_for_a_1": -1529121371559,
+          "newton_quadratic": 1529121371559
+        },
+        {
+          "r": 7,
+          "e_r_Q": 638203118479938,
+          "derivative_jump_for_a_1": -53007294314522,
+          "newton_quadratic": 53007294314522
+        },
+        {
+          "r": 8,
+          "e_r_Q": 11690349300025407,
+          "derivative_jump_for_a_1": -1060413718981428,
+          "newton_quadratic": 1060413718981428
+        },
+        {
+          "r": 9,
+          "e_r_Q": 112288613805800163,
+          "derivative_jump_for_a_1": -10838425338950922,
+          "newton_quadratic": 10838425338950922
+        },
+        {
+          "r": 10,
+          "e_r_Q": 417426410916350046,
+          "derivative_jump_for_a_1": -41954198705223849,
+          "newton_quadratic": 41954198705223849
+        }
+      ]
+    },
+    {
+      "dimension": 10,
+      "seed": 5,
+      "det_Q": 1317364585336800,
+      "min_positive_newton_quadratic": 10,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 717,
+          "derivative_jump_for_a_1": -10,
+          "newton_quadratic": 10
+        },
+        {
+          "r": 2,
+          "e_r_Q": 196470,
+          "derivative_jump_for_a_1": -6981,
+          "newton_quadratic": 6981
+        },
+        {
+          "r": 3,
+          "e_r_Q": 26218842,
+          "derivative_jump_for_a_1": -1845468,
+          "newton_quadratic": 1845468
+        },
+        {
+          "r": 4,
+          "e_r_Q": 1834671093,
+          "derivative_jump_for_a_1": -233573712,
+          "newton_quadratic": 233573712
+        },
+        {
+          "r": 5,
+          "e_r_Q": 70062520569,
+          "derivative_jump_for_a_1": -15000029556,
+          "newton_quadratic": 15000029556
+        },
+        {
+          "r": 6,
+          "e_r_Q": 1558254961028,
+          "derivative_jump_for_a_1": -497387827455,
+          "newton_quadratic": 497387827455
+        },
+        {
+          "r": 7,
+          "e_r_Q": 20839770484272,
+          "derivative_jump_for_a_1": -9068532957686,
+          "newton_quadratic": 9068532957686
+        },
+        {
+          "r": 8,
+          "e_r_Q": 165426243031728,
+          "derivative_jump_for_a_1": -92319561787356,
+          "newton_quadratic": 92319561787356
+        },
+        {
+          "r": 9,
+          "e_r_Q": 718787248611120,
+          "derivative_jump_for_a_1": -492990165591840,
+          "newton_quadratic": 492990165591840
+        },
+        {
+          "r": 10,
+          "e_r_Q": 1317364585336800,
+          "derivative_jump_for_a_1": -1076750517837600,
+          "newton_quadratic": 1076750517837600
+        }
+      ]
+    },
+    {
+      "dimension": 10,
+      "seed": 11,
+      "det_Q": 3004543699620693192,
+      "min_positive_newton_quadratic": 10,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 870,
+          "derivative_jump_for_a_1": -10,
+          "newton_quadratic": 10
+        },
+        {
+          "r": 2,
+          "e_r_Q": 326583,
+          "derivative_jump_for_a_1": -7548,
+          "newton_quadratic": 7548
+        },
+        {
+          "r": 3,
+          "e_r_Q": 69724500,
+          "derivative_jump_for_a_1": -2408040,
+          "newton_quadratic": 2408040
+        },
+        {
+          "r": 4,
+          "e_r_Q": 9367006092,
+          "derivative_jump_for_a_1": -426396174,
+          "newton_quadratic": 426396174
+        },
+        {
+          "r": 5,
+          "e_r_Q": 825350424603,
+          "derivative_jump_for_a_1": -46096071342,
+          "newton_quadratic": 46096071342
+        },
+        {
+          "r": 6,
+          "e_r_Q": 48119509075529,
+          "derivative_jump_for_a_1": -3143422202919,
+          "newton_quadratic": 3143422202919
+        },
+        {
+          "r": 7,
+          "e_r_Q": 1823573027158164,
+          "derivative_jump_for_a_1": -134521074677378,
+          "newton_quadratic": 134521074677378
+        },
+        {
+          "r": 8,
+          "e_r_Q": 42717438912206682,
+          "derivative_jump_for_a_1": -3461731569706266,
+          "newton_quadratic": 3461731569706266
+        },
+        {
+          "r": 9,
+          "e_r_Q": 554386592370854160,
+          "derivative_jump_for_a_1": -48257406398765232,
+          "newton_quadratic": 48257406398765232
+        },
+        {
+          "r": 10,
+          "e_r_Q": 3004543699620693192,
+          "derivative_jump_for_a_1": -275818988560152960,
+          "newton_quadratic": 275818988560152960
+        }
+      ]
+    },
+    {
+      "dimension": 10,
+      "seed": 17,
+      "det_Q": 8044596868159973565,
+      "min_positive_newton_quadratic": 10,
+      "barriers": [
+        {
+          "r": 1,
+          "e_r_Q": 915,
+          "derivative_jump_for_a_1": -10,
+          "newton_quadratic": 10
+        },
+        {
+          "r": 2,
+          "e_r_Q": 365895,
+          "derivative_jump_for_a_1": -7953,
+          "newton_quadratic": 7953
+        },
+        {
+          "r": 3,
+          "e_r_Q": 84069888,
+          "derivative_jump_for_a_1": -2713464,
+          "newton_quadratic": 2713464
+        },
+        {
+          "r": 4,
+          "e_r_Q": 12263735958,
+          "derivative_jump_for_a_1": -520039104,
+          "newton_quadratic": 520039104
+        },
+        {
+          "r": 5,
+          "e_r_Q": 1183449730686,
+          "derivative_jump_for_a_1": -61504184382,
+          "newton_quadratic": 61504184382
+        },
+        {
+          "r": 6,
+          "e_r_Q": 76246962168062,
+          "derivative_jump_for_a_1": -4637391431316,
+          "newton_quadratic": 4637391431316
+        },
+        {
+          "r": 7,
+          "e_r_Q": 3225574991770353,
+          "derivative_jump_for_a_1": -221956461671114,
+          "newton_quadratic": 221956461671114
+        },
+        {
+          "r": 8,
+          "e_r_Q": 85369610705835366,
+          "derivative_jump_for_a_1": -6473118176340165,
+          "newton_quadratic": 6473118176340165
+        },
+        {
+          "r": 9,
+          "e_r_Q": 1270617517064975742,
+          "derivative_jump_for_a_1": -103922110157922324,
+          "newton_quadratic": 103922110157922324
+        },
+        {
+          "r": 10,
+          "e_r_Q": 8044596868159973565,
+          "derivative_jump_for_a_1": -697529873079478314,
+          "newton_quadratic": 697529873079478314
+        }
+      ]
+    }
+  ],
+  "runtime_seconds": 0.855631
+}

@@ -1,0 +1,915 @@
+{
+  "status": "PASS",
+  "moduli": [
+    2147483647,
+    1000000007,
+    1000000009,
+    998244353
+  ],
+  "base_selected_N": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    15,
+    20,
+    30,
+    40,
+    60,
+    80,
+    100,
+    120
+  ],
+  "extra_N_first_modulus": [
+    160,
+    200
+  ],
+  "selected_N_by_modulus": {
+    "2147483647": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15,
+      20,
+      30,
+      40,
+      60,
+      80,
+      100,
+      120,
+      160,
+      200
+    ],
+    "1000000007": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15,
+      20,
+      30,
+      40,
+      60,
+      80,
+      100,
+      120
+    ],
+    "1000000009": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15,
+      20,
+      30,
+      40,
+      60,
+      80,
+      100,
+      120
+    ],
+    "998244353": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15,
+      20,
+      30,
+      40,
+      60,
+      80,
+      100,
+      120
+    ]
+  },
+  "object": "finite event-Prony reconstruction from the first 2N+1 odd event jets",
+  "sharpness": "the first 2N odd jets leave a nonzero blind line whose next odd jet is nonzero",
+  "runtime_seconds": 31.122714,
+  "cases_by_modulus": {
+    "2147483647": [
+      {
+        "N": 0,
+        "dimension": 1,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 0,
+        "twoN_jet_blind_next_value": 1,
+        "twoN_jet_blind_support_nonzero": 1
+      },
+      {
+        "N": 1,
+        "dimension": 3,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 2,
+        "twoN_jet_blind_next_value": 2,
+        "twoN_jet_blind_support_nonzero": 3
+      },
+      {
+        "N": 2,
+        "dimension": 5,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 4,
+        "twoN_jet_blind_next_value": 288,
+        "twoN_jet_blind_support_nonzero": 5
+      },
+      {
+        "N": 3,
+        "dimension": 7,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 6,
+        "twoN_jet_blind_next_value": 259200,
+        "twoN_jet_blind_support_nonzero": 7
+      },
+      {
+        "N": 4,
+        "dimension": 9,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 8,
+        "twoN_jet_blind_next_value": 812851200,
+        "twoN_jet_blind_support_nonzero": 9
+      },
+      {
+        "N": 5,
+        "dimension": 11,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 10,
+        "twoN_jet_blind_next_value": 2057341945,
+        "twoN_jet_blind_support_nonzero": 11
+      },
+      {
+        "N": 6,
+        "dimension": 13,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 12,
+        "twoN_jet_blind_next_value": 1329013956,
+        "twoN_jet_blind_support_nonzero": 13
+      },
+      {
+        "N": 7,
+        "dimension": 15,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 14,
+        "twoN_jet_blind_next_value": 990998691,
+        "twoN_jet_blind_support_nonzero": 15
+      },
+      {
+        "N": 8,
+        "dimension": 17,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 16,
+        "twoN_jet_blind_next_value": 1409264340,
+        "twoN_jet_blind_support_nonzero": 17
+      },
+      {
+        "N": 9,
+        "dimension": 19,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 18,
+        "twoN_jet_blind_next_value": 1448083031,
+        "twoN_jet_blind_support_nonzero": 19
+      },
+      {
+        "N": 10,
+        "dimension": 21,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 20,
+        "twoN_jet_blind_next_value": 559484363,
+        "twoN_jet_blind_support_nonzero": 21
+      },
+      {
+        "N": 15,
+        "dimension": 31,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 30,
+        "twoN_jet_blind_next_value": 1709061002,
+        "twoN_jet_blind_support_nonzero": 31
+      },
+      {
+        "N": 20,
+        "dimension": 41,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 40,
+        "twoN_jet_blind_next_value": 1009303001,
+        "twoN_jet_blind_support_nonzero": 41
+      },
+      {
+        "N": 30,
+        "dimension": 61,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 60,
+        "twoN_jet_blind_next_value": 48612040,
+        "twoN_jet_blind_support_nonzero": 61
+      },
+      {
+        "N": 40,
+        "dimension": 81,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 80,
+        "twoN_jet_blind_next_value": 103345813,
+        "twoN_jet_blind_support_nonzero": 81
+      },
+      {
+        "N": 60,
+        "dimension": 121,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 120,
+        "twoN_jet_blind_next_value": 407367133,
+        "twoN_jet_blind_support_nonzero": 121
+      },
+      {
+        "N": 80,
+        "dimension": 161,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 160,
+        "twoN_jet_blind_next_value": 1048411036,
+        "twoN_jet_blind_support_nonzero": 161
+      },
+      {
+        "N": 100,
+        "dimension": 201,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 200,
+        "twoN_jet_blind_next_value": 987665619,
+        "twoN_jet_blind_support_nonzero": 201
+      },
+      {
+        "N": 120,
+        "dimension": 241,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 240,
+        "twoN_jet_blind_next_value": 1935093879,
+        "twoN_jet_blind_support_nonzero": 241
+      },
+      {
+        "N": 160,
+        "dimension": 321,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 320,
+        "twoN_jet_blind_next_value": 2123432744,
+        "twoN_jet_blind_support_nonzero": 321
+      },
+      {
+        "N": 200,
+        "dimension": 401,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 400,
+        "twoN_jet_blind_next_value": 1831691326,
+        "twoN_jet_blind_support_nonzero": 401
+      }
+    ],
+    "1000000007": [
+      {
+        "N": 0,
+        "dimension": 1,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 0,
+        "twoN_jet_blind_next_value": 1,
+        "twoN_jet_blind_support_nonzero": 1
+      },
+      {
+        "N": 1,
+        "dimension": 3,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 2,
+        "twoN_jet_blind_next_value": 2,
+        "twoN_jet_blind_support_nonzero": 3
+      },
+      {
+        "N": 2,
+        "dimension": 5,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 4,
+        "twoN_jet_blind_next_value": 288,
+        "twoN_jet_blind_support_nonzero": 5
+      },
+      {
+        "N": 3,
+        "dimension": 7,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 6,
+        "twoN_jet_blind_next_value": 259200,
+        "twoN_jet_blind_support_nonzero": 7
+      },
+      {
+        "N": 4,
+        "dimension": 9,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 8,
+        "twoN_jet_blind_next_value": 812851200,
+        "twoN_jet_blind_support_nonzero": 9
+      },
+      {
+        "N": 5,
+        "dimension": 11,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 10,
+        "twoN_jet_blind_next_value": 94673912,
+        "twoN_jet_blind_support_nonzero": 11
+      },
+      {
+        "N": 6,
+        "dimension": 13,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 12,
+        "twoN_jet_blind_next_value": 598231145,
+        "twoN_jet_blind_support_nonzero": 13
+      },
+      {
+        "N": 7,
+        "dimension": 15,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 14,
+        "twoN_jet_blind_next_value": 808308275,
+        "twoN_jet_blind_support_nonzero": 15
+      },
+      {
+        "N": 8,
+        "dimension": 17,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 16,
+        "twoN_jet_blind_next_value": 556314094,
+        "twoN_jet_blind_support_nonzero": 17
+      },
+      {
+        "N": 9,
+        "dimension": 19,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 18,
+        "twoN_jet_blind_next_value": 26141147,
+        "twoN_jet_blind_support_nonzero": 19
+      },
+      {
+        "N": 10,
+        "dimension": 21,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 20,
+        "twoN_jet_blind_next_value": 781600382,
+        "twoN_jet_blind_support_nonzero": 21
+      },
+      {
+        "N": 15,
+        "dimension": 31,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 30,
+        "twoN_jet_blind_next_value": 346505106,
+        "twoN_jet_blind_support_nonzero": 31
+      },
+      {
+        "N": 20,
+        "dimension": 41,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 40,
+        "twoN_jet_blind_next_value": 742905650,
+        "twoN_jet_blind_support_nonzero": 41
+      },
+      {
+        "N": 30,
+        "dimension": 61,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 60,
+        "twoN_jet_blind_next_value": 171629035,
+        "twoN_jet_blind_support_nonzero": 61
+      },
+      {
+        "N": 40,
+        "dimension": 81,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 80,
+        "twoN_jet_blind_next_value": 236194545,
+        "twoN_jet_blind_support_nonzero": 81
+      },
+      {
+        "N": 60,
+        "dimension": 121,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 120,
+        "twoN_jet_blind_next_value": 979445614,
+        "twoN_jet_blind_support_nonzero": 121
+      },
+      {
+        "N": 80,
+        "dimension": 161,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 160,
+        "twoN_jet_blind_next_value": 351504734,
+        "twoN_jet_blind_support_nonzero": 161
+      },
+      {
+        "N": 100,
+        "dimension": 201,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 200,
+        "twoN_jet_blind_next_value": 253884327,
+        "twoN_jet_blind_support_nonzero": 201
+      },
+      {
+        "N": 120,
+        "dimension": 241,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 240,
+        "twoN_jet_blind_next_value": 814070792,
+        "twoN_jet_blind_support_nonzero": 241
+      }
+    ],
+    "1000000009": [
+      {
+        "N": 0,
+        "dimension": 1,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 0,
+        "twoN_jet_blind_next_value": 1,
+        "twoN_jet_blind_support_nonzero": 1
+      },
+      {
+        "N": 1,
+        "dimension": 3,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 2,
+        "twoN_jet_blind_next_value": 2,
+        "twoN_jet_blind_support_nonzero": 3
+      },
+      {
+        "N": 2,
+        "dimension": 5,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 4,
+        "twoN_jet_blind_next_value": 288,
+        "twoN_jet_blind_support_nonzero": 5
+      },
+      {
+        "N": 3,
+        "dimension": 7,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 6,
+        "twoN_jet_blind_next_value": 259200,
+        "twoN_jet_blind_support_nonzero": 7
+      },
+      {
+        "N": 4,
+        "dimension": 9,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 8,
+        "twoN_jet_blind_next_value": 812851200,
+        "twoN_jet_blind_support_nonzero": 9
+      },
+      {
+        "N": 5,
+        "dimension": 11,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 10,
+        "twoN_jet_blind_next_value": 94660744,
+        "twoN_jet_blind_support_nonzero": 11
+      },
+      {
+        "N": 6,
+        "dimension": 13,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 12,
+        "twoN_jet_blind_next_value": 368788615,
+        "twoN_jet_blind_support_nonzero": 13
+      },
+      {
+        "N": 7,
+        "dimension": 15,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 14,
+        "twoN_jet_blind_next_value": 753973325,
+        "twoN_jet_blind_support_nonzero": 15
+      },
+      {
+        "N": 8,
+        "dimension": 17,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 16,
+        "twoN_jet_blind_next_value": 863129148,
+        "twoN_jet_blind_support_nonzero": 17
+      },
+      {
+        "N": 9,
+        "dimension": 19,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 18,
+        "twoN_jet_blind_next_value": 960174757,
+        "twoN_jet_blind_support_nonzero": 19
+      },
+      {
+        "N": 10,
+        "dimension": 21,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 20,
+        "twoN_jet_blind_next_value": 233662959,
+        "twoN_jet_blind_support_nonzero": 21
+      },
+      {
+        "N": 15,
+        "dimension": 31,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 30,
+        "twoN_jet_blind_next_value": 372888210,
+        "twoN_jet_blind_support_nonzero": 31
+      },
+      {
+        "N": 20,
+        "dimension": 41,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 40,
+        "twoN_jet_blind_next_value": 748377255,
+        "twoN_jet_blind_support_nonzero": 41
+      },
+      {
+        "N": 30,
+        "dimension": 61,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 60,
+        "twoN_jet_blind_next_value": 538016045,
+        "twoN_jet_blind_support_nonzero": 61
+      },
+      {
+        "N": 40,
+        "dimension": 81,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 80,
+        "twoN_jet_blind_next_value": 230360691,
+        "twoN_jet_blind_support_nonzero": 81
+      },
+      {
+        "N": 60,
+        "dimension": 121,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 120,
+        "twoN_jet_blind_next_value": 985700758,
+        "twoN_jet_blind_support_nonzero": 121
+      },
+      {
+        "N": 80,
+        "dimension": 161,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 160,
+        "twoN_jet_blind_next_value": 25055758,
+        "twoN_jet_blind_support_nonzero": 161
+      },
+      {
+        "N": 100,
+        "dimension": 201,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 200,
+        "twoN_jet_blind_next_value": 280481417,
+        "twoN_jet_blind_support_nonzero": 201
+      },
+      {
+        "N": 120,
+        "dimension": 241,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 240,
+        "twoN_jet_blind_next_value": 631451666,
+        "twoN_jet_blind_support_nonzero": 241
+      }
+    ],
+    "998244353": [
+      {
+        "N": 0,
+        "dimension": 1,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 0,
+        "twoN_jet_blind_next_value": 1,
+        "twoN_jet_blind_support_nonzero": 1
+      },
+      {
+        "N": 1,
+        "dimension": 3,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 2,
+        "twoN_jet_blind_next_value": 2,
+        "twoN_jet_blind_support_nonzero": 3
+      },
+      {
+        "N": 2,
+        "dimension": 5,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 4,
+        "twoN_jet_blind_next_value": 288,
+        "twoN_jet_blind_support_nonzero": 5
+      },
+      {
+        "N": 3,
+        "dimension": 7,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 6,
+        "twoN_jet_blind_next_value": 259200,
+        "twoN_jet_blind_support_nonzero": 7
+      },
+      {
+        "N": 4,
+        "dimension": 9,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 8,
+        "twoN_jet_blind_next_value": 812851200,
+        "twoN_jet_blind_support_nonzero": 9
+      },
+      {
+        "N": 5,
+        "dimension": 11,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 10,
+        "twoN_jet_blind_next_value": 673211965,
+        "twoN_jet_blind_support_nonzero": 11
+      },
+      {
+        "N": 6,
+        "dimension": 13,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 12,
+        "twoN_jet_blind_next_value": 674130410,
+        "twoN_jet_blind_support_nonzero": 13
+      },
+      {
+        "N": 7,
+        "dimension": 15,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 14,
+        "twoN_jet_blind_next_value": 167768583,
+        "twoN_jet_blind_support_nonzero": 15
+      },
+      {
+        "N": 8,
+        "dimension": 17,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 16,
+        "twoN_jet_blind_next_value": 465043760,
+        "twoN_jet_blind_support_nonzero": 17
+      },
+      {
+        "N": 9,
+        "dimension": 19,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 18,
+        "twoN_jet_blind_next_value": 420589147,
+        "twoN_jet_blind_support_nonzero": 19
+      },
+      {
+        "N": 10,
+        "dimension": 21,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 20,
+        "twoN_jet_blind_next_value": 884634633,
+        "twoN_jet_blind_support_nonzero": 21
+      },
+      {
+        "N": 15,
+        "dimension": 31,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 30,
+        "twoN_jet_blind_next_value": 327663908,
+        "twoN_jet_blind_support_nonzero": 31
+      },
+      {
+        "N": 20,
+        "dimension": 41,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 40,
+        "twoN_jet_blind_next_value": 143718131,
+        "twoN_jet_blind_support_nonzero": 41
+      },
+      {
+        "N": 30,
+        "dimension": 61,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 60,
+        "twoN_jet_blind_next_value": 311241706,
+        "twoN_jet_blind_support_nonzero": 61
+      },
+      {
+        "N": 40,
+        "dimension": 81,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 80,
+        "twoN_jet_blind_next_value": 85361865,
+        "twoN_jet_blind_support_nonzero": 81
+      },
+      {
+        "N": 60,
+        "dimension": 121,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 120,
+        "twoN_jet_blind_next_value": 544154794,
+        "twoN_jet_blind_support_nonzero": 121
+      },
+      {
+        "N": 80,
+        "dimension": 161,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 160,
+        "twoN_jet_blind_next_value": 204710190,
+        "twoN_jet_blind_support_nonzero": 161
+      },
+      {
+        "N": 100,
+        "dimension": 201,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 200,
+        "twoN_jet_blind_next_value": 468774021,
+        "twoN_jet_blind_support_nonzero": 201
+      },
+      {
+        "N": 120,
+        "dimension": 241,
+        "reconstruction": "PASS",
+        "future_prediction": "PASS",
+        "recurrence_residue_max": 0,
+        "twoN_jet_blind_rank": 240,
+        "twoN_jet_blind_next_value": 40486791,
+        "twoN_jet_blind_support_nonzero": 241
+      }
+    ]
+  }
+}

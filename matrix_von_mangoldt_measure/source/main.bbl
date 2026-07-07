@@ -1,0 +1,162 @@
+\begin{thebibliography}{10}
+
+\bibitem{BatenkovYomdin2013}
+Dmitry Batenkov and Yosef Yomdin.
+\newblock On the accuracy of solving confluent {Prony} systems.
+\newblock {\em SIAM Journal on Applied Mathematics}, 73(1):134--154, 2013.
+\newblock \href {https://doi.org/10.1137/110836584}
+  {\path{doi:10.1137/110836584}}.
+
+\bibitem{Connes1999}
+Alain Connes.
+\newblock Trace formula in noncommutative geometry and the zeros of the
+  {Riemann} zeta function.
+\newblock {\em Selecta Mathematica (New Series)}, 5(1):29--106, 1999.
+\newblock \href {https://doi.org/10.1007/s000290050042}
+  {\path{doi:10.1007/s000290050042}}.
+
+\bibitem{Connes2026}
+Alain Connes.
+\newblock The {Riemann} hypothesis: Past, present and a letter through time.
+\newblock {\em arXiv:2602.04022}, 2026.
+\newblock \href {https://arxiv.org/abs/2602.04022} {\path{arXiv:2602.04022}}.
+
+\bibitem{ConnesConsaniMoscovici2025}
+Alain Connes, Caterina Consani, and Henri Moscovici.
+\newblock Zeta spectral triples.
+\newblock {\em arXiv:2511.22755}, 2025.
+\newblock URL: \url{https://arxiv.org/abs/2511.22755}, \href
+  {https://arxiv.org/abs/2511.22755} {\path{arXiv:2511.22755}}, \href
+  {https://doi.org/10.48550/arXiv.2511.22755}
+  {\path{doi:10.48550/arXiv.2511.22755}}.
+
+\bibitem{ConnesvanSuijlekom2025}
+Alain Connes and Walter~D. van Suijlekom.
+\newblock Quadratic forms, real zeros and echoes of the spectral action.
+\newblock {\em arXiv:2511.23257}, 2025.
+\newblock URL: \url{https://arxiv.org/abs/2511.23257}, \href
+  {https://arxiv.org/abs/2511.23257} {\path{arXiv:2511.23257}}, \href
+  {https://doi.org/10.48550/arXiv.2511.23257}
+  {\path{doi:10.48550/arXiv.2511.23257}}.
+
+\bibitem{Daubechies1992}
+Ingrid Daubechies.
+\newblock {\em Ten Lectures on Wavelets}, volume~61 of {\em CBMS-NSF Regional
+  Conference Series in Applied Mathematics}.
+\newblock SIAM, 1992.
+\newblock \href {https://doi.org/10.1137/1.9781611970104}
+  {\path{doi:10.1137/1.9781611970104}}.
+
+\bibitem{Silva20671635}
+Breno~Wilson de~Andrade~Silva.
+\newblock Exact archimedean entries for truncated {Weil} forms: Closed-form
+  implementation, a precision-stable library defect, and corrected deep
+  spectra, June 2026.
+\newblock Zenodo record 20671635.
+\newblock URL: \url{https://zenodo.org/records/20671635}, \href
+  {https://doi.org/10.5281/zenodo.20671635}
+  {\path{doi:10.5281/zenodo.20671635}}.
+
+\bibitem{Silva20710075}
+Breno~Wilson de~Andrade~Silva.
+\newblock A {Loewner} divided-difference formula for the prime contribution in
+  the localized {Weil} quadratic form, and a parity sign law, June 2026.
+\newblock Zenodo record 20710075.
+\newblock URL: \url{https://zenodo.org/records/20710075}, \href
+  {https://doi.org/10.5281/zenodo.20710075}
+  {\path{doi:10.5281/zenodo.20710075}}.
+
+\bibitem{Silva20737111}
+Breno~Wilson de~Andrade~Silva.
+\newblock A {Loewner}/operator-monotone framework for the even-simplicity
+  problem in the {CCM} spectral triple, June 2026.
+\newblock Zenodo record 20737111.
+\newblock URL: \url{https://zenodo.org/records/20737111}, \href
+  {https://doi.org/10.5281/zenodo.20737111}
+  {\path{doi:10.5281/zenodo.20737111}}.
+
+\bibitem{Prony1795}
+Gaspard~Riche de~Prony.
+\newblock Essai experimental et analytique sur les lois de la dilatabilite des
+  fluides elastiques et sur celles de la force expansive de la vapeur de l'eau
+  et de la vapeur de l'alkool, a differentes temperatures.
+\newblock {\em Journal de l'Ecole Polytechnique}, 1(2):24--76, 1795.
+
+\bibitem{Gautschi1962}
+Walter Gautschi.
+\newblock On inverses of {Vandermonde} and confluent {Vandermonde} matrices.
+\newblock {\em Numerische Mathematik}, 4:117--123, 1962.
+\newblock \href {https://doi.org/10.1007/BF01386302}
+  {\path{doi:10.1007/BF01386302}}.
+
+\bibitem{Groskin2026FiniteDictionary}
+Akiva Groskin.
+\newblock A finite {Guinand--Weil} dictionary and archimedean tail order for
+  the truncated {Weil} quadratic form, 2026.
+\newblock arXiv:2607.02828; also Zenodo (concept DOI 10.5281/zenodo.21124802,
+  resolves to latest version); companion paper.
+\newblock URL: \url{https://arxiv.org/abs/2607.02828}, \href
+  {https://arxiv.org/abs/2607.02828} {\path{arXiv:2607.02828}}, \href
+  {https://doi.org/10.5281/zenodo.21124802}
+  {\path{doi:10.5281/zenodo.21124802}}.
+
+\bibitem{Groskin2026Paper1}
+Akiva Groskin.
+\newblock High-precision approximation of {Riemann} zeros via the truncated
+  {Weil} form.
+\newblock {\em arXiv:2605.20224}, 2026.
+\newblock URL: \url{https://arxiv.org/abs/2605.20224}, \href
+  {https://arxiv.org/abs/2605.20224} {\path{arXiv:2605.20224}}.
+
+\bibitem{IwaniecKowalski2004}
+Henryk Iwaniec and Emmanuel Kowalski.
+\newblock {\em Analytic Number Theory}, volume~53 of {\em American Mathematical
+  Society Colloquium Publications}.
+\newblock American Mathematical Society, 2004.
+
+\bibitem{Liao2026}
+Jinhua Liao.
+\newblock Prime event languages: An information-theoretic investigation of
+  twin-prime event structure.
+\newblock {\em arXiv:2606.08395}, 2026.
+\newblock URL: \url{https://arxiv.org/abs/2606.08395}, \href
+  {https://arxiv.org/abs/2606.08395} {\path{arXiv:2606.08395}}.
+
+\bibitem{Liu2026}
+Kejun Liu.
+\newblock A local {Hilbert--P{\'o}lya} realisation for elliptic curve
+  {$L$}-functions.
+\newblock {\em arXiv:2605.17645}, 2026.
+\newblock URL: \url{https://arxiv.org/abs/2605.17645}, \href
+  {https://arxiv.org/abs/2605.17645} {\path{arXiv:2605.17645}}.
+
+\bibitem{MoranLedezma2023}
+{\'A}ngel~Alfredo Mor{\'a}n~Ledezma.
+\newblock A probabilistic interpretation of {Weil}'s explicit sums and
+  arithmetic spectral measures.
+\newblock {\em arXiv:2311.08519}, 2023.
+\newblock URL: \url{https://arxiv.org/abs/2311.08519}, \href
+  {https://arxiv.org/abs/2311.08519} {\path{arXiv:2311.08519}}.
+
+\bibitem{Sliwinski2026}
+Dominik {\'S}liwi{\'n}ski.
+\newblock Spectral analysis of the {$D_{\log}^{(\lambda,N)}$} operators.
+\newblock {\em arXiv:2601.12133}, 2026.
+\newblock URL: \url{https://arxiv.org/abs/2601.12133}, \href
+  {https://arxiv.org/abs/2601.12133} {\path{arXiv:2601.12133}}.
+
+\bibitem{Suzuki2026}
+Masatoshi Suzuki.
+\newblock {Weil}'s quadratic form via the screw function.
+\newblock {\em arXiv:2606.09096}, 2026.
+\newblock URL: \url{https://arxiv.org/abs/2606.09096}, \href
+  {https://arxiv.org/abs/2606.09096} {\path{arXiv:2606.09096}}.
+
+\bibitem{Weil1952}
+Andr{\'e} Weil.
+\newblock Sur les ``formules explicites'' de la th{\'e}orie des nombres
+  premiers.
+\newblock {\em Comm. S{\'e}m. Math. Univ. Lund [Medd. Lunds Univ. Mat. Sem.]},
+  Tome suppl.:252--265, 1952.
+
+\end{thebibliography}
