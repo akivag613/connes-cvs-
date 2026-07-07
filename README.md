@@ -5,12 +5,11 @@
 ### To our knowledge, the first public implementation of the Connes–van Suijlekom Galerkin matrix for the Riemann Hypothesis.
 
 [![PyPI version](https://img.shields.io/pypi/v/connes-cvs.svg?color=4c1&cacheSeconds=300)](https://pypi.org/project/connes-cvs/)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Tests](https://github.com/akivag613/connes-cvs-/actions/workflows/tests.yml/badge.svg)](https://github.com/akivag613/connes-cvs-/actions/workflows/tests.yml)
 [![Paper 1 · arXiv](https://img.shields.io/badge/Paper_1-arXiv%3A2605.20224-b31b1b.svg)](https://arxiv.org/abs/2605.20224)
 [![Paper 2 · arXiv](https://img.shields.io/badge/Paper_2-arXiv%3A2607.02828-b31b1b.svg)](https://arxiv.org/abs/2607.02828)
-[![Zenodo DOI](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.19546514-1f74b7.svg)](https://doi.org/10.5281/zenodo.19546514)
-[![Tests](https://img.shields.io/badge/tests-passing-4c1.svg)](tests/)
+[![Paper 3 · Zenodo](https://img.shields.io/badge/Paper_3-Zenodo%3A10.5281%2Fzenodo.21242028-1f74b7.svg)](https://doi.org/10.5281/zenodo.21242028)
 
 </div>
 
@@ -20,33 +19,15 @@
 
 ## Papers
 
-This repository hosts the `connes-cvs` package together with the two papers by **Akiva Groskin** that build on the truncated Weil quadratic form of Connes–van Suijlekom. The package implements the Galerkin operator both papers study.
+This repository hosts the `connes-cvs` package together with the three papers by **Akiva Groskin** that build on the truncated Weil quadratic form of Connes–van Suijlekom. The package implements the finite Galerkin operator the series studies. Each paper's manuscript and reproducibility package lives in [`papers/`](papers/) (see the [papers index](papers/README.md)).
 
-<table>
-<tr><td valign="top" width="50%">
+| Paper | Summary | Links |
+| :--- | :--- | :--- |
+| **Paper 1**<br>_the numerics_ | **High-Precision Approximation of Riemann Zeros via the Truncated Weil Form.** Builds and diagonalizes the CvS Galerkin matrix at high precision: extracts Riemann zeros to hundreds of matching digits and tests the Connes 2026 §6.4 continuum asymptotic out-of-sample at _c_ = 100. **This is the paper the `connes-cvs` package implements** — its reproducibility package is the package itself (`connes_cvs/`, `data/`, `examples/`, `tests/`); see [ERRATA.md](ERRATA.md) for a finite-cutoff sign correction. | [`papers/1_.../`](papers/1_high_precision_riemann_zeros/)<br>[arXiv:2605.20224](https://arxiv.org/abs/2605.20224) (math.NT)<br>Zenodo [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) |
+| **Paper 2**<br>_the structure_ | **A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form.** An exact finite Guinand-Weil zero-source dictionary for the truncated Weil form, plus a finite-cutoff archimedean tail-order theorem with a two-sided certification rule. | [`papers/2_.../`](papers/2_guinand_weil_dictionary_tail_order/)<br>[arXiv:2607.02828](https://arxiv.org/abs/2607.02828) (math.NT, math.SP)<br>Zenodo [10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802) |
+| **Paper 3**<br>_the arithmetic_ | **A matrix-valued von Mangoldt measure in the finite Connes–van Suijlekom path.** Realizes the prime side of the Weil–Guinand explicit formula as an exact, cutoff-free matrix-valued von Mangoldt measure on the finite path; proves arithmetic rigidity, a finite source-to-jet dictionary, and a finite prime-edge uncertainty principle. | [`papers/3_.../`](papers/3_matrix_von_mangoldt_measure/)<br>Zenodo [10.5281/zenodo.21242028](https://doi.org/10.5281/zenodo.21242028)<br>_arXiv pending_ |
 
-**Paper 1 — the numerics**
-
-*High-Precision Approximation of Riemann Zeros via the Truncated Weil Form.*
-
-[arXiv:2605.20224](https://arxiv.org/abs/2605.20224) (math.NT) · Zenodo concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514)
-
-Builds and diagonalizes the CvS Galerkin matrix at high precision: extracts Riemann zeros to hundreds of matching digits and tests the Connes 2026 §6.4 continuum asymptotic out-of-sample at $c = 100$. **This is the paper the `connes-cvs` package implements** (see [ERRATA.md](ERRATA.md) for a finite-cutoff sign correction).
-
-</td><td valign="top" width="50%">
-
-**Paper 2 — the structure**
-
-*A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form.*
-
-[arXiv:2607.02828](https://arxiv.org/abs/2607.02828) (math.NT, math.SP) · Zenodo concept DOI [10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802)
-
-An exact finite Guinand-Weil zero-source dictionary for the truncated Weil form, plus a finite-cutoff archimedean tail-order theorem with a two-sided certification rule. Manuscript and full reproducibility package in [`guinand_weil_dictionary_tail_order/`](guinand_weil_dictionary_tail_order/).
-
-</td></tr>
-</table>
-
-Both papers report empirical measurements and finite-cutoff structural results; neither claims a proof of the Riemann Hypothesis.
+All three papers report empirical measurements and finite-cutoff structural results; none claims a proof of the Riemann Hypothesis.
 
 <div align="center">
 
@@ -358,8 +339,9 @@ Precision management is transparent. Eigenvalues shrink super-exponentially ($\l
 
 ## Further reading
 
-- **Our paper** — Groskin 2026, *High-Precision Approximation of Riemann Zeros via the Truncated Weil Form*, [arXiv:2605.20224](https://arxiv.org/abs/2605.20224) (math.NT). Archived on Zenodo; the concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) always resolves to the latest version.
-- **Companion note (Paper 2)** — Groskin 2026, *A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form*, [arXiv:2607.02828](https://arxiv.org/abs/2607.02828) (math.NT): an exact finite Guinand-Weil zero-source dictionary for the truncated Weil form, and a finite-cutoff archimedean tail-order theorem with a two-sided certification rule. Manuscript and full reproducibility package in [`guinand_weil_dictionary_tail_order/`](guinand_weil_dictionary_tail_order/); archived on Zenodo, concept DOI [10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802) (always resolves to the latest version).
+- **Paper 1 (this package)** — Groskin 2026, *High-Precision Approximation of Riemann Zeros via the Truncated Weil Form*, [arXiv:2605.20224](https://arxiv.org/abs/2605.20224) (math.NT). Archived on Zenodo; the concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) always resolves to the latest version. Manuscript in [`papers/1_high_precision_riemann_zeros/`](papers/1_high_precision_riemann_zeros/); the reproducibility package is this repository.
+- **Companion note (Paper 2)** — Groskin 2026, *A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form*, [arXiv:2607.02828](https://arxiv.org/abs/2607.02828) (math.NT): an exact finite Guinand-Weil zero-source dictionary for the truncated Weil form, and a finite-cutoff archimedean tail-order theorem with a two-sided certification rule. Manuscript and full reproducibility package in [`guinand_weil_dictionary_tail_order/`](papers/2_guinand_weil_dictionary_tail_order/); archived on Zenodo, concept DOI [10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802) (always resolves to the latest version).
+- **Companion note (Paper 3)** — Groskin 2026, *A matrix-valued von Mangoldt measure in the finite Connes–van Suijlekom path* (math.NT, math.SP): realizes the prime side of the Weil–Guinand explicit formula as an exact, cutoff-free matrix-valued von Mangoldt measure on the finite path, with arithmetic rigidity, a finite source-to-jet dictionary, and a finite prime-edge uncertainty principle. Manuscript and full reproducibility package in [`matrix_von_mangoldt_measure/`](papers/3_matrix_von_mangoldt_measure/); archived on Zenodo, concept DOI [10.5281/zenodo.21242028](https://doi.org/10.5281/zenodo.21242028) (always resolves to the latest version). arXiv id pending.
 - **CvS — mathematical foundation** — Connes & van Suijlekom, *Quadratic forms, real zeros and echoes of the spectral action*, [arXiv:2511.23257](https://arxiv.org/abs/2511.23257).
 - **CCM — the rank-one spectral-triple construction whose spectrum this package measures** — Connes, Consani & Moscovici, *Zeta spectral triples*, [arXiv:2511.22755](https://arxiv.org/abs/2511.22755).
 - **Connes 2026 — the §6.4 heuristic asymptotic this work tests at $c = 100$** — *The Riemann Hypothesis: Past, Present and a Letter Through Time*, [arXiv:2602.04022](https://arxiv.org/abs/2602.04022).
@@ -369,7 +351,7 @@ Precision management is transparent. Eigenvalues shrink super-exponentially ($\l
 
 ## Citation
 
-If you use this package in academic work, please cite both the software and the accompanying paper:
+If you use this package in academic work, please cite the software and the paper it implements (Paper 1):
 
 ```bibtex
 @software{connes_cvs_package,
@@ -395,6 +377,8 @@ If you use this package in academic work, please cite both the software and the 
                    10.5281/zenodo.19546514, always resolves to the latest version).},
 }
 ```
+
+The companion notes [Paper 2](https://doi.org/10.5281/zenodo.21124802) and [Paper 3](https://doi.org/10.5281/zenodo.21242028) are separate works with their own DOIs (see [Papers](#papers)); cite them directly if you use their results. Machine-readable metadata is in [CITATION.cff](CITATION.cff).
 
 ---
 

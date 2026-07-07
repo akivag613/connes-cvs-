@@ -24,6 +24,9 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.21124802
     description: "Companion paper 2 (Zenodo concept DOI — always resolves to latest version)"
+  - type: doi
+    value: 10.5281/zenodo.21242028
+    description: "Companion paper 3 (Zenodo concept DOI — always resolves to latest version; arXiv id pending)"
 preferred-citation:
   type: article
   title: "High-Precision Approximation of Riemann Zeros via the Truncated Weil Form"

@@ -1,5 +1,7 @@
 # Novelty Boundary Audit
 
+> Paths below are relative to this package: verification scripts are in `scripts/`, their JSON/log outputs in `artifacts/`, LaTeX source in `source/`, figures in `figures/`.
+
 Timestamp: 2026-06-26 02:02:26 IDT
 
 Scope: this file records the package-local novelty and attribution boundary for

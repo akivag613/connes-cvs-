@@ -5,9 +5,13 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [paper 3 — Zenodo 10.5281/zenodo.21242028] — 2026-07-07
+
+A third companion paper is published on **Zenodo** (concept DOI [10.5281/zenodo.21242028](https://doi.org/10.5281/zenodo.21242028), resolves to the latest version), *A matrix-valued von Mangoldt measure in the finite Connes-van Suijlekom path* (math.NT, math.SP; arXiv id pending). It realizes the prime side of the Weil-Guinand explicit formula as an exact, cutoff-free matrix-valued von Mangoldt measure on the finite path, and proves arithmetic rigidity, a finite source-to-jet dictionary, and a finite prime-edge uncertainty principle; it makes no claims regarding the Riemann Hypothesis. Manuscript and full reproducibility package (organized into `source/`, `figures/`, `scripts/`, `artifacts/`) are in [`matrix_von_mangoldt_measure/`](papers/3_matrix_von_mangoldt_measure/). No changes to the `connes-cvs` PyPI package or to any numerical data.
+
 ## [paper 2 — arXiv:2607.02828] — 2026-07-07
 
-A second companion paper is now publicly available on **arXiv**: [arXiv:2607.02828](https://arxiv.org/abs/2607.02828) (math.NT primary, math.SP; submitted 2 July 2026), *A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form*. It gives an exact finite Guinand-Weil zero-source dictionary for the truncated Weil form and a finite-cutoff archimedean tail-order theorem with a two-sided certification rule; it makes no claims regarding the Riemann Hypothesis. Manuscript and full reproducibility package are in [`guinand_weil_dictionary_tail_order/`](guinand_weil_dictionary_tail_order/); archived on Zenodo, concept DOI [10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802) (always resolves to the latest version). No changes to the `connes-cvs` PyPI package or to any numerical data.
+A second companion paper is now publicly available on **arXiv**: [arXiv:2607.02828](https://arxiv.org/abs/2607.02828) (math.NT primary, math.SP; submitted 2 July 2026), *A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form*. It gives an exact finite Guinand-Weil zero-source dictionary for the truncated Weil form and a finite-cutoff archimedean tail-order theorem with a two-sided certification rule; it makes no claims regarding the Riemann Hypothesis. Manuscript and full reproducibility package are in [`guinand_weil_dictionary_tail_order/`](papers/2_guinand_weil_dictionary_tail_order/); archived on Zenodo, concept DOI [10.5281/zenodo.21124802](https://doi.org/10.5281/zenodo.21124802) (always resolves to the latest version). No changes to the `connes-cvs` PyPI package or to any numerical data.
 
 ## [paper - correction] - 2026-06-26
 

@@ -1,11 +1,23 @@
-# A matrix-valued von Mangoldt measure in the finite Connes-van Suijlekom path
+[**← `connes-cvs`**](../../README.md) · [**Papers**](../README.md) &nbsp;|&nbsp; [Paper 1](../1_high_precision_riemann_zeros/) · [Paper 2](../2_guinand_weil_dictionary_tail_order/) · **Paper 3**
 
-Akiva Groskin, 2026. Manuscript and full reproducibility package.
+<div align="center">
 
-Archived on Zenodo, concept DOI
-[10.5281/zenodo.21242028](https://doi.org/10.5281/zenodo.21242028) (resolves to the
-latest version). Companion to Paper 1 ([arXiv:2605.20224](https://arxiv.org/abs/2605.20224))
-and Paper 2 ([arXiv:2607.02828](https://arxiv.org/abs/2607.02828)).
+# A matrix-valued von Mangoldt measure<br>in the finite Connes–van Suijlekom path
+
+**Paper 3 — _the arithmetic_ · Akiva Groskin, 2026**
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21242028.svg)](https://doi.org/10.5281/zenodo.21242028)
+![arXiv](https://img.shields.io/badge/arXiv-pending-lightgrey.svg)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](LICENSE-PAPER-CC-BY-4.0.txt)
+
+</div>
+
+> Realizes the prime side of the Weil–Guinand explicit formula as an exact, cutoff-free
+> **matrix-valued von Mangoldt measure** on the finite Connes–van Suijlekom path, and proves
+> arithmetic rigidity, a finite source-to-jet dictionary, and a finite prime-edge uncertainty
+> principle. Every statement is finite and exact; it makes no claim regarding the Riemann Hypothesis.
+
+Part of the [`connes-cvs` series](../../README.md#papers): [**Paper 1** — the numerics](../1_high_precision_riemann_zeros/) (the [`connes-cvs`](../../README.md) package) · [**Paper 2** — the structure](../2_guinand_weil_dictionary_tail_order/) · **Paper 3 — the arithmetic**. Archived on Zenodo, concept DOI [10.5281/zenodo.21242028](https://doi.org/10.5281/zenodo.21242028) (resolves to the latest version); arXiv id pending.
 
 Fix a Galerkin level `N` in the finite Connes-van Suijlekom truncation of the Weil
 quadratic form (no archimedean cutoff), and vary the prime cutoff `u = log c`.

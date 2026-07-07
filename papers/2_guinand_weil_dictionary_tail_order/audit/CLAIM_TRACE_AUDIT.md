@@ -1,5 +1,7 @@
 # Claim Trace Audit
 
+> Paths below are relative to this package: verification scripts are in `scripts/`, their JSON/log outputs in `artifacts/`, LaTeX source in `source/`, figures in `figures/`.
+
 Timestamp: 2026-07-02 (post-revision pass)
 
 Scope: this audit traces every displayed numerical claim in the manuscript to a
