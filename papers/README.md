@@ -8,7 +8,7 @@
 
 [![Paper 1 · arXiv](https://img.shields.io/badge/Paper_1-arXiv%3A2605.20224-b31b1b.svg)](https://arxiv.org/abs/2605.20224)
 [![Paper 2 · arXiv](https://img.shields.io/badge/Paper_2-arXiv%3A2607.02828-b31b1b.svg)](https://arxiv.org/abs/2607.02828)
-[![Paper 3 · DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21242028.svg)](https://doi.org/10.5281/zenodo.21242028)
+[![Paper 3 · DOI](https://img.shields.io/badge/Paper_3-Zenodo%3A10.5281%2Fzenodo.21242028-1682D4.svg?logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.21242028)
 
 </div>
 

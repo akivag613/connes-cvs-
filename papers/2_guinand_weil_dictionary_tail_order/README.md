@@ -7,7 +7,7 @@
 **Paper 2 — _the structure_ · Akiva Groskin, 2026**
 
 [![arXiv](https://img.shields.io/badge/arXiv-2607.02828-b31b1b.svg)](https://arxiv.org/abs/2607.02828)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21124802.svg)](https://doi.org/10.5281/zenodo.21124802)
+[![Zenodo DOI](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.21124802-1682D4.svg?logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.21124802)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](LICENSE-PAPER-CC-BY-4.0.txt)
 
 </div>

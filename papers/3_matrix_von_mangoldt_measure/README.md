@@ -6,7 +6,7 @@
 
 **Paper 3 — _the arithmetic_ · Akiva Groskin, 2026**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21242028.svg)](https://doi.org/10.5281/zenodo.21242028)
+[![Zenodo DOI](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.21242028-1682D4.svg?logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.21242028)
 ![arXiv](https://img.shields.io/badge/arXiv-pending-lightgrey.svg)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](LICENSE-PAPER-CC-BY-4.0.txt)
 

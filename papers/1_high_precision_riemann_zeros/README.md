@@ -7,7 +7,7 @@
 **Paper 1 — _the numerics_ · Akiva Groskin, 2026**
 
 [![arXiv](https://img.shields.io/badge/arXiv-2605.20224-b31b1b.svg)](https://arxiv.org/abs/2605.20224)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19546514.svg)](https://doi.org/10.5281/zenodo.19546514)
+[![Zenodo DOI](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.19546514-1682D4.svg?logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.19546514)
 [![PyPI](https://img.shields.io/pypi/v/connes-cvs.svg?label=connes-cvs&color=4c1)](https://pypi.org/project/connes-cvs/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](https://doi.org/10.5281/zenodo.19546514)
 
