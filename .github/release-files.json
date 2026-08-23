@@ -50,6 +50,8 @@
     "examples/c100_aitken_check.py",
     "examples/make_fig10_c100_gamma_digits.py",
     "examples/make_fig9_c100_aitken.py",
+    "examples/path_law_weyl_overlay.py",
+    "examples/single_atom_path_law.py",
     "pyproject.toml",
     "tests/README.md",
     "tests/reference_values.json",
@@ -59,6 +61,7 @@
     "tests/test_release_artifacts.py",
     "tests/test_runner_checkpoints.py",
     "tests/test_runner_identity.py",
+    "tests/test_single_atom_path_law.py",
     "tests/test_validation.py",
     "tools/verify_release.py"
   ],

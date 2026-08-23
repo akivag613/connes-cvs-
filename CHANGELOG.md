@@ -5,6 +5,11 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+- New standalone example [`examples/path_law_weyl_overlay.py`](examples/path_law_weyl_overlay.py): runs the README smoke cell verbatim, then layers the Single-Atom Path Law over that very matrix - extracts each exact additive atom block `B_q` of `Q`, shows `||B_11||` converging monotonically to the closed form (deficit `2.7e-8` by `N = 48`), and runs the Weyl experiment `Q' = Q - B_q`, where the boundary atom `q = 13` (rank-one heuristic weight `0.7114`, Path Law norm exactly `0`) leaves `lambda_min` bit-unchanged on removal. Base install only (mpmath).
+- New example [`examples/single_atom_path_law.py`](examples/single_atom_path_law.py) and fast test `tests/test_single_atom_path_law.py`: the Single-Atom Path Law (White 2026) gives the infinite-band operator norm of each per-prime-power Loewner block of the prime piece in closed form, `2 cos(pi/(m+1)) * Lambda(q)/sqrt(q)` with `m = ceil(L/log q)`. The example checks the law against single-atom blocks assembled from this package's own `psi_prime`/`psi_prime_deriv` (relative error about `1e-15` at `c = 25`, `N = 48`, float64) and derives a dimension-independent Weyl stability budget for the prime piece; the test enforces the closed form, Cauchy interlacing from below, and the budget at `c = 13`, `N = 48` in under a second. **No code path, numerical value, or public API changes** - the additions touch only `examples/`, `tests/`, and the two sdist allowlists.
+
 ## [0.3.1] - 2026-08-14
 
 Documentation and metadata only. **No code path, numerical value, or public API changes**, and the c=13 bit-identity regression gate is unaffected.
