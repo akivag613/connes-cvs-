@@ -8,7 +8,7 @@
 
 [![Riemann zeros · arXiv](https://img.shields.io/badge/Riemann_zeros-arXiv%3A2605.20224-b31b1b.svg)](https://arxiv.org/abs/2605.20224)
 [![Guinand-Weil dictionary · arXiv](https://img.shields.io/badge/Guinand--Weil_dictionary-arXiv%3A2607.02828-b31b1b.svg)](https://arxiv.org/abs/2607.02828)
-[![von Mangoldt measure · DOI](https://img.shields.io/badge/von_Mangoldt_measure-Zenodo%3A10.5281%2Fzenodo.21242028-1682D4.svg?logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.21242028)
+[![von Mangoldt measure · Zenodo](https://img.shields.io/badge/von_Mangoldt_measure-Zenodo%3A10.5281%2Fzenodo.21242028-1682D4.svg?logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.21242028)
 [![Sine Loewner operator · Zenodo](https://img.shields.io/badge/Sine_Loewner_operator-Zenodo%3A10.5281%2Fzenodo.22662221-1682D4.svg?logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.22662221)
 
 </div>

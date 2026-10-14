@@ -9,9 +9,9 @@
 | `test_operator_hardening.py` | Direct checks of the fast prime-power enumerator, stable kernel, positive/negative index parity, and upper-triangle assembly against the legacy full assembly. These are independent of the runner-vs-classic comparison that shares the optimized operator. |
 | `test_runner_identity.py` | Exact small-cell scope: c=13, N=8, T=60, dps=30 through the runner and classic path must agree in every raw mpmath matrix entry, selected eigenvalue and eigenvector component; a second cell compares pooled and serial runner output. This does not assert identity at untested workloads. |
 | `test_runner_checkpoints.py` | Checkpoint, artifact and input-contract tests for `connes_cvs.runner` and `connes_cvs.sweep`: identity between a clean run and one resumed from a checkpoint; rejection of checkpoints whose checksum, config, backend or JSON canonicality does not match; artifact provenance fields and the path-collision policy; `CellConfig` immutability and input validation. |
-| `test_validation.py` | Adversarial tests for the outward Arb finite-matrix residual bound, exact dyadic serialization, shape/symmetry checks, canonical hashes and extreme exponents. |
+| `test_validation.py` | Adversarial tests for the outward Arb finite-matrix residual bound, exact dyadic serialization, shape/symmetry checks, canonical hashes and extreme exponents. Requires `python-flint`: the module skips in full without it, so install `.[dev]` or `.[all]` to exercise it. |
 | `test_matrix_microopt_v0_2_0.py` | Historical v0.2.0 regression. Its unmarked source-form check runs on a clean checkout. Pickle-dependent slow legs use a local research reference that is not distributed and skip when absent; they are not the release's portable numerical gate. |
-| `test_release_artifacts.py` | Distribution gate: asserts the built sdist contains exactly the allowlisted paths (including the credited `data/third_party/` artifacts) and that no local-only file leaks into a release. |
+| `test_release_artifacts.py` | Distribution gate. Runs in the fast suite without building anything: it asserts the manifests enumerate exactly the allowlisted paths present on disk, that the two manifests agree, and that no local-only file leaks into a release. Built archives are verified separately by `tools/verify_release.py` in the `release-archives` job. |
 
 ## Running
 

@@ -50,7 +50,7 @@ Any change to `connes_cvs/operator.py`, `connes_cvs/sweep.py`, or `connes_cvs/ke
 1. Reproduce the committed c=13 references in `tests/reference_values.json`: **all 80 stored printed digits** on the same-precision A/B cell, and **>=20** lambda plus **>=18** gamma-error digits on the cross-precision extended validation cell.
 2. Preserve the exact small-cell equality checks in `tests/test_runner_identity.py` and the independent parity/full-assembly checks in `tests/test_operator_hardening.py`. Do not generalize those scopes into a blanket raw-value claim.
 3. Include a matched before/after benchmark for any speed claim: same checkout except for the proposed change, same workload, precision, backend, worker count, output phases, hardware, and timing boundary. `benchmarks/win1_pool_benchmark.py` is a current-path timer, not by itself a historical v0.1 baseline.
-4. Document the change in [CHANGELOG.md](../CHANGELOG.md) under the next unreleased version, with the exact measured scope and numerical tolerance.
+4. Document the change in [CHANGELOG.md](../CHANGELOG.md) in a new dated heading at the top of the file, with the exact measured scope and numerical tolerance. The file uses named dated headings (e.g. `## [Name] - YYYY-MM-DD`) rather than a Keep a Changelog `[Unreleased]` section.
 
 Performance optimizations that produce a mathematically different output (e.g. changing the quadrature rule, reordering summation steps that accumulate differently) must be behind a default-off flag, not replace the v0.1+ reference path.
 
@@ -73,6 +73,33 @@ Performance optimizations that produce a mathematically different output (e.g. c
 2. Branch from `main`; keep PRs narrowly scoped.
 3. The PR description should include: the motivation, the benchmark numbers (if perf-related), and a pointer to the test that enforces the claim.
 4. All of `pytest` and `pytest -m slow` must pass.
+
+## Release
+
+The sdist allowlist is the exclusion mechanism: a file that is not named in it
+does not ship, so a new public file must be added deliberately, not by default.
+
+```bash
+python -m build --sdist --wheel --outdir release-dist
+python tools/verify_release.py --dist release-dist
+python -m twine check --strict release-dist/*
+```
+
+Two manifests must agree and must be edited in the same change:
+
+- `pyproject.toml` → `[tool.hatch.build.targets.sdist].include` (and
+  `[tool.hatch.build.targets.wheel].include` for package modules)
+- `.github/release-files.json` → `sdist_files` / `wheel_files`
+
+`PKG-INFO` and `.gitignore` appear only in the manifest: the first is generated
+by the build, the second is carried in by hatchling. Both are whitelisted as
+build-generated in `tools/verify_release.py`.
+
+`tests/test_release_artifacts.py` runs in the fast suite and covers the
+manifest against the working tree plus this cross-check, so a divergence fails
+before a release rather than during one. The archive-level checks — real tar
+and wheel member lists, sizes, and RECORD hashes — run only through
+`tools/verify_release.py`, which needs the build above.
 
 ## Reporting a numerical discrepancy
 
