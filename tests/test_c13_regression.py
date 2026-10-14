@@ -417,6 +417,62 @@ def test_build_and_ground_state_validate_shapes_and_types():
         compute_ground_state(complex_symmetric)
 
 
+def test_rejected_cells_restore_the_process_precision_context():
+    """
+    A call rejected by validation must not change the global mpmath context.
+
+    ``build_galerkin_matrix`` and ``extract_zeros`` raise the process-global
+    ``mp.mp.dps`` to their ``dps`` argument *before* validating, so a rejected
+    call used to leave that precision in place. Because
+    ``compute_ground_state`` runs ``mpmath.eigsy`` at whatever precision is
+    ambient and never sets one, a single ``TypeError`` from a typo (passing a
+    Python float cutoff) silently changed ``lambda_min`` for every later matrix
+    in the same process -- with no warning, on the quantity this suite pins to
+    80 digits.
+    """
+    import mpmath as mp
+    from connes_cvs import build_galerkin_matrix, compute_ground_state, extract_zeros
+
+    Q = build_galerkin_matrix(c=13, N=2, T=60, dps=30)
+    mp.mp.dps = 30
+    lam_before, _ = compute_ground_state(Q)
+
+    with pytest.raises(TypeError, match="Python float"):
+        build_galerkin_matrix(13.0, N=2, T=60, dps=17)
+    assert mp.mp.dps == 30
+    assert compute_ground_state(Q)[0] == lam_before
+
+    with pytest.raises(ValueError):
+        build_galerkin_matrix(c=1, N=2, T=60, dps=17)
+    assert mp.mp.dps == 30
+    assert compute_ground_state(Q)[0] == lam_before
+
+    _, eigvec = compute_ground_state(Q)
+    with pytest.raises(ValueError):
+        extract_zeros(eigvec, c=13, n_zeros=0, dps=17)
+    assert mp.mp.dps == 30
+    assert compute_ground_state(Q)[0] == lam_before
+
+    with pytest.raises(ValueError):
+        extract_zeros(eigvec, n_zeros=1, dps=17)
+    assert mp.mp.dps == 30
+
+
+def test_successful_cells_still_leave_their_precision_active():
+    """
+    The success path is unchanged: the builder leaves ``dps`` active.
+
+    ``compute_ground_state`` relies on this and never sets a precision itself,
+    so restoring on success would be a regression, not a hardening.
+    """
+    import mpmath as mp
+    from connes_cvs import build_galerkin_matrix
+
+    mp.mp.dps = 30
+    build_galerkin_matrix(c=13, N=2, T=60, dps=42)
+    assert mp.mp.dps == 42
+
+
 def test_extract_zeros_rejects_zero_and_complex_vectors():
     import mpmath as mp
     from connes_cvs import extract_zeros

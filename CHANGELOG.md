@@ -5,6 +5,34 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Rejected cells no longer leak the precision context] - 2026-10-14
+
+Fixed a silent-corruption path in `build_galerkin_matrix` and `extract_zeros`.
+Both raise the process-global `mp.mp.dps` to their `dps` argument *before*
+validating their inputs, so a call rejected by validation left that precision
+(and the Flint context) in place for the rest of the process.
+`compute_ground_state` runs `mpmath.eigsy` at whatever precision happens to be
+ambient and never establishes one itself, so a single rejected call — for
+example `build_galerkin_matrix(c=13.0)` raising `TypeError` because a Python
+float cutoff was passed — silently changed `lambda_min` for every matrix
+diagonalized afterwards. Measured on this checkout before the fix: one
+rejected call moved the ambient precision from 30 to 17, and the *same* matrix
+then returned `-9.443565454314582357428781279e-21` where the clean value was
+`4.43043331325578052903889280577e-23`.
+
+The context is now restored on the failure path only. The success path still
+leaves `dps` active, because that is the documented contract callers of
+`compute_ground_state` rely on (see `examples/basic_compute.py`); the new test
+`test_successful_cells_still_leave_their_precision_active` pins it.
+
+No recorded digit changes. The raw digest of the `c=13, N=8, T=60, dps=30`
+matrix, its `lambda_min`, eigenvector head, extracted zeros, and a second
+`c="13.5"` decimal-string cell are byte-identical before and after the change,
+and `git diff -w connes_cvs/operator.py` shows two assignment lines replaced by
+the new `_cell_precision` context manager with no arithmetic edit. Enforced by
+`tests/test_c13_regression.py::test_rejected_cells_restore_the_process_precision_context`,
+which fails against the previous implementation with `assert 17 == 30`.
+
 ## [Repository documentation audit] - 2026-09-08
 
 - Completed sibling navigation across all four paper folders and clarified where

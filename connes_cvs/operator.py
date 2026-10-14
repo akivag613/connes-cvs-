@@ -22,8 +22,9 @@ References
 
 from __future__ import annotations
 
+from contextlib import contextmanager
 from numbers import Integral
-from typing import Optional, Union
+from typing import Iterator, Optional, Union
 import warnings
 
 import mpmath as mp
@@ -65,6 +66,44 @@ def _validated_positive_mpf(name: str, value) -> mp.mpf:
     if value_mp <= 0:
         raise ValueError(f"{name} must be positive, got {value!r}")
     return value_mp
+
+
+@contextmanager
+def _cell_precision(dps: int) -> Iterator[None]:
+    """
+    Activate the process-global precision ``dps`` for the duration of a cell.
+
+    On success the new precision is deliberately *left in place*. That is the
+    documented contract of ``build_galerkin_matrix`` and ``extract_zeros``:
+    ``compute_ground_state`` runs ``mpmath.eigsy`` at whatever precision is
+    active when it is called and never sets one itself, so callers rely on the
+    builder having left ``dps`` active (see ``examples/basic_compute.py``).
+
+    On failure the previous mpmath and Flint contexts are restored before the
+    exception propagates. Restoring matters because input validation runs
+    *after* the precision is raised: without it, one rejected call -- for
+    example ``build_galerkin_matrix(c=13.0)`` raising ``TypeError`` because a
+    Python float cutoff was passed -- leaves ``mp.mp.dps`` at that rejected
+    cell's precision and silently corrupts the ground-state eigenvalue of an
+    unrelated matrix diagonalized later in the same process.
+    """
+    previous_dps = mp.mp.dps
+    # Saved and restored under the same HAS_FLINT guard, so the 0 defaults are
+    # never read back; flint_ctx does not exist at all on the pure-mpmath path.
+    previous_prec = 0
+    previous_threads = 0
+    if HAS_FLINT:
+        previous_prec = flint_ctx.prec
+        previous_threads = flint_ctx.threads
+    mp.mp.dps = dps
+    try:
+        yield
+    except BaseException:
+        mp.mp.dps = previous_dps
+        if HAS_FLINT:
+            flint_ctx.prec = previous_prec
+            flint_ctx.threads = previous_threads
+        raise
 
 
 # ============================================================
@@ -552,65 +591,65 @@ def build_galerkin_matrix(
     else:
         minimum_bits = (3322 * dps + 999) // 1000
         flint_bits = _validated_int("flint_bits", flint_bits, minimum_bits)
-    mp.mp.dps = dps
-    if isinstance(c, float):
-        raise TypeError(
-            "Cutoff c must not be a Python float; pass an integer, decimal "
-            "string, or mp.mpf so the requested precision is preserved"
-        )
-    try:
-        c_mp = mp.mpf(c)
-    except (TypeError, ValueError) as exc:
-        raise TypeError(f"Cutoff c must be a real numeric value, got {c!r}") from exc
-    if not mp.isfinite(c_mp):
-        raise ValueError(f"Cutoff c must be finite, got {c!r}")
-    if c_mp < 2:
-        raise ValueError(f"Cutoff c must be >= 2, got {c!r}")
+    with _cell_precision(dps):
+        if isinstance(c, float):
+            raise TypeError(
+                "Cutoff c must not be a Python float; pass an integer, decimal "
+                "string, or mp.mpf so the requested precision is preserved"
+            )
+        try:
+            c_mp = mp.mpf(c)
+        except (TypeError, ValueError) as exc:
+            raise TypeError(f"Cutoff c must be a real numeric value, got {c!r}") from exc
+        if not mp.isfinite(c_mp):
+            raise ValueError(f"Cutoff c must be finite, got {c!r}")
+        if c_mp < 2:
+            raise ValueError(f"Cutoff c must be >= 2, got {c!r}")
 
-    # Set flint precision when available: bits = dps * 3.5 (generous margin)
-    if HAS_FLINT:
-        flint_ctx.prec = flint_bits
-        flint_ctx.threads = 1
+        # Set flint precision when available: bits = dps * 3.5 (generous margin)
+        if HAS_FLINT:
+            flint_ctx.prec = flint_bits
+            flint_ctx.threads = 1
 
-    L = mp.log(c_mp)
-    prime_data, _ = prime_powers_up_to(int(mp.floor(c_mp)))
+        L = mp.log(c_mp)
+        prime_data, _ = prime_powers_up_to(int(mp.floor(c_mp)))
 
-    # The exact parity identities psi(-n) = -psi(n) and psi'(-n) = psi'(n)
-    # let us retain each existing [-T,T] quadrature unchanged while evaluating
-    # only N+1 basis points instead of 2N+1. Mirroring completed mpf values is
-    # raw-identical to evaluating the negative index directly on the configured
-    # backend; the hardening suite checks direct parity and legacy full assembly.
-    psi_vals = {}
-    psi_deriv_vals = {}
-    for n_idx in range(0, N + 1):
-        psi, psi_d = _compute_psi_pair(n_idx, L, T, dps, prime_data)
-        psi_vals[n_idx] = psi
-        psi_deriv_vals[n_idx] = psi_d
-        if n_idx:
-            psi_vals[-n_idx] = -psi
-            psi_deriv_vals[-n_idx] = psi_d
+        # The exact parity identities psi(-n) = -psi(n) and psi'(-n) = psi'(n)
+        # let us retain each existing [-T,T] quadrature unchanged while evaluating
+        # only N+1 basis points instead of 2N+1. Mirroring completed mpf values is
+        # raw-identical to evaluating the negative index directly on the configured
+        # backend; the hardening suite checks direct parity and legacy full assembly.
+        psi_vals = {}
+        psi_deriv_vals = {}
+        for n_idx in range(0, N + 1):
+            psi, psi_d = _compute_psi_pair(n_idx, L, T, dps, prime_data)
+            psi_vals[n_idx] = psi
+            psi_deriv_vals[n_idx] = psi_d
+            if n_idx:
+                psi_vals[-n_idx] = -psi
+                psi_deriv_vals[-n_idx] = psi_d
 
-    # Assemble the (2N+1) x (2N+1) Galerkin matrix
-    DIM = 2 * N + 1
-    Q = mp.matrix(DIM, DIM)
+        # Assemble the (2N+1) x (2N+1) Galerkin matrix
+        DIM = 2 * N + 1
+        Q = mp.matrix(DIM, DIM)
 
-    # Off-diagonal: Q[m,n] = (psi(m) - psi(n)) / (m - n)
-    # Diagonal: Q[n,n] = psi'(n)  (L'Hopital limit)
-    for i in range(DIM):
-        m_idx = i - N
-        for j in range(i, DIM):
-            n_idx = j - N
-            if m_idx == n_idx:
-                value = psi_deriv_vals[n_idx]
-            else:
-                # Note: mpmath handles mpf / int correctly; avoid redundant
-                # mp.mpf(int) conversion in the inner loop (arithmetic-preserving).
-                value = (psi_vals[m_idx] - psi_vals[n_idx]) / (m_idx - n_idx)
-            Q[i, j] = value
-            if i != j:
-                Q[j, i] = value
+        # Off-diagonal: Q[m,n] = (psi(m) - psi(n)) / (m - n)
+        # Diagonal: Q[n,n] = psi'(n)  (L'Hopital limit)
+        for i in range(DIM):
+            m_idx = i - N
+            for j in range(i, DIM):
+                n_idx = j - N
+                if m_idx == n_idx:
+                    value = psi_deriv_vals[n_idx]
+                else:
+                    # Note: mpmath handles mpf / int correctly; avoid redundant
+                    # mp.mpf(int) conversion in the inner loop (arithmetic-preserving).
+                    value = (psi_vals[m_idx] - psi_vals[n_idx]) / (m_idx - n_idx)
+                Q[i, j] = value
+                if i != j:
+                    Q[j, i] = value
 
-    return Q
+        return Q
 
 
 def compute_ground_state(
@@ -796,152 +835,152 @@ def extract_zeros(
             f"got {eigvec.rows}x{eigvec.cols}"
         )
 
-    mp.mp.dps = dps
-    DIM = eigvec.rows
-    N = (DIM - 1) // 2
-    coefficients = []
-    for i in range(DIM):
-        if mp.im(eigvec[i, 0]) != 0:
-            raise ValueError(f"eigvec must be real; complex entry at row {i}")
-        if not mp.isfinite(eigvec[i, 0]):
-            raise ValueError(f"eigvec contains a non-finite entry at row {i}")
-        coefficients.append(mp.mpf(eigvec[i, 0]))
-    for i in range(N):
-        reverse_i = DIM - 1 - i
-        if coefficients[i] != coefficients[reverse_i]:
+    with _cell_precision(dps):
+        DIM = eigvec.rows
+        N = (DIM - 1) // 2
+        coefficients = []
+        for i in range(DIM):
+            if mp.im(eigvec[i, 0]) != 0:
+                raise ValueError(f"eigvec must be real; complex entry at row {i}")
+            if not mp.isfinite(eigvec[i, 0]):
+                raise ValueError(f"eigvec contains a non-finite entry at row {i}")
+            coefficients.append(mp.mpf(eigvec[i, 0]))
+        for i in range(N):
+            reverse_i = DIM - 1 - i
+            if coefficients[i] != coefficients[reverse_i]:
+                raise ValueError(
+                    "eigvec must be exactly reversal-even; "
+                    f"mismatch at rows {i} and {reverse_i}"
+                )
+        norm = mp.sqrt(sum(value * value for value in coefficients))
+        if norm == 0:
+            raise ValueError("eigvec must be nonzero")
+        coefficients = [value / norm for value in coefficients]
+        if c is not None and L is not None:
             raise ValueError(
-                "eigvec must be exactly reversal-even; "
-                f"mismatch at rows {i} and {reverse_i}"
+                "extract_zeros: pass either c or L, not both "
+                "(c computes L = mp.log(c) internally at the active precision)."
             )
-    norm = mp.sqrt(sum(value * value for value in coefficients))
-    if norm == 0:
-        raise ValueError("eigvec must be nonzero")
-    coefficients = [value / norm for value in coefficients]
-    if c is not None and L is not None:
-        raise ValueError(
-            "extract_zeros: pass either c or L, not both "
-            "(c computes L = mp.log(c) internally at the active precision)."
-        )
-    if c is None and L is None:
-        raise ValueError(
-            "extract_zeros: one of c or L is required "
-            "(prefer c; L is kept for backward compatibility)."
-        )
-    if c is not None:
-        if isinstance(c, float):
-            raise TypeError(
-                "c must not be a Python float; pass an integer, decimal "
-                "string, or mp.mpf so the requested precision is preserved"
+        if c is None and L is None:
+            raise ValueError(
+                "extract_zeros: one of c or L is required "
+                "(prefer c; L is kept for backward compatibility)."
             )
-        try:
-            c_mp = mp.mpf(c)
-        except (TypeError, ValueError) as exc:
-            raise TypeError(f"c must be a real numeric value, got {c!r}") from exc
-        if not mp.isfinite(c_mp) or c_mp <= 1:
-            raise ValueError(f"c must be finite and > 1, got {c!r}")
-        L_mp = mp.log(c_mp)
-    else:
-        if isinstance(L, float):
-            warnings.warn(
-                "extract_zeros received L as a Python float (float64), which "
-                "carries only ~16 significant digits and caps the achievable "
-                "zero-extraction accuracy near 1e-16 regardless of dps. Pass "
-                "L = mp.log(c) as an mpmath mpf, or use the c= parameter "
-                "(extract_zeros(eigvec, c=13, ...)) to compute L internally "
-                "at full precision.",
-                UserWarning,
-                stacklevel=2,
-            )
-        try:
-            L_mp = mp.mpf(L)
-        except (TypeError, ValueError) as exc:
-            raise TypeError(f"L must be a real numeric value, got {L!r}") from exc
-        if not mp.isfinite(L_mp) or L_mp <= 0:
-            raise ValueError(f"L must be finite and positive, got {L!r}")
-    if tol is None:
-        tol_mp = mp.eps * (2 ** 10)
-    else:
-        tol_mp = _validated_positive_mpf("tol", tol)
-    PI = mp.pi
-
-    def F_even(tau):
-        """Finite test function whose roots are sought near zeta ordinates."""
-        tau_mp = mp.mpf(tau)
-        total = mp.mpc(0, 0)
-        exp_tL = mp.exp(-1j * tau_mp * L_mp)
-        for k in range(-N, N + 1):
-            c_coef = coefficients[k + N]
-            if c_coef == 0:
-                continue
-            denom = 2 * PI * k / L_mp - tau_mp
-            if denom == 0:
-                term = mp.mpc(L_mp, 0)
-            elif abs(denom * L_mp) < mp.sqrt(mp.eps):
-                # Since tau*L = 2*pi*k - denom*L, the numerator is
-                # expm1(i*denom*L). This avoids cancellation near the
-                # removable singularity without changing the ordinary path.
-                term = mp.expm1(1j * denom * L_mp) / (1j * denom)
-            else:
-                term = (exp_tL - 1) / (1j * denom)
-            total += c_coef * term
-        total /= mp.sqrt(L_mp)
-        return mp.re(mp.exp(1j * tau_mp * L_mp / 2) * total)
-
-    # Use mpmath's known zeta zeros as starting points
-    gamma_true = [mp.im(mp.zetazero(k)) for k in range(1, n_zeros + 1)]
-    results = []
-    for k, g in enumerate(gamma_true, 1):
-        entry = {
-            'k': k,
-            'gamma_true': g,
-            'gamma_detected': None,
-            'error': None,
-            'residual': None,
-            'converged': False,
-            'failure': None,
-            'tolerance': tol_mp,
-        }
-        try:
-            lower = g - mp.mpf("0.005")
-            upper = g + mp.mpf("0.005")
-            root = mp.findroot(
-                F_even,
-                (lower, upper),
-                solver="anderson",
-                tol=tol_mp,
-            )
+        if c is not None:
+            if isinstance(c, float):
+                raise TypeError(
+                    "c must not be a Python float; pass an integer, decimal "
+                    "string, or mp.mpf so the requested precision is preserved"
+                )
             try:
-                root_mp = mp.mpf(root)
+                c_mp = mp.mpf(c)
             except (TypeError, ValueError) as exc:
-                raise ValueError("root candidate must be a finite real number") from exc
-            if not mp.isfinite(root_mp):
-                raise ValueError("root candidate must be finite")
-            if not lower <= root_mp <= upper:
-                raise ValueError(
-                    "root candidate left the local search window: "
-                    f"{mp.nstr(root_mp, 12)} not in "
-                    f"[{mp.nstr(lower, 12)}, {mp.nstr(upper, 12)}]"
+                raise TypeError(f"c must be a real numeric value, got {c!r}") from exc
+            if not mp.isfinite(c_mp) or c_mp <= 1:
+                raise ValueError(f"c must be finite and > 1, got {c!r}")
+            L_mp = mp.log(c_mp)
+        else:
+            if isinstance(L, float):
+                warnings.warn(
+                    "extract_zeros received L as a Python float (float64), which "
+                    "carries only ~16 significant digits and caps the achievable "
+                    "zero-extraction accuracy near 1e-16 regardless of dps. Pass "
+                    "L = mp.log(c) as an mpmath mpf, or use the c= parameter "
+                    "(extract_zeros(eigvec, c=13, ...)) to compute L internally "
+                    "at full precision.",
+                    UserWarning,
+                    stacklevel=2,
                 )
-            residual = abs(F_even(root_mp))
-            if not mp.isfinite(residual):
-                raise ValueError("root residual must be finite")
-            if residual > tol_mp:
-                raise ValueError(
-                    "root residual exceeds the requested tolerance: "
-                    f"{mp.nstr(residual, 8)} > {mp.nstr(tol_mp, 8)}"
+            try:
+                L_mp = mp.mpf(L)
+            except (TypeError, ValueError) as exc:
+                raise TypeError(f"L must be a real numeric value, got {L!r}") from exc
+            if not mp.isfinite(L_mp) or L_mp <= 0:
+                raise ValueError(f"L must be finite and positive, got {L!r}")
+        if tol is None:
+            tol_mp = mp.eps * (2 ** 10)
+        else:
+            tol_mp = _validated_positive_mpf("tol", tol)
+        PI = mp.pi
+
+        def F_even(tau):
+            """Finite test function whose roots are sought near zeta ordinates."""
+            tau_mp = mp.mpf(tau)
+            total = mp.mpc(0, 0)
+            exp_tL = mp.exp(-1j * tau_mp * L_mp)
+            for k in range(-N, N + 1):
+                c_coef = coefficients[k + N]
+                if c_coef == 0:
+                    continue
+                denom = 2 * PI * k / L_mp - tau_mp
+                if denom == 0:
+                    term = mp.mpc(L_mp, 0)
+                elif abs(denom * L_mp) < mp.sqrt(mp.eps):
+                    # Since tau*L = 2*pi*k - denom*L, the numerator is
+                    # expm1(i*denom*L). This avoids cancellation near the
+                    # removable singularity without changing the ordinary path.
+                    term = mp.expm1(1j * denom * L_mp) / (1j * denom)
+                else:
+                    term = (exp_tL - 1) / (1j * denom)
+                total += c_coef * term
+            total /= mp.sqrt(L_mp)
+            return mp.re(mp.exp(1j * tau_mp * L_mp / 2) * total)
+
+        # Use mpmath's known zeta zeros as starting points
+        gamma_true = [mp.im(mp.zetazero(k)) for k in range(1, n_zeros + 1)]
+        results = []
+        for k, g in enumerate(gamma_true, 1):
+            entry = {
+                'k': k,
+                'gamma_true': g,
+                'gamma_detected': None,
+                'error': None,
+                'residual': None,
+                'converged': False,
+                'failure': None,
+                'tolerance': tol_mp,
+            }
+            try:
+                lower = g - mp.mpf("0.005")
+                upper = g + mp.mpf("0.005")
+                root = mp.findroot(
+                    F_even,
+                    (lower, upper),
+                    solver="anderson",
+                    tol=tol_mp,
                 )
-            entry['gamma_detected'] = root_mp
-            entry['error'] = abs(root_mp - g)
-            entry['residual'] = residual
-            entry['converged'] = True
-        except ValueError as exc:
-            entry['failure'] = str(exc)
-            if strict:
-                raise
-            warnings.warn(
-                f"extract_zeros did not converge for zeta zero {k}: {exc}",
-                RuntimeWarning,
-                stacklevel=2,
-            )
-        results.append(entry)
-    return results
+                try:
+                    root_mp = mp.mpf(root)
+                except (TypeError, ValueError) as exc:
+                    raise ValueError("root candidate must be a finite real number") from exc
+                if not mp.isfinite(root_mp):
+                    raise ValueError("root candidate must be finite")
+                if not lower <= root_mp <= upper:
+                    raise ValueError(
+                        "root candidate left the local search window: "
+                        f"{mp.nstr(root_mp, 12)} not in "
+                        f"[{mp.nstr(lower, 12)}, {mp.nstr(upper, 12)}]"
+                    )
+                residual = abs(F_even(root_mp))
+                if not mp.isfinite(residual):
+                    raise ValueError("root residual must be finite")
+                if residual > tol_mp:
+                    raise ValueError(
+                        "root residual exceeds the requested tolerance: "
+                        f"{mp.nstr(residual, 8)} > {mp.nstr(tol_mp, 8)}"
+                    )
+                entry['gamma_detected'] = root_mp
+                entry['error'] = abs(root_mp - g)
+                entry['residual'] = residual
+                entry['converged'] = True
+            except ValueError as exc:
+                entry['failure'] = str(exc)
+                if strict:
+                    raise
+                warnings.warn(
+                    f"extract_zeros did not converge for zeta zero {k}: {exc}",
+                    RuntimeWarning,
+                    stacklevel=2,
+                )
+            results.append(entry)
+        return results
