@@ -254,9 +254,9 @@ Performance release: the recorded same-environment A/B cell shows an approximate
 
 ### Files added
 
-- `_benchmarks/baseline_benchmark.py` - historical small-workload baseline driver (c=13 N=50 dps=50).
-- `_benchmarks/win1_benchmark.py` - historical small-workload WIN 1 driver (same params, direct comparison).
-- `_benchmarks/win1_pool_benchmark.py` - historical production-style A/B harness using the then-current internal sweep path (12-way multiprocessing).
+- `benchmarks/baseline_benchmark.py` - historical small-workload baseline driver (c=13 N=50 dps=50).
+- `benchmarks/win1_benchmark.py` - historical small-workload WIN 1 driver (same params, direct comparison).
+- `benchmarks/win1_pool_benchmark.py` - historical production-style A/B harness using the then-current internal sweep path (12-way multiprocessing).
 - `benchmarks/AB_VERIFIED_2026-04-14.md` - A/B verification record (same-environment baseline-vs-WIN-1; all 80 printed lambda digits agree).
 
 ### No API changes
