@@ -87,22 +87,26 @@ def _cell_precision(dps: int) -> Iterator[None]:
     cell's precision and silently corrupts the ground-state eigenvalue of an
     unrelated matrix diagonalized later in the same process.
     """
-    previous_dps = mp.mp.dps
+    previous_mpmath_prec = mp.mp.prec
     # Saved and restored under the same HAS_FLINT guard, so the 0 defaults are
     # never read back; flint_ctx does not exist at all on the pure-mpmath path.
-    previous_prec = 0
-    previous_threads = 0
+    previous_flint_prec = 0
+    previous_flint_threads = 0
     if HAS_FLINT:
-        previous_prec = flint_ctx.prec
-        previous_threads = flint_ctx.threads
+        previous_flint_prec = flint_ctx.prec
+        previous_flint_threads = flint_ctx.threads
     mp.mp.dps = dps
     try:
         yield
     except BaseException:
-        mp.mp.dps = previous_dps
+        # Restore prec, not dps. mpmath is binary-precision based and its
+        # prec -> dps -> prec round trip is lossy (prec=101 -> dps=29 ->
+        # prec=100; prec=201 -> dps=60 -> prec=203), so restoring the decimal
+        # value would silently change the caller's precision by a bit or two.
+        mp.mp.prec = previous_mpmath_prec
         if HAS_FLINT:
-            flint_ctx.prec = previous_prec
-            flint_ctx.threads = previous_threads
+            flint_ctx.prec = previous_flint_prec
+            flint_ctx.threads = previous_flint_threads
         raise
 
 

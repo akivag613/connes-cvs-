@@ -25,6 +25,14 @@ leaves `dps` active, because that is the documented contract callers of
 `compute_ground_state` rely on (see `examples/basic_compute.py`); the new test
 `test_successful_cells_still_leave_their_precision_active` pins it.
 
+Restoration is exact in binary precision, not in decimal digits. mpmath is
+binary-precision based and its `prec` → `dps` → `prec` round trip is lossy
+(`prec=101` reports `dps=29`, and assigning that `dps` back yields `prec=100`;
+`prec=201` → `dps=60` → `prec=203`), so the context is saved and restored through
+`mp.mp.prec`. `test_rejected_cells_restore_the_exact_binary_precision` covers
+that from `prec=101`, including a failure injected after the Flint context is
+configured rather than during input validation.
+
 No recorded digit changes. The raw digest of the `c=13, N=8, T=60, dps=30`
 matrix, its `lambda_min`, eigenvector head, extracted zeros, and a second
 `c="13.5"` decimal-string cell are byte-identical before and after the change,

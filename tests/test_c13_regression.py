@@ -473,6 +473,77 @@ def test_successful_cells_still_leave_their_precision_active():
     assert mp.mp.dps == 42
 
 
+def test_rejected_cells_restore_the_exact_binary_precision(monkeypatch):
+    """
+    Restoration must be exact in bits, not in decimal digits.
+
+    mpmath is binary-precision based and its prec -> dps -> prec round trip is
+    lossy: prec=101 reports dps=29, and assigning that dps back yields prec=100.
+    A caller whose context was an awkward bit count therefore had its precision
+    silently changed by the restore. Reported on PR #6.
+
+    Starts from prec=101 so a dps-based restore is actually observable, and also
+    drives a failure raised *after* the Flint context is configured, which is
+    the other path that escapes the context manager.
+    """
+    import mpmath as mp
+    from connes_cvs import build_galerkin_matrix, extract_zeros
+    from connes_cvs import operator
+
+    original_prec = mp.mp.prec
+    original_flint = (
+        (operator.flint_ctx.prec, operator.flint_ctx.threads)
+        if operator.HAS_FLINT
+        else None
+    )
+
+    def arm():
+        """Put the ambient context on the awkward precision, then check it took."""
+        mp.mp.prec = 101
+        assert mp.mp.dps == 29, "prec=101 must be the lossy case this test guards"
+
+    def assert_restored():
+        assert mp.mp.prec == 101
+        if operator.HAS_FLINT:
+            assert (operator.flint_ctx.prec, operator.flint_ctx.threads) == original_flint
+
+    def boom(*args, **kwargs):
+        raise RuntimeError("injected after backend setup")
+
+    try:
+        arm()
+        assert_restored()
+
+        # Rejected during input validation.
+        with pytest.raises(TypeError, match="Python float"):
+            build_galerkin_matrix(13.0, N=2, T=60, dps=17)
+        assert_restored()
+
+        vector = _tiny_eigvec()  # the helper itself moves the global precision
+        arm()
+        with pytest.raises(ValueError):
+            extract_zeros(vector, n_zeros=1, dps=17)
+        assert_restored()
+
+        # Raised after the backend context has been configured, not during
+        # validation: the flint precision is already installed at this point.
+        arm()
+        monkeypatch.setattr(operator, "_compute_psi_pair", boom)
+        with pytest.raises(RuntimeError, match="injected after backend setup"):
+            build_galerkin_matrix(c=13, N=2, T=60, dps=17)
+        assert_restored()
+
+        # And the success path still leaves the requested precision active.
+        monkeypatch.undo()
+        arm()
+        build_galerkin_matrix(c=13, N=2, T=60, dps=17)
+        assert mp.mp.dps == 17
+    finally:
+        mp.mp.prec = original_prec
+        if operator.HAS_FLINT:
+            operator.flint_ctx.prec, operator.flint_ctx.threads = original_flint
+
+
 def test_extract_zeros_rejects_zero_and_complex_vectors():
     import mpmath as mp
     from connes_cvs import extract_zeros
