@@ -121,7 +121,7 @@ jobs:
           python -m pip install --upgrade python-flint
       - name: Confirm Windows and Flint
         run: |
-          python -c "import platform, flint; assert platform.system() == 'Windows'; print('python-flint', flint.__version__)"
+          python -c "import platform, flint; from connes_cvs.operator import HAS_FLINT; assert platform.system() == 'Windows'; assert HAS_FLINT; print('python-flint', flint.__version__)"
       - name: Exercise spawn path explicitly
         run: >-
           python -m pytest -v

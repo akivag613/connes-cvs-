@@ -50,8 +50,11 @@ def test_every_package_test_example_and_public_data_file_is_allowlisted():
     sdist = set(_manifest()["sdist_files"])
     for directory in (
         "connes_cvs",
+        "data",
         "data/c100",
         "data/third_party/karl-keysingularity",
+        "benchmarks",
+        "tools",
     ):
         assert _relative_files(directory) <= sdist, directory
     assert not any(name.startswith("papers/") for name in sdist)
@@ -79,6 +82,22 @@ def test_every_package_test_example_and_public_data_file_is_allowlisted():
     assert "tests/test_paper2_public_artifacts.py" not in sdist
     assert not any(name.startswith("data/paper2/") for name in sdist)
     assert not any("paper2" in Path(name).name for name in sdist if name.startswith("examples/"))
+
+
+def test_pyproject_allowlists_match_the_release_manifest():
+    """
+    The two manifests must move together, in the fast suite.
+
+    ``tools/verify_release.py`` already cross-checks the pyproject allowlists
+    against ``sdist_files``/``wheel_files``, but only from its entry point,
+    which CI reaches in the ``release-archives`` job after a build. Editing one
+    allowlist in ``pyproject.toml`` alone therefore left every fast-suite leg
+    green across the whole matrix and surfaced only at release time.
+    """
+    pytest.importorskip("tomllib", reason="tomllib requires Python 3.11+")
+    module = _verifier_module()
+    manifest = module._load_manifest(MANIFEST_PATH)
+    module._verify_source_configuration(ROOT, manifest)
 
 
 def test_wheel_manifest_is_exactly_the_public_package_plus_metadata():
