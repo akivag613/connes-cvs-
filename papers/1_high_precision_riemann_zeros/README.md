@@ -23,7 +23,9 @@ Part of the [`connes-cvs` series](../../README.md#papers): **Riemann zeros - the
 ## About this folder
 
 `high_precision_approximation_of_riemann_zeros.pdf` is the current published manuscript, 46 pages,
-carrying every recorded correction in its text. It is byte-identical to the manuscript in the
+incorporating the corrections dated through 2026-08-14. The later [Martini attribution
+update](../../ERRATA.md#2026-10-15---martini-replication-attribution-in-section-98) applies to Section 9.8
+and is not yet incorporated in this PDF. It is byte-identical to the manuscript in the
 Zenodo deposit that the concept DOI
 [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514) resolves to.
 **This paper's reproducibility package is the `connes-cvs` package**, together with
@@ -61,10 +63,10 @@ summary digit-increment ranges in Section 6.5, 93-117 and 181-203; and the corre
 `c = 100` negative block does not vanish at any finite cutoff tested, though a cutoff-free
 evaluation still leaves the even sector non-negative.
 
-**All of them are already incorporated in the text of the PDF in this folder**, so it needs no
-errata overlay. `ERRATA.md` is retained as the record of what changed and when, and because it
-still applies to anyone reading an earlier version of the manuscript, on either Zenodo or
-[arXiv](https://arxiv.org/abs/2605.20224).
+**The corrections listed in the preceding paragraph are incorporated in this PDF.** The later
+2026-10-15 Martini attribution update remains an overlay for Section 9.8 pending a new
+manuscript revision. `ERRATA.md` records the status of each correction for readers of the
+Zenodo and [arXiv](https://arxiv.org/abs/2605.20224) versions.
 
 ## License
 

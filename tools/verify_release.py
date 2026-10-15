@@ -13,6 +13,7 @@ or duplicate archive member fails verification.
 from __future__ import annotations
 
 import argparse
+import ast
 import base64
 import csv
 import hashlib
@@ -266,9 +267,36 @@ def _verify_source_configuration(root: Path, manifest: Mapping[str, object]) -> 
         ) from exc
     with (root / "pyproject.toml").open("rb") as handle:
         project = tomllib.load(handle)
+    if project["project"]["name"] != manifest["distribution"]:
+        raise ReleaseVerificationError("pyproject project name differs from the release manifest")
+    version = manifest["version"]
+    if project["project"]["version"] != version:
+        raise ReleaseVerificationError("pyproject version differs from the release manifest")
+
+    # Read the declared package version without importing the numerical package.
+    source = ast.parse((root / "connes_cvs" / "__init__.py").read_text(encoding="utf-8"))
+    versions = [
+        node.value.value
+        for node in source.body
+        if isinstance(node, ast.Assign)
+        and any(isinstance(target, ast.Name) and target.id == "__version__"
+                for target in node.targets)
+        and isinstance(node.value, ast.Constant)
+        and isinstance(node.value.value, str)
+    ]
+    if versions != [version]:
+        raise ReleaseVerificationError("package version differs from the release manifest")
+
+    normalized = str(manifest["distribution"]).replace("-", "_")
+    dist_info = f"{normalized}-{version}.dist-info"
+    _check_exact(
+        [name for name in manifest["wheel_files"] if not name.startswith("connes_cvs/")],
+        [f"{dist_info}/{name}" for name in ("METADATA", "RECORD", "WHEEL", "licenses/LICENSE")],
+        "wheel metadata paths",
+    )
     targets = project["tool"]["hatch"]["build"]["targets"]
     configured_sdist = targets["sdist"]["include"]
-    generated = {".gitignore", "PKG-INFO"}
+    generated = {"PKG-INFO"}
     expected_sdist = [
         "/" + name for name in manifest["sdist_files"] if name not in generated
     ]

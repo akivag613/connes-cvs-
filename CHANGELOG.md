@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Close release-configuration and recursive source-inventory gaps, remove
+  obsolete filename exemptions, and include the selected references page in
+  source distributions. Add negative controls for omitted files and inconsistent
+  versions, following Dan Alec Yamaguchi's reports in [PR #7](https://github.com/akivag613/connes-cvs-/pull/7).
+- Make both c=100 figure scripts importable without data and reject incomplete
+  input bundles with a clear command-line error. Numerical inputs and plotting
+  calculations are unchanged.
+- Refresh Martini's replication attribution against v4, record the pending
+  Section 9.8 manuscript correction, and consolidate selected third-party
+  references with source versions and distinct citation/validation labels.
+
 - Restore the caller's exact mpmath bit precision and Flint precision/thread
   settings when matrix construction or zero extraction raises, including
   interruption. Successful calls retain the existing precision behavior;

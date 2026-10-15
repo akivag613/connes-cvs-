@@ -1,8 +1,16 @@
 # Errata
 
-Corrections to the accompanying paper, [arXiv:2605.20224](https://arxiv.org/abs/2605.20224), *High-Precision Approximation of Riemann Zeros via the Truncated Weil Form*. This note records them for transparency. Entries are newest first. No entry changes a measured value.
+Corrections to the accompanying paper, [arXiv:2605.20224](https://arxiv.org/abs/2605.20224), *High-Precision Approximation of Riemann Zeros via the Truncated Weil Form*. This note records them for transparency. Entries are newest first. No entry changes a measured value from this project.
 
-**Status of each correction in the manuscript.** Every correction recorded here is incorporated in the text of the current manuscript, which is deposited on Zenodo under the concept DOI [10.5281/zenodo.19546514](https://doi.org/10.5281/zenodo.19546514). That DOI always resolves to the current version. Readers working from an earlier version, on either Zenodo or arXiv, should read the passages named below against these entries.
+**Status in the manuscript.** The corrections dated through 2026-08-14 are incorporated in the published manuscript ([arXiv](https://arxiv.org/abs/2605.20224); [Zenodo concept DOI](https://doi.org/10.5281/zenodo.19546514)). The attribution update below is an overlay for Section 9.8 and is **not yet incorporated in that PDF**.
+
+## 2026-10-15 - Martini replication attribution in Section 9.8
+
+A. F. Martini's [revised replication](https://doi.org/10.5281/zenodo.21864191), reviewed at [v4, record 23393038](https://zenodo.org/records/23393038), corrects the account attributed to him in Section 9.8. The reported numerical replication uses `connes-cvs`; his separate from-scratch assembly has not been rerun with its corrected formulas and should not be described as a successful independent implementation.
+
+At c=13, N=60, T=400, dps=80, his revised Table 2 reports a first-zero error of 4.215 × 10⁻⁵⁵ using v0.3.1, consistent with this paper's rounded 4.22 × 10⁻⁵⁵. The earlier roughly 10⁻¹⁷ errors arose from a float64 `L=log(c)` input, not from finite N or the stated working precision. His earlier “same form in different bases” explanation is withdrawn in v4 and is no longer attributed here. Accordingly, Section 9.8's introductory count should read **two independent implementations and two package reruns**, plus the separate table-row reproduction.
+
+This updates third-party attribution, not this project's numerical data or its independently stated operator identities. The README and selected references use the revised account. The published manuscript remains unchanged pending a new revision.
 
 ## 2026-08-14 - the c = 100 negative block does not vanish at any finite cutoff we tested
 

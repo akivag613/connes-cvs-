@@ -44,26 +44,33 @@ import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
+N_LIST = (100, 150, 200, 250)
+INPUT_FILES = {
+    N: f"results_c100_N{N}_T800_dps500_v020.json" for N in N_LIST
+}
 
 
 def _resolve_data_dir() -> str:
-    """Try the source-repo path first, then the Zenodo-bundle path."""
+    """Select the first complete source-repo or Zenodo data bundle."""
+    missing_by_directory = []
     for candidate in (
         os.path.join(REPO, "data", "c100"),                  # source repo
         os.path.join(REPO, "data", "c100_verification"),     # Zenodo bundle
     ):
-        if os.path.isdir(candidate):
+        missing = [
+            name for name in INPUT_FILES.values()
+            if not os.path.isfile(os.path.join(candidate, name))
+        ]
+        if not missing:
             return candidate
+        missing_by_directory.append(f"{candidate}: missing {', '.join(missing)}")
     raise FileNotFoundError(
-        "Could not locate the c=100 result JSONs in either data/c100/ "
-        "(source repo) or data/c100_verification/ (Zenodo bundle)."
+        "No complete c=100 N-sweep data bundle found. "
+        + "; ".join(missing_by_directory)
     )
 
 
-DATA = _resolve_data_dir()
 DEFAULT_OUT = os.path.join("figures", "fig9_c100_aitken.pdf")
-
-N_LIST = (100, 150, 200, 250)
 
 
 def log10_from_decimal_string(s: str) -> float:
@@ -85,10 +92,12 @@ def connes_2026_section_6_4(c: int) -> float:
     return prefactor - 4.0 * math.pi * c / math.log(10.0) + 9.0 * L / (2.0 * math.log(10.0))
 
 
-def load_x() -> dict[int, float]:
+def load_x(data_dir: str | None = None) -> dict[int, float]:
+    if data_dir is None:
+        data_dir = _resolve_data_dir()
     runs = {}
-    for N in N_LIST:
-        path = os.path.join(DATA, f"results_c100_N{N}_T800_dps500_v020.json")
+    for N, filename in INPUT_FILES.items():
+        path = os.path.join(data_dir, filename)
         with open(path, encoding="utf-8") as handle:
             runs[N] = json.load(handle)
     return {N: log10_from_decimal_string(r["lambda_even"]) for N, r in runs.items()}
@@ -240,14 +249,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--out", default=DEFAULT_OUT, help="output PDF path")
     args = p.parse_args(argv)
 
-    if not os.path.isdir(DATA):
-        print(f"error: data directory not found at {DATA}", file=sys.stderr)
+    try:
+        x = load_x()
+    except OSError as exc:
+        print(f"error: {exc}", file=sys.stderr)
         return 2
     out_dir = os.path.dirname(os.path.abspath(args.out))
     if not os.path.isdir(out_dir):
         os.makedirs(out_dir, exist_ok=True)
 
-    x = load_x()
     make_figure(x, args.out)
 
     print(f"wrote {args.out}")

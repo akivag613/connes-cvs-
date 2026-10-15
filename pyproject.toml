@@ -108,6 +108,7 @@ include = [
     "/tests/README.md",
     "/tests/reference_values.json",
     "/tests/test_c13_regression.py",
+    "/tests/test_figure_data_resolution.py",
     "/tests/test_matrix_microopt_v0_2_0.py",
     "/tests/test_runner_identity.py",
     "/tests/test_operator_hardening.py",
@@ -142,6 +143,8 @@ include = [
     "/benchmarks/win1_benchmark.py",
     "/benchmarks/win1_pool_benchmark.py",
     "/README.md",
+    "/REFERENCES_TO_THIS_WORK.md",
+    "/.gitignore",
     "/ERRATA.md",
     "/CHANGELOG.md",
     "/CITATION.cff",
@@ -162,7 +165,7 @@ exclude = [
 testpaths = ["tests"]
 # Plain `pytest` runs the fast suite; the slow regression gate is
 # selected explicitly with `pytest -m slow` (the CLI -m overrides this).
-addopts = "-m 'not slow' --ignore=tests/test_paper2_public_artifacts.py"
+addopts = "-m 'not slow'"
 markers = [
     "slow: marks tests that take >60 seconds (e.g., full matrix construction)",
 ]
