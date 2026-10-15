@@ -21,6 +21,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   CC BY 4.0 manuscript license.
 - Correct three historical benchmark path references below and clarify what
   the fast release tests check. These edits do not create a PyPI release.
+- Release tooling: list `.gitignore` in the pyproject sdist allowlist so the
+  two release manifests agree entry for entry (only `PKG-INFO` remains
+  treated as build-generated), and bind the release version across
+  `pyproject.toml`, `.github/release-files.json` and `connes_cvs.__version__`
+  so a partial version bump fails the fast suite instead of reaching the
+  release-archives job. The release inventory test now walks each
+  allowlisted tree recursively, so a new nested public file must be
+  allowlisted, and it no longer exempts paths for a test file that was
+  removed (`tests/test_paper2_public_artifacts.py`).
+- `examples/make_fig10_c100_gamma_digits.py` and
+  `examples/make_fig9_c100_aitken.py` resolve their data bundle inside
+  `main()` and report a missing or partial bundle on stderr with exit code 2
+  instead of raising at import; a bundle must contain every file the figure
+  reads.
 
 ## [Repository documentation audit] - 2026-09-08
 
