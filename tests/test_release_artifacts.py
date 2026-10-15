@@ -94,14 +94,8 @@ def test_every_package_test_example_and_public_data_file_is_allowlisted():
         assert _relative_files(directory) <= sdist, directory
     assert not any(name.startswith("papers/") for name in sdist)
 
-    expected_tests = _relative_files("tests") - {
-        "tests/test_paper2_public_artifacts.py"
-    }
-    expected_examples = {
-        name
-        for name in _relative_files("examples")
-        if "paper2" not in Path(name).name
-    }
+    expected_tests = _relative_files("tests")
+    expected_examples = _relative_files("examples")
     assert expected_tests <= sdist
     assert expected_examples <= sdist
 
@@ -110,11 +104,9 @@ def test_every_package_test_example_and_public_data_file_is_allowlisted():
         "data/third_party/karl-keysingularity/2026-08-02_c13_validation_artifact.json",
         "examples/make_fig9_c100_aitken.py",
         "examples/make_fig10_c100_gamma_digits.py",
-        "tests/test_paper2_public_artifacts.py",
         "tests/test_validation.py",
     }
-    assert required - {"tests/test_paper2_public_artifacts.py"} <= sdist
-    assert "tests/test_paper2_public_artifacts.py" not in sdist
+    assert required <= sdist
     assert not any(name.startswith("data/paper2/") for name in sdist)
     assert not any("paper2" in Path(name).name for name in sdist if name.startswith("examples/"))
 

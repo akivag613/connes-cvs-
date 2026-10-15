@@ -163,7 +163,7 @@ exclude = [
 testpaths = ["tests"]
 # Plain `pytest` runs the fast suite; the slow regression gate is
 # selected explicitly with `pytest -m slow` (the CLI -m overrides this).
-addopts = "-m 'not slow' --ignore=tests/test_paper2_public_artifacts.py"
+addopts = "-m 'not slow'"
 markers = [
     "slow: marks tests that take >60 seconds (e.g., full matrix construction)",
 ]
