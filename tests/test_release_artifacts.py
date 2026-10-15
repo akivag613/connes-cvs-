@@ -56,10 +56,17 @@ def _relative_files(directory: str):
 
 
 def test_release_manifest_is_canonical_and_self_consistent():
+    import connes_cvs
+
     module = _verifier_module()
     manifest = module._load_manifest(MANIFEST_PATH)
     assert manifest["distribution"] == "connes-cvs"
-    assert manifest["version"] == "0.3.1"
+    assert manifest["version"] == connes_cvs.__version__, (
+        f"release manifest version ({manifest['version']}) must match "
+        f"connes_cvs.__version__ ({connes_cvs.__version__}); pyproject and "
+        "installer metadata are bound to both in the verifier and the "
+        "c13 regression suite"
+    )
     assert ".github/release-files.json" in manifest["sdist_files"]
     assert "tools/verify_release.py" in manifest["sdist_files"]
     assert len(manifest["sdist_files"]) == len(set(manifest["sdist_files"]))

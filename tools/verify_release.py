@@ -296,6 +296,19 @@ def _verify_source_configuration(root: Path, manifest: Mapping[str, object]) -> 
         raise ReleaseVerificationError(
             "pyproject wheel allowlist differs from the release manifest"
         )
+    if project["project"]["version"] != manifest["version"]:
+        raise ReleaseVerificationError(
+            "pyproject project version differs from the release manifest"
+        )
+    normalized = str(manifest["distribution"]).replace("-", "_")
+    dist_info = f"{normalized}-{manifest['version']}.dist-info/"
+    for name in manifest["wheel_files"]:
+        if name.startswith(f"{normalized}/"):
+            continue
+        if not name.startswith(dist_info):
+            raise ReleaseVerificationError(
+                "wheel manifest metadata path does not carry the release version"
+            )
 
 
 def verify_release(root: Path, dist: Path) -> Tuple[Path, Path, int, int]:
