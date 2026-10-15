@@ -4,10 +4,10 @@ The papers and software have been used in independent reproductions, mathematica
 
 | Label | Paper or software |
 |---|---|
-| P1 | [High-Precision Approximation of Riemann Zeros via the Truncated Weil Form](https://doi.org/10.5281/zenodo.19546514) |
-| P2 | [A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form](https://doi.org/10.5281/zenodo.21124802) |
+| P1 | [High-Precision Approximation of Riemann Zeros via the Truncated Weil Form](https://arxiv.org/abs/2605.20224) |
+| P2 | [A finite Guinand-Weil dictionary and archimedean tail order for the truncated Weil quadratic form](https://arxiv.org/abs/2607.02828) |
 | P3 | [A matrix-valued von Mangoldt measure in the finite Connes-van Suijlekom path](https://doi.org/10.5281/zenodo.21242028) |
-| SW | [connes-cvs software](https://github.com/akivag613/connes-cvs-) |
+| SW | [connes-cvs software](https://pypi.org/project/connes-cvs/) · [source](https://github.com/akivag613/connes-cvs-) |
 
 | Referencing work | References | Use in the source | Inspected location and version |
 |---|---|---|---|
