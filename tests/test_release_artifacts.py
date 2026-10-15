@@ -29,10 +29,18 @@ def _manifest():
 
 def _relative_files(directory: str):
     root = ROOT / directory
+    # Recursive: the shipped manifest carries nested paths (for example
+    # benchmarks/AB_VERIFIED_2026-04-14.md and
+    # data/third_party/karl-keysingularity/README.md), so a top-level-only
+    # walk cannot see a new public file below the first level and would
+    # silently accept it not shipping.
     files = {
         path.relative_to(ROOT).as_posix()
-        for path in root.iterdir()
-        if path.is_file() and path.name != ".DS_Store"
+        for path in root.rglob("*")
+        if path.is_file()
+        and path.name != ".DS_Store"
+        and "__pycache__" not in path.parts
+        and path.suffix not in {".pyc", ".pyo"}
     }
     if not (ROOT / ".git").exists():
         # An archive has no Git exclusions. Verify a clean source export here.
