@@ -60,7 +60,6 @@ def _resolve_data_dir() -> str:
     )
 
 
-DATA = _resolve_data_dir()
 DEFAULT_OUT = os.path.join("figures", "fig9_c100_aitken.pdf")
 
 N_LIST = (100, 150, 200, 250)
@@ -85,10 +84,10 @@ def connes_2026_section_6_4(c: int) -> float:
     return prefactor - 4.0 * math.pi * c / math.log(10.0) + 9.0 * L / (2.0 * math.log(10.0))
 
 
-def load_x() -> dict[int, float]:
+def load_x(data_dir: str) -> dict[int, float]:
     runs = {}
     for N in N_LIST:
-        path = os.path.join(DATA, f"results_c100_N{N}_T800_dps500_v020.json")
+        path = os.path.join(data_dir, f"results_c100_N{N}_T800_dps500_v020.json")
         with open(path, encoding="utf-8") as handle:
             runs[N] = json.load(handle)
     return {N: log10_from_decimal_string(r["lambda_even"]) for N, r in runs.items()}
@@ -240,14 +239,16 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--out", default=DEFAULT_OUT, help="output PDF path")
     args = p.parse_args(argv)
 
-    if not os.path.isdir(DATA):
-        print(f"error: data directory not found at {DATA}", file=sys.stderr)
+    try:
+        data_dir = _resolve_data_dir()
+    except FileNotFoundError as exc:
+        print(f"error: {exc}", file=sys.stderr)
         return 2
     out_dir = os.path.dirname(os.path.abspath(args.out))
     if not os.path.isdir(out_dir):
         os.makedirs(out_dir, exist_ok=True)
 
-    x = load_x()
+    x = load_x(data_dir)
     make_figure(x, args.out)
 
     print(f"wrote {args.out}")
