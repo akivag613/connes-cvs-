@@ -34,22 +34,22 @@ REPO = os.path.dirname(HERE)
 
 
 def _resolve_data_dir() -> str:
+    # A candidate qualifies only when it holds every file CELLS loads.
+    # Checking a subset would let a partial bundle pass here and fail
+    # later inside make_figure with an opaque missing-file traceback.
+    required = [meta["file"] for meta in CELLS]
     for candidate in (
         os.path.join(REPO, "data", "c100"),                  # source-repo layout
         os.path.join(REPO, "data", "c100_verification"),     # Zenodo-bundle layout
     ):
-        # Require at least one of the gamma-extraction files to be present.
-        if os.path.isdir(candidate) and any(
-            os.path.exists(os.path.join(candidate, f))
-            for f in (
-                "c100_N250_dps500_gamma_extraction.json",
-                "c100_N150_dps1000_gamma_extraction.json",
-            )
+        if os.path.isdir(candidate) and all(
+            os.path.exists(os.path.join(candidate, name)) for name in required
         ):
             return candidate
     raise FileNotFoundError(
         "Could not locate the gamma_extraction JSONs in any of the "
-        "candidate data directories."
+        "candidate data directories; all of these files are required: "
+        + ", ".join(meta["file"] for meta in CELLS)
     )
 
 

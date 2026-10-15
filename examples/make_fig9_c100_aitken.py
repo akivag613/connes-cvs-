@@ -48,15 +48,22 @@ REPO = os.path.dirname(HERE)
 
 def _resolve_data_dir() -> str:
     """Try the source-repo path first, then the Zenodo-bundle path."""
+    # A candidate qualifies only when it holds every result file load_x
+    # reads; a bare directory check let an empty or partial data tree pass
+    # here and fail later with an opaque missing-file traceback.
+    required = [f"results_c100_N{N}_T800_dps500_v020.json" for N in N_LIST]
     for candidate in (
         os.path.join(REPO, "data", "c100"),                  # source repo
         os.path.join(REPO, "data", "c100_verification"),     # Zenodo bundle
     ):
-        if os.path.isdir(candidate):
+        if os.path.isdir(candidate) and all(
+            os.path.exists(os.path.join(candidate, name)) for name in required
+        ):
             return candidate
     raise FileNotFoundError(
         "Could not locate the c=100 result JSONs in either data/c100/ "
-        "(source repo) or data/c100_verification/ (Zenodo bundle)."
+        "(source repo) or data/c100_verification/ (Zenodo bundle); all of "
+        "these files are required: " + ", ".join(required)
     )
 
 
