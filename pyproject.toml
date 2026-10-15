@@ -148,6 +148,7 @@ include = [
     "/LICENSE",
     "/pyproject.toml",
     "/.github/release-files.json",
+    "/.gitignore",
     "/tools/verify_release.py",
 ]
 # Build hygiene. The allowlist above is the exclusion mechanism: anything not

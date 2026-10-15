@@ -268,7 +268,12 @@ def _verify_source_configuration(root: Path, manifest: Mapping[str, object]) -> 
         project = tomllib.load(handle)
     targets = project["tool"]["hatch"]["build"]["targets"]
     configured_sdist = targets["sdist"]["include"]
-    generated = {".gitignore", "PKG-INFO"}
+    # Only PKG-INFO is build-generated. .gitignore is a tracked source file and
+    # must be allowlisted in pyproject like every other shipped path; hatchling
+    # force-includes root VCS exclusion files regardless of the allowlist, and
+    # dedups the member when it is listed, so naming it keeps both manifests in
+    # exact agreement without changing the archive contents.
+    generated = {"PKG-INFO"}
     expected_sdist = [
         "/" + name for name in manifest["sdist_files"] if name not in generated
     ]
