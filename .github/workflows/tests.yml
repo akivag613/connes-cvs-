@@ -122,6 +122,7 @@ jobs:
       - name: Confirm Windows and Flint
         run: |
           python -c "import platform, flint; assert platform.system() == 'Windows'; print('python-flint', flint.__version__)"
+          python -c "from connes_cvs import operator; assert operator.HAS_FLINT, 'Windows tests require the Flint backend'"
       - name: Exercise spawn path explicitly
         run: >-
           python -m pytest -v

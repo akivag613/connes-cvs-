@@ -609,3 +609,77 @@ def test_c13_published_t800_runner_cell_and_gamma1():
     assert zero["converged"] is True
     got_error = mp.nstr(zero["error"], 40)
     assert _matching_digits(ref["gamma_1_abs_error"], got_error) >= 22
+
+
+@pytest.fixture
+def unusual_numerical_context():
+    """Use bit precision that cannot survive a decimal dps round trip."""
+    import connes_cvs.operator as operator
+    original_bits = mp.mp.prec
+    original_flint = (operator.flint_ctx.prec, operator.flint_ctx.threads) if operator.HAS_FLINT else None
+    mp.mp.prec = 101
+    if operator.HAS_FLINT:
+        operator.flint_ctx.prec = 173
+        operator.flint_ctx.threads = 2
+    try:
+        yield operator
+    finally:
+        mp.mp.prec = original_bits
+        if original_flint is not None:
+            operator.flint_ctx.prec, operator.flint_ctx.threads = original_flint
+
+
+def _assert_original_context(operator):
+    assert mp.mp.prec == 101
+    if operator.HAS_FLINT:
+        assert (operator.flint_ctx.prec, operator.flint_ctx.threads) == (173, 2)
+
+
+@pytest.mark.parametrize("api", ["matrix", "zeros"])
+def test_api_rejection_preserves_callers_bit_precision(unusual_numerical_context, api):
+    operator = unusual_numerical_context
+    with pytest.raises(TypeError, match="float"):
+        if api == "matrix":
+            operator.build_galerkin_matrix(c=13.0, N=1, T=1, dps=47)
+        else:
+            operator.extract_zeros(mp.matrix([1, 2, 1]), c=13.0, n_zeros=1, dps=47)
+    _assert_original_context(operator)
+
+
+@pytest.mark.parametrize("failure_type", [RuntimeError, KeyboardInterrupt])
+@pytest.mark.parametrize("api", ["matrix", "zeros"])
+def test_raised_failure_restores_context_and_exception_identity(
+    unusual_numerical_context, monkeypatch, failure_type, api,
+):
+    operator = unusual_numerical_context
+    failure = failure_type("controlled failure after precision setup")
+
+    def fail(*args, **kwargs):
+        assert mp.mp.dps == 47
+        if operator.HAS_FLINT and api == "matrix":
+            assert (operator.flint_ctx.prec, operator.flint_ctx.threads) == (197, 1)
+        raise failure
+
+    monkeypatch.setattr(operator, "prime_powers_up_to" if api == "matrix" else "_validated_positive_mpf", fail)
+    with pytest.raises(failure_type) as raised:
+        if api == "matrix":
+            operator.build_galerkin_matrix(c=13, N=1, T=1, dps=47, flint_bits=197)
+        else:
+            operator.extract_zeros(mp.matrix([1, 2, 1]), c=13, n_zeros=1, dps=47, tol="1e-30")
+    assert raised.value is failure
+    _assert_original_context(operator)
+
+
+def test_successful_call_keeps_requested_precision(unusual_numerical_context):
+    operator = unusual_numerical_context
+    matrix = operator.build_galerkin_matrix(c=2, N=1, T=1, dps=30, flint_bits=120)
+    assert matrix.rows == 3
+    assert mp.mp.dps == 30
+    if operator.HAS_FLINT:
+        assert (operator.flint_ctx.prec, operator.flint_ctx.threads) == (120, 1)
+    _, vector = operator.compute_ground_state(matrix)
+    with pytest.warns(RuntimeWarning, match="did not converge"):
+        operator.extract_zeros(vector, c=2, n_zeros=1, dps=35)
+    assert mp.mp.dps == 35
+    if operator.HAS_FLINT:
+        assert (operator.flint_ctx.prec, operator.flint_ctx.threads) == (120, 1)

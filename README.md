@@ -55,6 +55,7 @@ The series combines high-precision numerical work, finite-dimensional theorems, 
 - [How it works](#how-it-works)
 - [Further reading](#further-reading)
 - [Citation](#citation)
+- [References to this work](#references-to-this-work)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -445,9 +446,21 @@ The companion notes, [*A finite Guinand-Weil dictionary and archimedean tail ord
 
 ---
 
+## References to this work
+
+[Selected references to this work](https://github.com/akivag613/connes-cvs-/blob/main/REFERENCES_TO_THIS_WORK.md)
+highlights independent reproductions and research that cites or uses the papers
+and software, with links to the original sources.
+
+---
+
 ## Contributing
 
 Issues and pull requests are welcome. See [CONTRIBUTING.md](https://github.com/akivag613/connes-cvs-/blob/main/.github/CONTRIBUTING.md) for developer-setup instructions and the numerical regression protocol. Version history is in [CHANGELOG.md](https://github.com/akivag613/connes-cvs-/blob/main/CHANGELOG.md).
+
+Thanks to Dan Alec Yamaguchi ([danalec](https://github.com/danalec)) for reporting
+the failure-path precision leak and identifying release-check and documentation
+improvements in [PR #6](https://github.com/akivag613/connes-cvs-/pull/6).
 
 ---
 

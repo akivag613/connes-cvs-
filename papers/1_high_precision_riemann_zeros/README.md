@@ -68,4 +68,4 @@ still applies to anyone reading an earlier version of the manuscript, on either 
 
 ## License
 
-Manuscript: CC BY 4.0. The `connes-cvs` package is [MIT](../../LICENSE).
+Manuscript: [CC BY 4.0](LICENSE-PAPER-CC-BY-4.0.txt). The `connes-cvs` package is [MIT](../../LICENSE).

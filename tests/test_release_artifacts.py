@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -28,11 +29,30 @@ def _manifest():
 
 def _relative_files(directory: str):
     root = ROOT / directory
-    return {
+    files = {
         path.relative_to(ROOT).as_posix()
         for path in root.iterdir()
         if path.is_file() and path.name != ".DS_Store"
     }
+    if not (ROOT / ".git").exists():
+        # An archive has no Git exclusions. Verify a clean source export here.
+        return files
+
+    # Respect Git exclusions when determining the source inventory.
+    # Include both tracked files and new public files awaiting staging; an
+    # ignored tracked file must still be checked. Run Git without a shell and
+    # disable any configured filesystem-monitor command for this read.
+    source = subprocess.run(
+        ["git", "-c", "core.fsmonitor=false", "-C", str(ROOT),
+         "ls-files", "--cached", "--others",
+         "--exclude-standard", "-z", "--", directory],
+        check=True,
+        capture_output=True,
+    )
+    public_paths = {
+        path.decode("utf-8") for path in source.stdout.split(b"\0") if path
+    }
+    return files & public_paths
 
 
 def test_release_manifest_is_canonical_and_self_consistent():
@@ -50,6 +70,9 @@ def test_every_package_test_example_and_public_data_file_is_allowlisted():
     sdist = set(_manifest()["sdist_files"])
     for directory in (
         "connes_cvs",
+        "benchmarks",
+        "tools",
+        "data",
         "data/c100",
         "data/third_party/karl-keysingularity",
     ):
@@ -79,6 +102,14 @@ def test_every_package_test_example_and_public_data_file_is_allowlisted():
     assert "tests/test_paper2_public_artifacts.py" not in sdist
     assert not any(name.startswith("data/paper2/") for name in sdist)
     assert not any("paper2" in Path(name).name for name in sdist if name.startswith("examples/"))
+
+
+def test_source_configuration_agrees_with_distribution_manifest():
+    # The release verifier parses TOML with the standard library. Python 3.10
+    # still runs the inventory tests; the 3.11+ legs also check both allowlists.
+    pytest.importorskip("tomllib")
+    verifier = _verifier_module()
+    verifier._verify_source_configuration(ROOT, _manifest())
 
 
 def test_wheel_manifest_is_exactly_the_public_package_plus_metadata():

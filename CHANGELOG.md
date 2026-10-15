@@ -5,6 +5,23 @@ All notable changes to `connes-cvs` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [Unreleased]
+
+- Restore the caller's exact mpmath bit precision and Flint precision/thread
+  settings when matrix construction or zero extraction raises, including
+  interruption. Successful calls retain the existing precision behavior;
+  the numerical formulas and evaluation order are unchanged.
+- Add independent tests for rejection, runtime failure, interruption and
+  successful-call context behavior, following the issue reported by Dan Alec
+  Yamaguchi in [PR #6](https://github.com/akivag613/connes-cvs-/pull/6).
+- Strengthen release-source coverage and manifest agreement checks and verify
+  that Windows tests activate the intended Flint backend.
+- Credit the issue report and add a standalone notice for Paper 1's existing
+  CC BY 4.0 manuscript license.
+- Correct three historical benchmark path references below and clarify what
+  the fast release tests check. These edits do not create a PyPI release.
+
 ## [Repository documentation audit] - 2026-09-08
 
 - Completed sibling navigation across all four paper folders and clarified where
@@ -169,7 +186,7 @@ Paper revision; no changes to the `connes-cvs` PyPI package.  Published on Zenod
 ### Unchanged
 
 - The original 15-cutoff data file ($c = 13, 14, 17, \ldots, 67$ at $N = 100$, $T = 800$, $\mathrm{dps} = 150$–$200$) is byte-for-byte unchanged from Zenodo Version 2.
-- The `connes-cvs` v0.2.2 PyPI package is unaffected. The new $c = 100$ data was produced by a local-only v0.2.3 port (in preparation for an eventual v0.3.0 umbrella release per the no-intermediate-releases discipline).
+- The `connes-cvs` v0.2.2 PyPI package is unaffected. The new $c = 100$ data was produced by the unreleased v0.2.3-local runner.
 - All theorems, derivations, and structural observations from earlier versions are preserved.
 
 ## [Riemann zeros - Zenodo Version 2] - 2026-04-19
@@ -254,9 +271,9 @@ Performance release: the recorded same-environment A/B cell shows an approximate
 
 ### Files added
 
-- `_benchmarks/baseline_benchmark.py` - historical small-workload baseline driver (c=13 N=50 dps=50).
-- `_benchmarks/win1_benchmark.py` - historical small-workload WIN 1 driver (same params, direct comparison).
-- `_benchmarks/win1_pool_benchmark.py` - historical production-style A/B harness using the then-current internal sweep path (12-way multiprocessing).
+- `benchmarks/baseline_benchmark.py` - historical small-workload baseline driver (c=13 N=50 dps=50).
+- `benchmarks/win1_benchmark.py` - historical small-workload WIN 1 driver (same params, direct comparison).
+- `benchmarks/win1_pool_benchmark.py` - historical production-style A/B harness using the then-current internal sweep path (12-way multiprocessing).
 - `benchmarks/AB_VERIFIED_2026-04-14.md` - A/B verification record (same-environment baseline-vs-WIN-1; all 80 printed lambda digits agree).
 
 ### No API changes

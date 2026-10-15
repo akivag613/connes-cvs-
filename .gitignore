@@ -18,6 +18,8 @@ venv/
 
 # ---- Local secrets ----
 .env
+.env.*
+!.env.example
 
 # ---- OS / editor ----
 .DS_Store
@@ -25,9 +27,3 @@ venv/
 
 # ---- PyPI release staging (built artifacts, never committed) ----
 release-dist/
-
-# ---- Working material that must never enter this repository ----
-*_private_rc*
-*_HELD_*
-*_in_prep*
-proof_objects/

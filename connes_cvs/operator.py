@@ -22,8 +22,9 @@ References
 
 from __future__ import annotations
 
+from functools import wraps
 from numbers import Integral
-from typing import Optional, Union
+from typing import Callable, Optional, ParamSpec, TypeVar, Union
 import warnings
 
 import mpmath as mp
@@ -42,6 +43,34 @@ try:
 except ImportError:
     HAS_FLINT = False
     _FLINT_VERSION = None
+
+
+_PrecisionArgs = ParamSpec("_PrecisionArgs")
+_PrecisionResult = TypeVar("_PrecisionResult")
+
+
+def _preserve_context_on_failure(
+    operation: Callable[_PrecisionArgs, _PrecisionResult],
+) -> Callable[_PrecisionArgs, _PrecisionResult]:
+    """Restore numerical context if an API call raises; keep success semantics.
+
+    mpmath's binary precision is the exact state. Saving decimal ``dps``
+    would round a caller's manually chosen bit count on restoration.
+    This does not roll back caches or make the global contexts thread-safe.
+    """
+    @wraps(operation)
+    def protected(*args: _PrecisionArgs.args, **kwargs: _PrecisionArgs.kwargs) -> _PrecisionResult:
+        prior_bits = mp.mp.prec
+        prior_flint = (flint_ctx.prec, flint_ctx.threads) if HAS_FLINT else None
+        try:
+            return operation(*args, **kwargs)
+        except BaseException:
+            mp.mp.prec = prior_bits
+            if prior_flint is not None:
+                flint_ctx.prec, flint_ctx.threads = prior_flint
+            raise
+
+    return protected
 
 
 def _validated_int(name: str, value: int, minimum: int) -> int:
@@ -485,6 +514,7 @@ def _compute_psi_pair(
 # Public API
 # ============================================================
 
+@_preserve_context_on_failure
 def build_galerkin_matrix(
     c: Union[int, str, mp.mpf],
     N: int = 100,
@@ -722,6 +752,7 @@ def compute_ground_state(
     return lambda_even, v_full
 
 
+@_preserve_context_on_failure
 def extract_zeros(
     eigvec: "mp.matrix",
     L: Optional[mp.mpf] = None,

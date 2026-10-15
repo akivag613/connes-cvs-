@@ -50,9 +50,32 @@ Any change to `connes_cvs/operator.py`, `connes_cvs/sweep.py`, or `connes_cvs/ke
 1. Reproduce the committed c=13 references in `tests/reference_values.json`: **all 80 stored printed digits** on the same-precision A/B cell, and **>=20** lambda plus **>=18** gamma-error digits on the cross-precision extended validation cell.
 2. Preserve the exact small-cell equality checks in `tests/test_runner_identity.py` and the independent parity/full-assembly checks in `tests/test_operator_hardening.py`. Do not generalize those scopes into a blanket raw-value claim.
 3. Include a matched before/after benchmark for any speed claim: same checkout except for the proposed change, same workload, precision, backend, worker count, output phases, hardware, and timing boundary. `benchmarks/win1_pool_benchmark.py` is a current-path timer, not by itself a historical v0.1 baseline.
-4. Document the change in [CHANGELOG.md](../CHANGELOG.md) under the next unreleased version, with the exact measured scope and numerical tolerance.
+4. Document the change in [CHANGELOG.md](../CHANGELOG.md) under an unreleased heading (or a dated documentation heading for documentation-only changes), with the exact measured scope and numerical tolerance.
 
 Performance optimizations that produce a mathematically different output (e.g. changing the quadrature rule, reordering summation steps that accumulate differently) must be behind a default-off flag, not replace the v0.1+ reference path.
+
+## Checking distribution archives
+
+Work from a clean public source tree and use a new, empty output directory.
+The source-distribution allowlist defines the package contents. Fast tests
+check source coverage and configuration; they do not inspect a built archive.
+
+After the fast suite, pinned reference suite and type checks pass, use the same
+build tools and archive checks as the release workflow:
+
+```bash
+python -m pip install 'build==1.4.3' 'twine==7.0.0'
+python -m build --sdist --wheel --outdir release-dist
+python tools/verify_release.py --dist release-dist
+python -m twine check --strict release-dist/*
+```
+
+The build backend is pinned in `pyproject.toml`. Test each archive in a fresh
+virtual environment at the declared mpmath floor, from outside the source tree,
+so a local import cannot hide an incomplete distribution. The workflow records
+the complete clean-install procedure. Any failed gate stops publication.
+These checks do not upload a release; a new release also needs its own version
+and synchronized metadata.
 
 ## Style
 

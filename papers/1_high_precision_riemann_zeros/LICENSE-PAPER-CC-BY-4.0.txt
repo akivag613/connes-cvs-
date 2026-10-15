@@ -1,0 +1,11 @@
+Paper license notice
+
+The manuscript High-Precision Approximation of Riemann Zeros via the Truncated
+Weil Form, by Akiva Groskin, is licensed under Creative Commons Attribution
+4.0 International (CC BY 4.0), as already stated in this folder's README.
+
+License: https://creativecommons.org/licenses/by/4.0/
+Legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+This notice records the existing manuscript license. It does not change the
+MIT license of the connes-cvs software or third-party licenses.
