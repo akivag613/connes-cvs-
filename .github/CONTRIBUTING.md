@@ -1,5 +1,7 @@
 # Contributing to connes-cvs
 
+> **This project has concluded and the repository is archived.** Issues and pull requests are no longer accepted. This guide is kept as a record of how the package was developed and verified, and for anyone extending the code in a fork under the MIT License.
+
 Thanks for your interest. This project implements a specific mathematical construction (the Connes-van Suijlekom Galerkin matrix) and prioritises **correctness and reproducibility** over feature surface. The bar for any change that touches the numerical core is high.
 
 ## Development setup

@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+These changes are on the `main` branch only and were not published to PyPI. The project concluded in November 2026; 0.3.1 is the final release.
+
 - Close release-configuration and recursive source-inventory gaps, remove
   obsolete filename exemptions, and include the selected references page in
   source distributions. Add negative controls for omitted files and inconsistent

@@ -14,6 +14,9 @@
 
 </div>
 
+> [!NOTE]
+> **Project status: concluded.** This research project is complete, and the repository is archived as a permanent, read-only record. It is no longer maintained: no further releases are planned, and new issues and pull requests are not accepted. The four papers (see [Papers](#papers)), the `connes-cvs` package ([version 0.3.1 on PyPI](https://pypi.org/project/connes-cvs/), the final release), and the data, examples, tests and verification programs in this repository remain available. The `main` branch also contains post-release fixes and documentation updates that were not published to PyPI; see [CHANGELOG.md](https://github.com/akivag613/connes-cvs-/blob/main/CHANGELOG.md). The code is MIT-licensed and may be forked freely; please cite it as described under [Citation](#citation). Project page: [groskingroup.com/riemann-project](https://www.groskingroup.com/riemann-project).
+
 > Connes & van Suijlekom (2025) proposed a spectral route to the Riemann Hypothesis through a truncated Weil quadratic form. This package builds and diagonalizes its finite Galerkin matrices at arbitrary precision. The published study follows the smallest-positive even-sector branch across **275 orders of magnitude**, from $\sim 10^{-59}$ at $c = 13$, $N = 100$, $T = 800$, $\mathrm{dps} = 150$ to $\sim 10^{-334}$ at $c = 100$, $N = 250$, $T = 800$, $\mathrm{dps} = 500$, and reports **329 matching digits** for $\gamma_1$ at the latter cell. These are finite-cutoff numerical results, not a proof of the Riemann Hypothesis.
 
 ---
@@ -450,7 +453,7 @@ and software, with links to the original sources.
 
 ## Contributing
 
-Issues and pull requests are welcome. See [CONTRIBUTING.md](https://github.com/akivag613/connes-cvs-/blob/main/.github/CONTRIBUTING.md) for developer-setup instructions and the numerical regression protocol. Version history is in [CHANGELOG.md](https://github.com/akivag613/connes-cvs-/blob/main/CHANGELOG.md).
+This project has concluded and the repository is archived, so issues and pull requests are no longer accepted. You are welcome to fork the code under the MIT License. [CONTRIBUTING.md](https://github.com/akivag613/connes-cvs-/blob/main/.github/CONTRIBUTING.md) records the development setup, test suite and numerical regression protocol used during development, which remain a guide for work in a fork. Version history is in [CHANGELOG.md](https://github.com/akivag613/connes-cvs-/blob/main/CHANGELOG.md).
 
 Thanks to Dan Alec Yamaguchi ([danalec](https://github.com/danalec)) for reporting
 the failure-path precision leak and identifying release-check and documentation
